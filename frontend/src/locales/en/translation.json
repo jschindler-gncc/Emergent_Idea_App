@@ -106,5 +106,68 @@
   "dates": {
     "created": "Created {{date}}",
     "updated": "Updated {{date}}"
+  },
+  "settings": {
+    "title": "Settings",
+    "tabs": {
+      "appearance": "Appearance",
+      "layout": "Layout", 
+      "preferences": "Preferences",
+      "achievements": "Achievements"
+    },
+    "appearance": {
+      "theme_selection": "Theme Selection",
+      "dark_mode": "Dark Mode",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "layout": {
+      "layout_density": "Layout Density",
+      "default_view": "Default View",
+      "sidebar_settings": "Sidebar Settings",
+      "collapse_sidebar": "Collapse sidebar by default",
+      "show_sidebar_icons": "Show sidebar icons"
+    },
+    "preferences": {
+      "quick_actions": "Quick Actions",
+      "auto_save": "Auto-save ideas as you type",
+      "confirm_delete": "Confirm before deleting ideas",
+      "show_tooltips": "Show helpful tooltips",
+      "ideas_per_page": "Ideas per Page"
+    },
+    "achievements": {
+      "your_progress": "Your Progress",
+      "achievement_stats": "Achievement Stats",
+      "unlocked": "{{count}} of {{total}} achievements unlocked"
+    }
+  },
+  "themes": {
+    "default": "Default",
+    "ocean": "Ocean",
+    "forest": "Forest",
+    "sunset": "Sunset",
+    "purple": "Purple",
+    "monochrome": "Monochrome"
+  },
+  "layout_density": {
+    "comfortable": "Comfortable",
+    "compact": "Compact", 
+    "cozy": "Cozy",
+    "comfortable_desc": "More spacing, easier on the eyes",
+    "compact_desc": "Less spacing, more content visible",
+    "cozy_desc": "Balanced spacing for optimal comfort"
+  },
+  "achievements_list": {
+    "first_step": "First Step",
+    "first_step_desc": "Created your first idea",
+    "idea_collector": "Idea Collector",
+    "idea_collector_desc": "Created 10 ideas",
+    "idea_master": "Idea Master", 
+    "idea_master_desc": "Created 50 ideas",
+    "organizer": "Super Organizer",
+    "organizer_desc": "Used all 5 categories",
+    "weekly_streak": "Weekly Warrior",
+    "weekly_streak_desc": "Created ideas for 7 consecutive days"
   }
 }
