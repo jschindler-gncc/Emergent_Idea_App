@@ -392,6 +392,24 @@ function App() {
     setSettings(prev => ({ ...prev, darkMode: !prev.darkMode }));
   };
 
+  // Change language
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setShowLanguageMenu(false);
+  };
+
+  // Available languages
+  const languages = [
+    { code: 'en', name: t('languages.en'), flag: '🇺🇸' },
+    { code: 'es', name: t('languages.es'), flag: '🇪🇸' },
+    { code: 'fr', name: t('languages.fr'), flag: '🇫🇷' },
+    { code: 'de', name: t('languages.de'), flag: '🇩🇪' },
+    { code: 'pt', name: t('languages.pt'), flag: '🇧🇷' },
+    { code: 'it', name: t('languages.it'), flag: '🇮🇹' },
+    { code: 'zh', name: t('languages.zh'), flag: '🇨🇳' },
+    { code: 'ja', name: t('languages.ja'), flag: '🇯🇵' },
+  ];
+
   // Toggle idea selection
   const toggleIdeaSelection = (ideaId) => {
     const newSelected = new Set(selectedIdeas);
