@@ -106,5 +106,68 @@
   "dates": {
     "created": "Créé {{date}}",
     "updated": "Mis à jour {{date}}"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "tabs": {
+      "appearance": "Apparence",
+      "layout": "Mise en page",
+      "preferences": "Préférences", 
+      "achievements": "Réalisations"
+    },
+    "appearance": {
+      "theme_selection": "Sélection du Thème",
+      "dark_mode": "Mode Sombre",
+      "light": "Clair",
+      "dark": "Sombre",
+      "system": "Système"
+    },
+    "layout": {
+      "layout_density": "Densité de la Mise en Page",
+      "default_view": "Vue par Défaut",
+      "sidebar_settings": "Paramètres de la Barre Latérale",
+      "collapse_sidebar": "Réduire la barre latérale par défaut",
+      "show_sidebar_icons": "Afficher les icônes de la barre latérale"
+    },
+    "preferences": {
+      "quick_actions": "Actions Rapides",
+      "auto_save": "Sauvegarde automatique lors de la saisie",
+      "confirm_delete": "Confirmer avant de supprimer les idées",
+      "show_tooltips": "Afficher les conseils utiles",
+      "ideas_per_page": "Idées par Page"
+    },
+    "achievements": {
+      "your_progress": "Votre Progression",
+      "achievement_stats": "Statistiques des Réalisations",
+      "unlocked": "{{count}} sur {{total}} réalisations débloquées"
+    }
+  },
+  "themes": {
+    "default": "Par défaut",
+    "ocean": "Océan",
+    "forest": "Forêt",
+    "sunset": "Coucher de soleil",
+    "purple": "Violet",
+    "monochrome": "Monochrome"
+  },
+  "layout_density": {
+    "comfortable": "Confortable",
+    "compact": "Compact",
+    "cozy": "Douillet",
+    "comfortable_desc": "Plus d'espacement, plus facile pour les yeux",
+    "compact_desc": "Moins d'espacement, plus de contenu visible",
+    "cozy_desc": "Espacement équilibré pour un confort optimal"
+  },
+  "achievements_list": {
+    "first_step": "Premier Pas",
+    "first_step_desc": "Vous avez créé votre première idée",
+    "idea_collector": "Collectionneur d'Idées",
+    "idea_collector_desc": "Vous avez créé 10 idées",
+    "idea_master": "Maître des Idées",
+    "idea_master_desc": "Vous avez créé 50 idées",
+    "organizer": "Super Organisateur",
+    "organizer_desc": "Vous avez utilisé les 5 catégories",
+    "weekly_streak": "Guerrier Hebdomadaire",
+    "weekly_streak_desc": "Vous avez créé des idées pendant 7 jours consécutifs"
   }
 }
