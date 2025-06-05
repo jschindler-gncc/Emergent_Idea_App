@@ -119,7 +119,8 @@ function App() {
   const [showTemplates, setShowTemplates] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
-  const [viewMode, setViewMode] = useState('card'); // 'card' or 'list'
+  const [showSettings, setShowSettings] = useState(false);
+  const [viewMode, setViewMode] = useState(settings.defaultView || 'card'); // 'card' or 'list'
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedIdeas, setSelectedIdeas] = useState(new Set());
   const [bulkMode, setBulkMode] = useState(false);
