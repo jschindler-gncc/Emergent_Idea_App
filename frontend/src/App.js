@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './App.css';
+import './i18n'; // Import i18n configuration
+import { useTranslation } from 'react-i18next';
 import { 
   Search, Plus, Tag, Archive, Edit3, Trash2, X, Hash, Calendar, Filter,
   Moon, Sun, Download, BarChart3, Menu, Grid, List, Settings, Zap,
   CheckSquare, Copy, FileText, Lightbulb, Target, Briefcase, Code,
-  Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp
+  Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp, Languages
 } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
