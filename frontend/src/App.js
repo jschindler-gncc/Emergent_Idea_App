@@ -328,22 +328,30 @@ function App() {
 
     if (sourceIndex === destIndex) return;
 
+    // Create a copy of filtered ideas to reorder
     const reorderedIdeas = Array.from(filteredIdeas);
     const [movedIdea] = reorderedIdeas.splice(sourceIndex, 1);
     reorderedIdeas.splice(destIndex, 0, movedIdea);
 
-    // Update the main ideas array maintaining the new order
-    const updatedIdeas = [...ideas];
-    const sourceId = filteredIdeas[sourceIndex].id;
-    const destId = filteredIdeas[destIndex].id;
+    // Update the main ideas array to reflect the new order
+    // We need to maintain non-filtered ideas in their original positions
+    const newIdeas = [...ideas];
     
-    const sourcePos = updatedIdeas.findIndex(idea => idea.id === sourceId);
-    const destPos = updatedIdeas.findIndex(idea => idea.id === destId);
-    
-    const [moved] = updatedIdeas.splice(sourcePos, 1);
-    updatedIdeas.splice(destPos, 0, moved);
-    
-    setIdeas(updatedIdeas);
+    // Remove all filtered ideas from their current positions
+    filteredIdeas.forEach(idea => {
+      const index = newIdeas.findIndex(i => i.id === idea.id);
+      if (index !== -1) {
+        newIdeas.splice(index, 1);
+      }
+    });
+
+    // Find the position to insert the reordered filtered ideas
+    // Insert them at the beginning if no specific position is needed
+    reorderedIdeas.forEach((idea, index) => {
+      newIdeas.splice(index, 0, idea);
+    });
+
+    setIdeas(newIdeas);
   };
 
   // Start editing
