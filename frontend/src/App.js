@@ -36,7 +36,24 @@ const saveIdeas = (ideas) => {
 const loadSettings = () => {
   try {
     const stored = localStorage.getItem(SETTINGS_KEY);
-    return stored ? JSON.parse(stored) : { darkMode: window.matchMedia('(prefers-color-scheme: dark)').matches };
+    return stored ? JSON.parse(stored) : { 
+      darkMode: window.matchMedia('(prefers-color-scheme: dark)').matches,
+      theme: 'default',
+      layoutDensity: 'comfortable',
+      defaultView: 'card',
+      sidebarCollapsed: false,
+      showSidebarIcons: true,
+      autoSave: true,
+      confirmDelete: true,
+      showTooltips: true,
+      ideasPerPage: 20,
+      customColors: {
+        primary: '#3b82f6',
+        secondary: '#64748b',
+        accent: '#10b981',
+        background: '#f9fafb'
+      }
+    };
   } catch (error) {
     return { darkMode: false };
   }
