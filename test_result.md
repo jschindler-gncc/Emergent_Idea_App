@@ -378,3 +378,5 @@ agent_communication:
       message: "Implemented comprehensive enhancements: Dark mode toggle, Export functionality (JSON/CSV), Idea templates, Enhanced mobile design, Analytics dashboard, Drag & drop reordering, Bulk operations, Multiple view modes. Ready for enhanced testing of new features."
     - agent: "main"
       message: "Fixed UI visibility issues and drag-drop configuration. Analytics button, Bulk operations button, and Grid view button should now be visible. Fixed react-beautiful-dnd configuration errors. Ready for retesting of enhanced features."
+    - agent: "testing"
+      message: "Completed testing of the enhanced features. Analytics dashboard, bulk operations, and multiple view modes are now working correctly. Dark mode toggle, export functionality, idea templates, and mobile responsive design continue to work well. However, drag and drop reordering still has issues with react-beautiful-dnd showing console errors about 'isCombineEnabled must be a boolean'. This feature needs further configuration fixes."
