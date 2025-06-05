@@ -481,7 +481,7 @@ function App() {
                 </span>
               )}
               {bulkMode && selectedIdeas.size > 0 && (
-                <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">
+                <span className="text-xs px-2 py-1 rounded text-white" style={{ backgroundColor: 'var(--color-primary)' }}>
                   {t('header.selected', { count: selectedIdeas.size })}
                 </span>
               )}
