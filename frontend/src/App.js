@@ -621,7 +621,13 @@ function App() {
 
             <button
               onClick={() => setIsAddingIdea(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+              className="text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+              style={{ 
+                backgroundColor: 'var(--color-primary)',
+                ':hover': { backgroundColor: 'var(--color-secondary)' }
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--color-secondary)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--color-primary)'}
             >
               <Plus className="w-4 h-4" />
               <span className="hidden sm:inline">{t('header.new_idea')}</span>
