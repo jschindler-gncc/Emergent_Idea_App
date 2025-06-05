@@ -420,9 +420,9 @@ function App() {
     setEditingIdea(null);
   };
 
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setSettings(prev => ({ ...prev, darkMode: !prev.darkMode }));
+  // Update settings
+  const updateSettings = (newSettings) => {
+    setSettings(newSettings);
   };
 
   // Change language
