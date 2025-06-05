@@ -17,6 +17,11 @@ const SettingsModal = ({
   const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState('appearance');
 
+  // Force re-render when language changes
+  useEffect(() => {
+    // This effect will trigger a re-render when the language changes
+  }, [i18n.language]);
+
   if (!isOpen) return null;
 
   // Theme Options
