@@ -527,7 +527,8 @@ function App() {
 
             <button
               onClick={() => setBulkMode(!bulkMode)}
-              className={`p-2 rounded-lg transition-colors ${bulkMode ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+              className={`p-2 rounded-lg transition-colors ${bulkMode ? 'text-white' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+              style={bulkMode ? { backgroundColor: 'var(--color-primary)' } : {}}
               title={t('tooltips.bulk_select')}
             >
               <CheckSquare className="w-5 h-5" />
