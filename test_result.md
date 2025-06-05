@@ -335,15 +335,18 @@ test_plan:
   
   - task: "Bulk operations (multi-select and batch actions)"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/App.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "medium"
     needs_retesting: true
     status_history:
         - working: true
           agent: "main"
           comment: "Added bulk mode with multi-select checkboxes and batch archive/delete operations"
+        - working: false
+          agent: "testing"
+          comment: "Bulk operations button is not visible in the UI. The code shows implementation of bulk selection and operations, but the button to activate bulk mode could not be found during testing. This feature needs to be fixed to make bulk operations accessible."
   
   - task: "Multiple view modes (card and list view)"
     implemented: true
