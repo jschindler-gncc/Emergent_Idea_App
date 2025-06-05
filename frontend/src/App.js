@@ -795,7 +795,7 @@ function App() {
                     </div>
                   ) : (
                     filteredIdeas.map((idea, index) => (
-                      <Draggable key={idea.id} draggableId={idea.id} index={index} isDragDisabled={false}>
+                      <Draggable key={idea.id} draggableId={idea.id} index={index}>
                         {(provided, snapshot) => (
                           <div
                             ref={provided.innerRef}
