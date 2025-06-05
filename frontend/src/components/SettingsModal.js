@@ -210,7 +210,7 @@ const SettingsModal = ({
           {activeTab === 'appearance' && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4">Theme Selection</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.appearance.theme_selection')}</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {themes.map(theme => (
                     <button
