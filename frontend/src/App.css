@@ -12,6 +12,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f9fafb;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #111827;
+  color: #f9fafb;
 }
 
 /* Custom Scrollbar */
@@ -23,13 +34,25 @@ body {
   background: #f1f1f1;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 3px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }
 
 /* Focus styles for better accessibility */
@@ -86,6 +109,10 @@ select:focus {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+.dark .idea-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
 /* Custom input styles */
 input[type="text"],
 textarea,
@@ -107,6 +134,10 @@ select:focus {
 .tag:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .tag:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Button hover effects */
@@ -151,7 +182,20 @@ select:focus {
   }
 }
 
-/* Mobile responsiveness */
+/* Drag and drop styles */
+.react-beautiful-dnd-dragging {
+  z-index: 999 !important;
+}
+
+.react-beautiful-dnd-drag-handle {
+  cursor: grab;
+}
+
+.react-beautiful-dnd-drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Mobile specific styles */
 @media (max-width: 768px) {
   .desktop-sidebar {
     display: none;
@@ -165,11 +209,56 @@ select:focus {
     margin: 0.5rem;
     padding: 1rem;
   }
+
+  /* Mobile grid adjustments */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Mobile text adjustments */
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  /* Hide complex elements on mobile */
+  .hidden-mobile {
+    display: none;
+  }
+
+  /* Mobile-specific button styling */
+  .mobile-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-/* Dark mode support (future enhancement) */
-@media (prefers-color-scheme: dark) {
-  /* Dark mode styles can be added here */
+@media (max-width: 640px) {
+  /* Even smaller screens */
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .space-x-4 > * + * {
+    margin-left: 0.5rem;
+  }
+
+  /* Compact cards on small screens */
+  .idea-card {
+    padding: 0.75rem;
+  }
+
+  /* Smaller text on mobile */
+  .text-lg {
+    font-size: 1rem;
+  }
+}
+
+/* Enhanced tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* Print styles */
@@ -181,5 +270,122 @@ select:focus {
   .idea-card {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* Remove shadows and transitions for print */
+  * {
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Ensure dark mode doesn't affect print */
+  .dark * {
+    color: black !important;
+    background-color: white !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .idea-card {
+    border-width: 2px;
+  }
+
+  .tag {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .empty-state {
+    animation: none;
+  }
+}
+
+/* Custom selection styles */
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark ::selection {
+  background-color: #60a5fa;
+  color: #1f2937;
+}
+
+/* Enhanced focus indicators for keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth theme transition */
+html {
+  color-scheme: light;
+  transition: color-scheme 0.2s ease-in-out;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Template dropdown animation */
+.template-dropdown {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bulk selection highlight */
+.bulk-selected {
+  ring: 2px;
+  ring-color: #3b82f6;
+  ring-opacity: 0.5;
+}
+
+/* Analytics chart styles */
+.analytics-chart {
+  transition: all 0.3s ease-in-out;
+}
+
+.analytics-chart:hover {
+  transform: scale(1.05);
+}
+
+/* Export button group */
+.export-group {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+.dark .export-group {
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+/* Enhanced responsive breakpoints */
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .max-w-7xl {
+    max-width: 1536px;
   }
 }
