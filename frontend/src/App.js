@@ -764,11 +764,11 @@ function App() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{analytics.total}</div>
+                  <div className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>{analytics.total}</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.total_ideas')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600 dark:text-green-400">{analytics.active}</div>
+                  <div className="text-2xl font-bold" style={{ color: 'var(--color-accent)' }}>{analytics.active}</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.active')}</div>
                 </div>
                 <div className="text-center">
@@ -776,7 +776,7 @@ function App() {
                   <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.archived')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{analytics.recentIdeas}</div>
+                  <div className="text-2xl font-bold" style={{ color: 'var(--color-secondary)' }}>{analytics.recentIdeas}</div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.this_week')}</div>
                 </div>
               </div>
