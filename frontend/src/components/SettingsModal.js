@@ -140,10 +140,10 @@ const SettingsModal = ({
   ];
 
   const tabs = [
-    { id: 'appearance', name: 'Appearance', icon: Palette },
-    { id: 'layout', name: 'Layout', icon: Layout },
-    { id: 'preferences', name: 'Preferences', icon: SettingsIcon },
-    { id: 'achievements', name: 'Achievements', icon: Trophy }
+    { id: 'appearance', name: t('settings.tabs.appearance'), icon: Palette },
+    { id: 'layout', name: t('settings.tabs.layout'), icon: Layout },
+    { id: 'preferences', name: t('settings.tabs.preferences'), icon: SettingsIcon },
+    { id: 'achievements', name: t('settings.tabs.achievements'), icon: Trophy }
   ];
 
   const updateTheme = (themeId) => {
