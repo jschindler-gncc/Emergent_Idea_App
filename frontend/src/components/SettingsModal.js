@@ -292,7 +292,7 @@ const SettingsModal = ({
           {activeTab === 'layout' && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4">Layout Density</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.layout.layout_density')}</h3>
                 <div className="space-y-3">
                   {layoutOptions.map(layout => (
                     <button
