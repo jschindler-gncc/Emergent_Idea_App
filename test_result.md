@@ -347,6 +347,9 @@ test_plan:
         - working: true
           agent: "testing"
           comment: "Customization features work correctly. Successfully tested the settings modal with its different tabs (Appearance, Layout, Preferences, Achievements). The 6 theme options (Default, Ocean, Forest, Sunset, Purple, Monochrome) all apply correctly. Layout density options (Comfortable, Compact, Cozy) change spacing as expected. Dark/light/system mode switching works properly. All settings persist correctly across browser sessions. The achievement system is properly implemented with progress tracking."
+        - working: true
+          agent: "testing"
+          comment: "Specifically tested the theme changing functionality. Successfully opened the settings modal and clicked on the Ocean theme. Verified that the CSS custom properties changed from the default values (primary: #3b82f6, secondary: #64748b, accent: #10b981, background: #f9fafb) to the Ocean theme values (primary: #0ea5e9, secondary: #0284c7, accent: #06b6d4, background: #f0f9ff). The theme selection is visually indicated by a blue border around the selected theme. All themes (Default, Ocean, Forest, Sunset, Purple, Monochrome) are available and displayed with their respective color swatches."
   
   - task: "Multiple view modes (card and list view)"
     implemented: true
