@@ -904,7 +904,12 @@ function App() {
                       {!searchTerm && (
                         <button
                           onClick={() => setIsAddingIdea(true)}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+                          className="text-white px-4 py-2 rounded-lg transition-colors"
+                          style={{ 
+                            backgroundColor: 'var(--color-primary)',
+                          }}
+                          onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--color-secondary)'}
+                          onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--color-primary)'}
                         >
                           {t('ideas.add_first_idea')}
                         </button>
