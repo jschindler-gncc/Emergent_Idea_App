@@ -174,7 +174,7 @@ const SettingsModal = ({
           darkMode ? 'border-gray-700 bg-gray-900' : 'border-gray-200 bg-gray-50'
         }`}>
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold">{t('sidebar.settings')}</h2>
+            <h2 className="text-xl font-bold">{t('settings.title')}</h2>
             <button
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
