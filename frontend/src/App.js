@@ -579,6 +579,14 @@ function App() {
             >
               {settings.darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
+
+            <button
+              onClick={() => setShowSettings(true)}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              title={t('tooltips.settings')}
+            >
+              <Settings className="w-5 h-5" />
+            </button>
             
             <div className="relative">
               <button
