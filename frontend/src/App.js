@@ -1116,6 +1116,7 @@ function App() {
 
       {/* Settings Modal */}
       <SettingsModal
+        key={i18n.language} // Force re-render when language changes
         isOpen={showSettings}
         onClose={() => setShowSettings(false)}
         settings={settings}
