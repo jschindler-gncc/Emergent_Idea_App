@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Ideas",
+    "subtitle": "Captura y organiza tus ideas brillantes"
+  },
+  "header": {
+    "ideas_count": "{{count}} ideas",
+    "archived": "Archivado",
+    "selected": "{{count}} seleccionadas",
+    "new_idea": "Nueva Idea",
+    "templates": "Plantillas"
+  },
+  "sidebar": {
+    "search_placeholder": "Buscar ideas...",
+    "export": "Exportar",
+    "export_json": "Exportar como JSON",
+    "export_csv": "Exportar como CSV",
+    "categories": "Categorías",
+    "all_ideas": "Todas las Ideas",
+    "show_archived": "Mostrar Archivadas",
+    "hide_archived": "Ocultar Archivadas",
+    "tags": "Etiquetas",
+    "language": "Idioma",
+    "settings": "Configuración"
+  },
+  "ideas": {
+    "no_ideas_title": "Aún no hay ideas",
+    "no_ideas_subtitle": "¡Comienza a capturar tus ideas brillantes!",
+    "no_search_results": "No se encontraron ideas",
+    "search_help": "Intenta ajustar tu búsqueda o filtros",
+    "add_first_idea": "Agrega Tu Primera Idea",
+    "title_placeholder": "Título de la idea...",
+    "content_placeholder": "Describe tu idea...",
+    "tags_placeholder": "Etiquetas (separadas por comas)"
+  },
+  "categories": {
+    "general": "General",
+    "business": "Negocios",
+    "personal": "Personal",
+    "creative": "Creativo",
+    "technical": "Técnico"
+  },
+  "templates": {
+    "quick_start": "Plantillas de Inicio Rápido",
+    "business_idea": "Idea de Negocio",
+    "project_idea": "Idea de Proyecto",
+    "technical_solution": "Solución Técnica",
+    "creative_concept": "Concepto Creativo",
+    "personal_goal": "Meta Personal"
+  },
+  "template_content": {
+    "business": "Problema:\n\nSolución:\n\nMercado Objetivo:\n\nModelo de Ingresos:\n\nPróximos Pasos:",
+    "project": "Objetivo:\n\nAlcance:\n\nRequisitos:\n\nCronograma:\n\nRecursos Necesarios:",
+    "technical": "Declaración del Problema:\n\nSolución Propuesta:\n\nStack Tecnológico:\n\nPasos de Implementación:\n\nDesafíos Potenciales:",
+    "creative": "Concepto:\n\nInspiración:\n\nAudiencia Objetivo:\n\nIdeas de Ejecución:\n\nRecursos Necesarios:",
+    "personal": "Meta:\n\nPor qué importa:\n\nPasos de Acción:\n\nMétricas de Éxito:\n\nFecha Límite:"
+  },
+  "actions": {
+    "add": "Agregar",
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "archive": "Archivar",
+    "unarchive": "Desarchivar",
+    "add_idea": "Agregar Idea",
+    "archive_selected": "Archivar Seleccionadas",
+    "delete_selected": "Eliminar Seleccionadas",
+    "bulk_select": "Selección Múltiple",
+    "analytics": "Analíticas",
+    "card_view": "Vista de Tarjetas",
+    "list_view": "Vista de Lista"
+  },
+  "analytics": {
+    "title": "Analíticas",
+    "total_ideas": "Total de Ideas",
+    "active": "Activas",
+    "archived": "Archivadas",
+    "this_week": "Esta Semana",
+    "most_popular_category": "Categoría más popular:",
+    "top_tag": "Etiqueta principal:"
+  },
+  "modals": {
+    "add_new_idea": "Agregar Nueva Idea",
+    "confirm_delete": "¿Eliminar {{count}} ideas seleccionadas?"
+  },
+  "tooltips": {
+    "dark_mode": "Alternar modo oscuro",
+    "analytics": "Ver analíticas",
+    "bulk_select": "Modo de selección múltiple",
+    "card_view": "Cambiar a vista de tarjetas",
+    "list_view": "Cambiar a vista de lista",
+    "templates": "Usar plantillas",
+    "settings": "Configuración"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文",
+    "ja": "日本語"
+  },
+  "dates": {
+    "created": "Creado {{date}}",
+    "updated": "Actualizado {{date}}"
+  }
+}

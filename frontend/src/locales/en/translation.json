@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Ideas",
+    "subtitle": "Capture and organize your brilliant ideas"
+  },
+  "header": {
+    "ideas_count": "{{count}} ideas",
+    "archived": "Archived",
+    "selected": "{{count}} selected",
+    "new_idea": "New Idea",
+    "templates": "Templates"
+  },
+  "sidebar": {
+    "search_placeholder": "Search ideas...",
+    "export": "Export",
+    "export_json": "Export as JSON",
+    "export_csv": "Export as CSV",
+    "categories": "Categories",
+    "all_ideas": "All Ideas",
+    "show_archived": "Show Archived",
+    "hide_archived": "Hide Archived",
+    "tags": "Tags",
+    "language": "Language",
+    "settings": "Settings"
+  },
+  "ideas": {
+    "no_ideas_title": "No ideas yet",
+    "no_ideas_subtitle": "Start capturing your brilliant ideas!",
+    "no_search_results": "No ideas found",
+    "search_help": "Try adjusting your search or filters",
+    "add_first_idea": "Add Your First Idea",
+    "title_placeholder": "Idea title...",
+    "content_placeholder": "Describe your idea...",
+    "tags_placeholder": "Tags (comma separated)"
+  },
+  "categories": {
+    "general": "General",
+    "business": "Business",
+    "personal": "Personal",
+    "creative": "Creative",
+    "technical": "Technical"
+  },
+  "templates": {
+    "quick_start": "Quick Start Templates",
+    "business_idea": "Business Idea",
+    "project_idea": "Project Idea",
+    "technical_solution": "Technical Solution",
+    "creative_concept": "Creative Concept",
+    "personal_goal": "Personal Goal"
+  },
+  "template_content": {
+    "business": "Problem:\n\nSolution:\n\nTarget Market:\n\nRevenue Model:\n\nNext Steps:",
+    "project": "Objective:\n\nScope:\n\nRequirements:\n\nTimeline:\n\nResources Needed:",
+    "technical": "Problem Statement:\n\nProposed Solution:\n\nTechnology Stack:\n\nImplementation Steps:\n\nPotential Challenges:",
+    "creative": "Concept:\n\nInspiration:\n\nTarget Audience:\n\nExecution Ideas:\n\nResources Needed:",
+    "personal": "Goal:\n\nWhy this matters:\n\nAction Steps:\n\nSuccess Metrics:\n\nDeadline:"
+  },
+  "actions": {
+    "add": "Add",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "archive": "Archive",
+    "unarchive": "Unarchive",
+    "add_idea": "Add Idea",
+    "archive_selected": "Archive Selected",
+    "delete_selected": "Delete Selected",
+    "bulk_select": "Bulk Select",
+    "analytics": "Analytics",
+    "card_view": "Card View",
+    "list_view": "List View"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "total_ideas": "Total Ideas",
+    "active": "Active",
+    "archived": "Archived",
+    "this_week": "This Week",
+    "most_popular_category": "Most popular category:",
+    "top_tag": "Top tag:"
+  },
+  "modals": {
+    "add_new_idea": "Add New Idea",
+    "confirm_delete": "Delete {{count}} selected ideas?"
+  },
+  "tooltips": {
+    "dark_mode": "Toggle dark mode",
+    "analytics": "View analytics",
+    "bulk_select": "Bulk select mode",
+    "card_view": "Switch to card view",
+    "list_view": "Switch to list view",
+    "templates": "Use templates",
+    "settings": "Settings"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français", 
+    "de": "Deutsch",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文",
+    "ja": "日本語"
+  },
+  "dates": {
+    "created": "Created {{date}}",
+    "updated": "Updated {{date}}"
+  }
+}
