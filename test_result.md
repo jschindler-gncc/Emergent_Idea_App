@@ -317,7 +317,7 @@ test_plan:
   
   - task: "Drag and drop reordering"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 2
     priority: "medium"
@@ -341,6 +341,9 @@ test_plan:
         - working: false
           agent: "testing"
           comment: "Drag and drop functionality is still not working correctly. Testing shows two persistent console errors: 1) 'Invariant failed: isDropDisabled must be a boolean' when the page loads, and 2) 'Invariant failed: Cannot find droppable entry with id [ideas]' when attempting to drag items. When trying to drag an idea card, a red error screen appears showing the 'Cannot find droppable entry with id [ideas]' error. The drag operation cannot be completed, and items cannot be reordered."
+        - working: true
+          agent: "testing"
+          comment: "Drag and drop functionality is now working correctly after migrating from react-beautiful-dnd to @hello-pangea/dnd. No console errors were detected during testing. Successfully tested dragging and dropping items in both card view and list view. The order of items changes correctly after drag operations, and the new order persists. Visual feedback during dragging works as expected."
   
   - task: "Bulk operations (multi-select and batch actions)"
     implemented: true
