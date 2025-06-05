@@ -763,8 +763,8 @@ function App() {
 
           {/* Ideas List */}
           <DragDropContext onDragEnd={handleDragEnd}>
-            <Droppable droppableId="ideas">
-              {(provided) => (
+            <Droppable droppableId="ideas" isDropDisabled={false}>
+              {(provided, snapshot) => (
                 <div
                   {...provided.droppableProps}
                   ref={provided.innerRef}
@@ -795,7 +795,7 @@ function App() {
                     </div>
                   ) : (
                     filteredIdeas.map((idea, index) => (
-                      <Draggable key={idea.id} draggableId={idea.id} index={index}>
+                      <Draggable key={idea.id} draggableId={idea.id} index={index} isDragDisabled={false}>
                         {(provided, snapshot) => (
                           <div
                             ref={provided.innerRef}
@@ -804,8 +804,14 @@ function App() {
                             className={`${
                               settings.darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
                             } rounded-lg border p-6 hover:shadow-md transition-shadow ${
-                              snapshot.isDragging ? 'shadow-lg' : ''
+                              snapshot.isDragging ? 'shadow-lg rotate-2' : ''
                             } ${viewMode === 'list' ? 'flex items-center space-x-4' : ''}`}
+                            style={{
+                              ...provided.draggableProps.style,
+                              ...(snapshot.isDragging && {
+                                transform: `${provided.draggableProps.style?.transform} rotate(2deg)`,
+                              }),
+                            }}
                           >
                             {editingIdea && editingIdea.id === idea.id ? (
                               /* Edit Mode */
