@@ -235,8 +235,106 @@ test_plan:
   test_all: false
   test_priority: "high_first"
 
+  - task: "Dark mode toggle with system preference detection"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js, /app/frontend/tailwind.config.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Implemented dark mode toggle with automatic system preference detection and persistent settings"
+  
+  - task: "Export functionality (JSON and CSV)"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Added export functionality for both JSON and CSV formats with proper file naming"
+  
+  - task: "Idea templates for quick start"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Implemented 5 idea templates: Business, Project, Technical, Creative, Personal with pre-filled content structures"
+  
+  - task: "Enhanced mobile responsive design"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Enhanced mobile experience with responsive sidebar, mobile-optimized layouts, and touch-friendly interactions"
+  
+  - task: "Analytics dashboard with insights"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Added analytics panel showing total ideas, active/archived counts, recent activity, top categories and tags"
+  
+  - task: "Drag and drop reordering"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Implemented drag-and-drop reordering using react-beautiful-dnd library"
+  
+  - task: "Bulk operations (multi-select and batch actions)"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Added bulk mode with multi-select checkboxes and batch archive/delete operations"
+  
+  - task: "Multiple view modes (card and list view)"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Implemented card and list view modes with optimized layouts for different use cases"
+
 agent_communication:
     - agent: "main"
       message: "Implemented complete Notion-style idea logger with all requested features. Ready for comprehensive testing of CRUD operations, search, filtering, tagging, archiving, and UI/UX. App uses localStorage for persistence and should work completely in frontend."
     - agent: "testing"
       message: "Completed comprehensive testing of the Notion-style idea logger app. All core functionality is working correctly including CRUD operations, search, category filtering, tag system, archive functionality, UI, and data persistence. The app successfully stores data in localStorage and maintains state across browser sessions."
+    - agent: "main"
+      message: "Implemented comprehensive enhancements: Dark mode toggle, Export functionality (JSON/CSV), Idea templates, Enhanced mobile design, Analytics dashboard, Drag & drop reordering, Bulk operations, Multiple view modes. Ready for enhanced testing of new features."
