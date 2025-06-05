@@ -320,15 +320,18 @@ test_plan:
   
   - task: "Drag and drop reordering"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/App.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "medium"
     needs_retesting: true
     status_history:
         - working: true
           agent: "main"
           comment: "Implemented drag-and-drop reordering using react-beautiful-dnd library"
+        - working: false
+          agent: "testing"
+          comment: "Drag and drop functionality has implementation issues. Console shows errors from react-beautiful-dnd: 'Invariant failed: isDropDisabled must be a boolean'. This suggests there's a configuration issue with the drag and drop implementation that needs to be fixed."
   
   - task: "Bulk operations (multi-select and batch actions)"
     implemented: true
