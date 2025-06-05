@@ -1078,11 +1078,8 @@ function App() {
                                       {idea.tags && idea.tags.length > 0 && (
                                         <div className="flex items-center space-x-1">
                                           {idea.tags.slice(0, viewMode === 'list' ? 2 : 5).map(tag => (
-                                            <span key={tag} className={`text-xs px-2 py-1 rounded flex items-center ${
-                                              settings.darkMode 
-                                                ? 'bg-blue-900 text-blue-300' 
-                                                : 'bg-blue-100 text-blue-700'
-                                            }`}>
+                                            <span key={tag} className={`text-xs px-2 py-1 rounded flex items-center text-white`}
+                                              style={{ backgroundColor: 'var(--color-accent)' }}>
                                               <Hash className="w-3 h-3 mr-1" />
                                               {tag}
                                             </span>
