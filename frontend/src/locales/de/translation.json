@@ -106,5 +106,68 @@
   "dates": {
     "created": "Erstellt {{date}}",
     "updated": "Aktualisiert {{date}}"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "tabs": {
+      "appearance": "Erscheinungsbild",
+      "layout": "Layout",
+      "preferences": "Einstellungen",
+      "achievements": "Errungenschaften"
+    },
+    "appearance": {
+      "theme_selection": "Thema-Auswahl",
+      "dark_mode": "Dunkler Modus",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "layout": {
+      "layout_density": "Layout-Dichte",
+      "default_view": "Standard-Ansicht",
+      "sidebar_settings": "Seitenleisten-Einstellungen",
+      "collapse_sidebar": "Seitenleiste standardmäßig einklappen",
+      "show_sidebar_icons": "Seitenleisten-Symbole anzeigen"
+    },
+    "preferences": {
+      "quick_actions": "Schnelle Aktionen",
+      "auto_save": "Automatisches Speichern beim Tippen",
+      "confirm_delete": "Vor dem Löschen von Ideen bestätigen",
+      "show_tooltips": "Hilfreiche Tooltips anzeigen",
+      "ideas_per_page": "Ideen pro Seite"
+    },
+    "achievements": {
+      "your_progress": "Ihr Fortschritt",
+      "achievement_stats": "Errungenschaften-Statistiken",
+      "unlocked": "{{count}} von {{total}} Errungenschaften freigeschaltet"
+    }
+  },
+  "themes": {
+    "default": "Standard",
+    "ocean": "Ozean",
+    "forest": "Wald",
+    "sunset": "Sonnenuntergang",
+    "purple": "Lila",
+    "monochrome": "Monochrom"
+  },
+  "layout_density": {
+    "comfortable": "Komfortabel",
+    "compact": "Kompakt",
+    "cozy": "Gemütlich",
+    "comfortable_desc": "Mehr Abstand, schonender für die Augen",
+    "compact_desc": "Weniger Abstand, mehr sichtbarer Inhalt",
+    "cozy_desc": "Ausgewogener Abstand für optimalen Komfort"
+  },
+  "achievements_list": {
+    "first_step": "Erster Schritt",
+    "first_step_desc": "Ihre erste Idee erstellt",
+    "idea_collector": "Ideen-Sammler",
+    "idea_collector_desc": "10 Ideen erstellt",
+    "idea_master": "Ideen-Meister",
+    "idea_master_desc": "50 Ideen erstellt",
+    "organizer": "Super-Organisator",
+    "organizer_desc": "Alle 5 Kategorien verwendet",
+    "weekly_streak": "Wöchentlicher Krieger",
+    "weekly_streak_desc": "7 Tage hintereinander Ideen erstellt"
   }
 }
