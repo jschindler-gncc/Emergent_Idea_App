@@ -359,11 +359,11 @@ test_plan:
   
   - task: "Multiple view modes (card and list view)"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 1
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
           agent: "main"
@@ -371,6 +371,9 @@ test_plan:
         - working: false
           agent: "testing"
           comment: "Multiple view modes have implementation issues. The list view button is visible, but the grid view button could not be found during testing. This suggests there's an issue with the view mode toggle implementation that needs to be fixed."
+        - working: true
+          agent: "testing"
+          comment: "Both grid view and list view buttons are now visible in the UI. Successfully tested switching between grid and list views. The layout changes appropriately when switching between views."
 
 agent_communication:
     - agent: "main"
