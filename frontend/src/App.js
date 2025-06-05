@@ -1089,6 +1089,16 @@ function App() {
           </DragDropContext>
         </div>
       </div>
+
+      {/* Settings Modal */}
+      <SettingsModal
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+        settings={settings}
+        updateSettings={updateSettings}
+        analytics={analytics}
+        darkMode={settings.darkMode}
+      />
     </div>
   );
 }
