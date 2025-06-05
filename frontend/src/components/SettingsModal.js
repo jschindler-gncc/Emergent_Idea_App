@@ -23,7 +23,7 @@ const SettingsModal = ({
   const themes = [
     { 
       id: 'default', 
-      name: 'Default', 
+      name: t('themes.default'), 
       colors: {
         primary: '#3b82f6',
         secondary: '#64748b',
@@ -33,7 +33,7 @@ const SettingsModal = ({
     },
     { 
       id: 'ocean', 
-      name: 'Ocean', 
+      name: t('themes.ocean'), 
       colors: {
         primary: '#0ea5e9',
         secondary: '#0284c7',
@@ -43,7 +43,7 @@ const SettingsModal = ({
     },
     { 
       id: 'forest', 
-      name: 'Forest', 
+      name: t('themes.forest'), 
       colors: {
         primary: '#059669',
         secondary: '#047857',
@@ -53,7 +53,7 @@ const SettingsModal = ({
     },
     { 
       id: 'sunset', 
-      name: 'Sunset', 
+      name: t('themes.sunset'), 
       colors: {
         primary: '#ea580c',
         secondary: '#dc2626',
@@ -63,7 +63,7 @@ const SettingsModal = ({
     },
     { 
       id: 'purple', 
-      name: 'Purple', 
+      name: t('themes.purple'), 
       colors: {
         primary: '#7c3aed',
         secondary: '#6d28d9',
@@ -73,7 +73,7 @@ const SettingsModal = ({
     },
     { 
       id: 'monochrome', 
-      name: 'Monochrome', 
+      name: t('themes.monochrome'), 
       colors: {
         primary: '#374151',
         secondary: '#4b5563',
