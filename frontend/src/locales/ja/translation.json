@@ -106,5 +106,68 @@
   "dates": {
     "created": "作成日 {{date}}",
     "updated": "更新日 {{date}}"
+  },
+  "settings": {
+    "title": "設定",
+    "tabs": {
+      "appearance": "外観",
+      "layout": "レイアウト",
+      "preferences": "設定",
+      "achievements": "実績"
+    },
+    "appearance": {
+      "theme_selection": "テーマ選択",
+      "dark_mode": "ダークモード",
+      "light": "ライト",
+      "dark": "ダーク",
+      "system": "システム"
+    },
+    "layout": {
+      "layout_density": "レイアウト密度",
+      "default_view": "デフォルトビュー",
+      "sidebar_settings": "サイドバー設定",
+      "collapse_sidebar": "デフォルトでサイドバーを折りたたむ",
+      "show_sidebar_icons": "サイドバーアイコンを表示"
+    },
+    "preferences": {
+      "quick_actions": "クイックアクション",
+      "auto_save": "入力時に自動保存",
+      "confirm_delete": "アイデア削除前に確認",
+      "show_tooltips": "役立つツールチップを表示",
+      "ideas_per_page": "ページあたりのアイデア数"
+    },
+    "achievements": {
+      "your_progress": "あなたの進捗",
+      "achievement_stats": "実績統計",
+      "unlocked": "{{total}} 個中 {{count}} 個の実績をアンロック"
+    }
+  },
+  "themes": {
+    "default": "デフォルト",
+    "ocean": "オーシャン",
+    "forest": "フォレスト",
+    "sunset": "サンセット",
+    "purple": "パープル",
+    "monochrome": "モノクローム"
+  },
+  "layout_density": {
+    "comfortable": "快適",
+    "compact": "コンパクト",
+    "cozy": "心地よい",
+    "comfortable_desc": "余白を多くし、目に優しく",
+    "compact_desc": "余白を少なくし、より多くのコンテンツを表示",
+    "cozy_desc": "最適な快適さのためのバランスの取れた余白"
+  },
+  "achievements_list": {
+    "first_step": "はじめの一歩",
+    "first_step_desc": "最初のアイデアを作成しました",
+    "idea_collector": "アイデアコレクター",
+    "idea_collector_desc": "10個のアイデアを作成しました",
+    "idea_master": "アイデアマスター",
+    "idea_master_desc": "50個のアイデアを作成しました",
+    "organizer": "スーパーオーガナイザー",
+    "organizer_desc": "5つのカテゴリすべてを使用しました",
+    "weekly_streak": "ウィークリーウォリアー",
+    "weekly_streak_desc": "7日連続でアイデアを作成しました"
   }
 }
