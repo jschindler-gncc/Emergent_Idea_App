@@ -229,12 +229,23 @@ metadata:
   test_sequence: 0
   run_ui: true
 
-test_plan:
-  current_focus:
-    - "Drag and drop reordering"
-  stuck_tasks: []
-  test_all: true
-  test_priority: "high_first"
+  - task: "Bulk operations (multi-select and batch actions)"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 1
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Added bulk mode with multi-select checkboxes and batch archive/delete operations"
+        - working: false
+          agent: "testing"
+          comment: "Bulk operations button is not visible in the UI. The code shows implementation of bulk selection and operations, but the button to activate bulk mode could not be found during testing. This feature needs to be fixed to make bulk operations accessible."
+        - working: true
+          agent: "testing"
+          comment: "Bulk operations button is now visible in the UI. Successfully tested activating bulk mode which shows checkboxes for each idea. Selecting ideas shows the bulk action buttons (Archive Selected and Delete Selected). Bulk mode can be properly toggled on and off."
 
   - task: "Dark mode toggle with system preference detection"
     implemented: true
