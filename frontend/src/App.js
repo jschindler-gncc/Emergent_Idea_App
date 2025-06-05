@@ -804,7 +804,7 @@ function App() {
                             className={`${
                               settings.darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
                             } rounded-lg border p-6 hover:shadow-md transition-shadow ${
-                              snapshot.isDragging ? 'shadow-lg rotate-2' : ''
+                              snapshot.isDragging ? 'shadow-lg rotate-2 z-50' : ''
                             } ${viewMode === 'list' ? 'flex items-center space-x-4' : ''}`}
                             style={{
                               ...provided.draggableProps.style,
