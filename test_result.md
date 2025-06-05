@@ -247,20 +247,13 @@ metadata:
           agent: "testing"
           comment: "Bulk operations button is now visible in the UI. Successfully tested activating bulk mode which shows checkboxes for each idea. Selecting ideas shows the bulk action buttons (Archive Selected and Delete Selected). Bulk mode can be properly toggled on and off."
 
-  - task: "Dark mode toggle with system preference detection"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/App.js, /app/frontend/tailwind.config.js"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-        - working: true
-          agent: "main"
-          comment: "Implemented dark mode toggle with automatic system preference detection and persistent settings"
-        - working: true
-          agent: "testing"
-          comment: "Dark mode toggle works correctly on both desktop and mobile. Successfully tested toggling between light and dark modes. Theme preference persists after page reload as expected. System preference detection is implemented in the code."
+test_plan:
+  current_focus:
+    - "Multi-Language Capability (8 languages)"
+    - "Customization & Personalization Features"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
   
   - task: "Export functionality (JSON and CSV)"
     implemented: true
