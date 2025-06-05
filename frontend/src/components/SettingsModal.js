@@ -467,7 +467,7 @@ const SettingsModal = ({
           {activeTab === 'achievements' && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4">Your Progress</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.achievements.your_progress')}</h3>
                 <div className="grid gap-4">
                   {achievements.map(achievement => (
                     <div
