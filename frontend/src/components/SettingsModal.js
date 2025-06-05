@@ -378,7 +378,7 @@ const SettingsModal = ({
           {activeTab === 'preferences' && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.preferences.quick_actions')}</h3>
                 <div className="space-y-3">
                   <label className="flex items-center space-x-3">
                     <input
@@ -390,7 +390,7 @@ const SettingsModal = ({
                       })}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <span>Auto-save ideas as you type</span>
+                    <span>{t('settings.preferences.auto_save')}</span>
                   </label>
                   <label className="flex items-center space-x-3">
                     <input
@@ -402,7 +402,7 @@ const SettingsModal = ({
                       })}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <span>Confirm before deleting ideas</span>
+                    <span>{t('settings.preferences.confirm_delete')}</span>
                   </label>
                   <label className="flex items-center space-x-3">
                     <input
@@ -414,13 +414,13 @@ const SettingsModal = ({
                       })}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <span>Show helpful tooltips</span>
+                    <span>{t('settings.preferences.show_tooltips')}</span>
                   </label>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Ideas per Page</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.preferences.ideas_per_page')}</h3>
                 <select
                   value={settings.ideasPerPage || 20}
                   onChange={(e) => updateSettings({ 
@@ -433,15 +433,15 @@ const SettingsModal = ({
                       : 'bg-white border-gray-200 text-gray-900'
                   }`}
                 >
-                  <option value={10}>10 ideas</option>
-                  <option value={20}>20 ideas</option>
-                  <option value={50}>50 ideas</option>
-                  <option value={100}>100 ideas</option>
+                  <option value={10}>10 {t('header.ideas_count', { count: '' }).split(' ')[1]}</option>
+                  <option value={20}>20 {t('header.ideas_count', { count: '' }).split(' ')[1]}</option>
+                  <option value={50}>50 {t('header.ideas_count', { count: '' }).split(' ')[1]}</option>
+                  <option value={100}>100 {t('header.ideas_count', { count: '' }).split(' ')[1]}</option>
                 </select>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Language</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('sidebar.language')}</h3>
                 <select
                   value={i18n.language}
                   onChange={(e) => i18n.changeLanguage(e.target.value)}
