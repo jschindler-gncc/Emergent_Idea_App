@@ -85,9 +85,9 @@ const SettingsModal = ({
 
   // Layout Options
   const layoutOptions = [
-    { id: 'comfortable', name: 'Comfortable', description: 'More spacing, easier on the eyes' },
-    { id: 'compact', name: 'Compact', description: 'Less spacing, more content visible' },
-    { id: 'cozy', name: 'Cozy', description: 'Balanced spacing for optimal comfort' }
+    { id: 'comfortable', name: t('layout_density.comfortable'), description: t('layout_density.comfortable_desc') },
+    { id: 'compact', name: t('layout_density.compact'), description: t('layout_density.compact_desc') },
+    { id: 'cozy', name: t('layout_density.cozy'), description: t('layout_density.cozy_desc') }
   ];
 
   // Achievement System
