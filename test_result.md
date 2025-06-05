@@ -335,6 +335,9 @@ test_plan:
         - working: false
           agent: "testing"
           comment: "Drag and drop functionality still has issues. Console shows errors: 'Invariant failed: isDropDisabled must be a boolean' and when attempting to drag, 'Invariant failed: Cannot find droppable entry with id [ideas]'. The drag and drop functionality doesn't work as expected - items cannot be reordered."
+        - working: false
+          agent: "testing"
+          comment: "Final validation confirms drag and drop functionality still has issues. Console consistently shows errors: 'Invariant failed: isCombineEnabled must be a boolean'. This is a configuration issue with the react-beautiful-dnd library. The Droppable component in App.js needs the isCombineEnabled prop set to a boolean value."
   
   - task: "Bulk operations (multi-select and batch actions)"
     implemented: true
