@@ -344,7 +344,7 @@ test_plan:
           agent: "testing"
           comment: "Customization features work correctly. Successfully tested the settings modal with its different tabs (Appearance, Layout, Preferences, Achievements). The 6 theme options (Default, Ocean, Forest, Sunset, Purple, Monochrome) all apply correctly. Layout density options (Comfortable, Compact, Cozy) change spacing as expected. Dark/light/system mode switching works properly. All settings persist correctly across browser sessions. The achievement system is properly implemented with progress tracking."
   
-  - task: "Bulk operations (multi-select and batch actions)"
+  - task: "Multiple view modes (card and list view)"
     implemented: true
     working: true
     file: "/app/frontend/src/App.js"
@@ -354,13 +354,13 @@ test_plan:
     status_history:
         - working: true
           agent: "main"
-          comment: "Added bulk mode with multi-select checkboxes and batch archive/delete operations"
+          comment: "Implemented card and list view modes with optimized layouts for different use cases"
         - working: false
           agent: "testing"
-          comment: "Bulk operations button is not visible in the UI. The code shows implementation of bulk selection and operations, but the button to activate bulk mode could not be found during testing. This feature needs to be fixed to make bulk operations accessible."
+          comment: "Multiple view modes have implementation issues. The list view button is visible, but the grid view button could not be found during testing. This suggests there's an issue with the view mode toggle implementation that needs to be fixed."
         - working: true
           agent: "testing"
-          comment: "Bulk operations button is now visible in the UI. Successfully tested activating bulk mode which shows checkboxes for each idea. Selecting ideas shows the bulk action buttons (Archive Selected and Delete Selected). Bulk mode can be properly toggled on and off."
+          comment: "Both grid view and list view buttons are now visible in the UI. Successfully tested switching between grid and list views. The layout changes appropriately when switching between views."
   
   - task: "Drag and drop reordering"
     implemented: true
