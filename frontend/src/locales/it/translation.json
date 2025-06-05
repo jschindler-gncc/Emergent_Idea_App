@@ -106,5 +106,68 @@
   "dates": {
     "created": "Creato {{date}}",
     "updated": "Aggiornato {{date}}"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "tabs": {
+      "appearance": "Aspetto",
+      "layout": "Layout",
+      "preferences": "Preferenze",
+      "achievements": "Risultati"
+    },
+    "appearance": {
+      "theme_selection": "Selezione Tema",
+      "dark_mode": "Modalità Scura",
+      "light": "Chiaro",
+      "dark": "Scuro",
+      "system": "Sistema"
+    },
+    "layout": {
+      "layout_density": "Densità del Layout",
+      "default_view": "Vista Predefinita",
+      "sidebar_settings": "Impostazioni Barra Laterale",
+      "collapse_sidebar": "Comprimi barra laterale per impostazione predefinita",
+      "show_sidebar_icons": "Mostra icone barra laterale"
+    },
+    "preferences": {
+      "quick_actions": "Azioni Rapide",
+      "auto_save": "Salvataggio automatico durante la digitazione",
+      "confirm_delete": "Conferma prima di eliminare le idee",
+      "show_tooltips": "Mostra suggerimenti utili",
+      "ideas_per_page": "Idee per Pagina"
+    },
+    "achievements": {
+      "your_progress": "I Tuoi Progressi",
+      "achievement_stats": "Statistiche Risultati",
+      "unlocked": "{{count}} di {{total}} risultati sbloccati"
+    }
+  },
+  "themes": {
+    "default": "Predefinito",
+    "ocean": "Oceano",
+    "forest": "Foresta",
+    "sunset": "Tramonto",
+    "purple": "Viola",
+    "monochrome": "Monocromatico"
+  },
+  "layout_density": {
+    "comfortable": "Comodo",
+    "compact": "Compatto",
+    "cozy": "Accogliente",
+    "comfortable_desc": "Più spaziatura, più facile per gli occhi",
+    "compact_desc": "Meno spaziatura, più contenuto visibile",
+    "cozy_desc": "Spaziatura equilibrata per comfort ottimale"
+  },
+  "achievements_list": {
+    "first_step": "Primo Passo",
+    "first_step_desc": "Hai creato la tua prima idea",
+    "idea_collector": "Collezionista di Idee",
+    "idea_collector_desc": "Hai creato 10 idee",
+    "idea_master": "Maestro delle Idee",
+    "idea_master_desc": "Hai creato 50 idee",
+    "organizer": "Super Organizzatore",
+    "organizer_desc": "Hai usato tutte e 5 le categorie",
+    "weekly_streak": "Guerriero Settimanale",
+    "weekly_streak_desc": "Hai creato idee per 7 giorni consecutivi"
   }
 }
