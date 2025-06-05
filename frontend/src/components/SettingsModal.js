@@ -528,11 +528,14 @@ const SettingsModal = ({
                 <div className="flex items-center space-x-2 mb-2">
                   <Trophy className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span className="font-medium text-blue-800 dark:text-blue-300">
-                    Achievement Stats
+                    {t('settings.achievements.achievement_stats')}
                   </span>
                 </div>
                 <div className="text-sm text-blue-700 dark:text-blue-400">
-                  {achievements.filter(a => a.unlocked).length} of {achievements.length} achievements unlocked
+                  {t('settings.achievements.unlocked', { 
+                    count: achievements.filter(a => a.unlocked).length,
+                    total: achievements.length 
+                  })}
                 </div>
               </div>
             </div>
