@@ -255,20 +255,20 @@ test_plan:
   test_all: true
   test_priority: "high_first"
   
-  - task: "Export functionality (JSON and CSV)"
+  - task: "Dark mode toggle with system preference detection"
     implemented: true
     working: true
-    file: "/app/frontend/src/App.js"
+    file: "/app/frontend/src/App.js, /app/frontend/tailwind.config.js"
     stuck_count: 0
-    priority: "medium"
+    priority: "high"
     needs_retesting: false
     status_history:
         - working: true
           agent: "main"
-          comment: "Added export functionality for both JSON and CSV formats with proper file naming"
+          comment: "Implemented dark mode toggle with automatic system preference detection and persistent settings"
         - working: true
           agent: "testing"
-          comment: "Export functionality is implemented correctly. Both JSON and CSV export options are available in the sidebar. Export buttons trigger file downloads as expected. File naming includes date stamps for better organization."
+          comment: "Dark mode toggle works correctly on both desktop and mobile. Successfully tested toggling between light and dark modes. Theme preference persists after page reload as expected. System preference detection is implemented in the code."
   
   - task: "Idea templates for quick start"
     implemented: true
