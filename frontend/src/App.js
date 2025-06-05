@@ -591,7 +591,12 @@ function App() {
             <div className="relative">
               <button
                 onClick={() => setShowTemplates(!showTemplates)}
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+                className="text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+                style={{ 
+                  backgroundColor: 'var(--color-accent)',
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'color-mix(in srgb, var(--color-accent) 90%, black)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--color-accent)'}
                 title={t('tooltips.templates')}
               >
                 <Zap className="w-4 h-4" />
