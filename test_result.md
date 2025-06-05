@@ -232,8 +232,7 @@ metadata:
 test_plan:
   current_focus:
     - "Drag and drop reordering"
-  stuck_tasks:
-    - "Drag and drop reordering"
+  stuck_tasks: []
   test_all: true
   test_priority: "high_first"
 
