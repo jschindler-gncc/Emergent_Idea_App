@@ -335,6 +335,9 @@ test_plan:
         - working: false
           agent: "testing"
           comment: "Found issues with multi-language functionality specifically in the Settings Modal. While the main UI elements (buttons, labels, etc.) are properly translated when switching languages, the Settings Modal content is not fully translated. The tab names (Appearance, Layout, Preferences, Achievements), layout density options (Comfortable, Compact, Cozy), theme names (Default, Ocean, Forest, etc.), and achievement names/descriptions remain in English when switching to other languages. This is because the SettingsModal.js component is not using the translation system (t function) for most of its text content. The text is hardcoded in English instead of using translation keys."
+        - working: false
+          agent: "testing"
+          comment: "Conducted comprehensive testing of the Settings Modal translation functionality for all 8 languages. The Settings Modal does use the translation system (t function) for theme names, tab names, and other UI elements as seen in the code, but the translations don't appear to be working correctly in the UI. When changing languages through the language selector in the Preferences tab or through the language dropdown in the header, the Settings Modal content remains in English. This includes the modal title, tab names, theme names, and other text elements. The issue appears to be with how the language change is applied to the Settings Modal component."
   
   - task: "Customization & Personalization Features"
     implemented: true
