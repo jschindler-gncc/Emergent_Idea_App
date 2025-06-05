@@ -316,7 +316,7 @@ const SettingsModal = ({
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Default View</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.layout.default_view')}</h3>
                 <div className="flex space-x-3">
                   <button
                     onClick={() => updateSettings({ ...settings, defaultView: 'card' })}
@@ -327,7 +327,7 @@ const SettingsModal = ({
                     }`}
                   >
                     <Grid className="w-4 h-4" />
-                    <span>Card View</span>
+                    <span>{t('actions.card_view')}</span>
                   </button>
                   <button
                     onClick={() => updateSettings({ ...settings, defaultView: 'list' })}
@@ -338,13 +338,13 @@ const SettingsModal = ({
                     }`}
                   >
                     <List className="w-4 h-4" />
-                    <span>List View</span>
+                    <span>{t('actions.list_view')}</span>
                   </button>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Sidebar Settings</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.layout.sidebar_settings')}</h3>
                 <div className="space-y-3">
                   <label className="flex items-center space-x-3">
                     <input
@@ -356,7 +356,7 @@ const SettingsModal = ({
                       })}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <span>Collapse sidebar by default</span>
+                    <span>{t('settings.layout.collapse_sidebar')}</span>
                   </label>
                   <label className="flex items-center space-x-3">
                     <input
@@ -368,7 +368,7 @@ const SettingsModal = ({
                       })}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <span>Show sidebar icons</span>
+                    <span>{t('settings.layout.show_sidebar_icons')}</span>
                   </label>
                 </div>
               </div>
