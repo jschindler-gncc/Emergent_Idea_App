@@ -429,6 +429,11 @@ function App() {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setShowLanguageMenu(false);
+    // Force settings modal to re-render if it's open
+    if (showSettings) {
+      setShowSettings(false);
+      setTimeout(() => setShowSettings(true), 50);
+    }
   };
 
   // Available languages
