@@ -452,20 +452,58 @@ html.dark {
 }
 
 /* Apply theme colors to UI elements */
-.btn-primary {
-  background-color: var(--color-primary);
+.btn-primary,
+.bg-blue-600 {
+  background-color: var(--color-primary) !important;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-secondary);
+.btn-primary:hover,
+.bg-blue-600:hover,
+.hover\:bg-blue-700:hover {
+  background-color: var(--color-secondary) !important;
 }
 
-.accent-color {
-  color: var(--color-accent);
+.text-blue-600,
+.text-blue-700 {
+  color: var(--color-primary) !important;
 }
 
-.bg-accent {
-  background-color: var(--color-accent);
+.text-blue-400 {
+  color: var(--color-accent) !important;
+}
+
+.bg-blue-100 {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent) !important;
+}
+
+.bg-blue-900 {
+  background-color: color-mix(in srgb, var(--color-primary) 80%, black) !important;
+}
+
+/* Apply accent color */
+.accent-color,
+.text-green-600,
+.text-green-400 {
+  color: var(--color-accent) !important;
+}
+
+.bg-accent,
+.bg-green-600 {
+  background-color: var(--color-accent) !important;
+}
+
+.bg-green-600:hover,
+.hover\:bg-green-700:hover {
+  background-color: color-mix(in srgb, var(--color-accent) 90%, black) !important;
+}
+
+/* Focus states */
+.focus\:ring-blue-500:focus {
+  --tw-ring-color: var(--color-primary) !important;
+}
+
+.focus\:border-blue-500:focus {
+  border-color: var(--color-primary) !important;
 }
 
 /* Layout density for cards */
