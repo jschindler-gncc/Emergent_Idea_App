@@ -249,11 +249,14 @@ test_plan:
     file: "/app/frontend/src/App.js, /app/frontend/tailwind.config.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
           agent: "main"
           comment: "Implemented dark mode toggle with automatic system preference detection and persistent settings"
+        - working: true
+          agent: "testing"
+          comment: "Dark mode toggle works correctly on both desktop and mobile. Successfully tested toggling between light and dark modes. Theme preference persists after page reload as expected. System preference detection is implemented in the code."
   
   - task: "Export functionality (JSON and CSV)"
     implemented: true
