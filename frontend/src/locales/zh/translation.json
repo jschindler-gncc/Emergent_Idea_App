@@ -106,5 +106,68 @@
   "dates": {
     "created": "创建于 {{date}}",
     "updated": "更新于 {{date}}"
+  },
+  "settings": {
+    "title": "设置",
+    "tabs": {
+      "appearance": "外观",
+      "layout": "布局",
+      "preferences": "偏好设置",
+      "achievements": "成就"
+    },
+    "appearance": {
+      "theme_selection": "主题选择",
+      "dark_mode": "深色模式",
+      "light": "浅色",
+      "dark": "深色",
+      "system": "系统"
+    },
+    "layout": {
+      "layout_density": "布局密度",
+      "default_view": "默认视图",
+      "sidebar_settings": "侧边栏设置",
+      "collapse_sidebar": "默认折叠侧边栏",
+      "show_sidebar_icons": "显示侧边栏图标"
+    },
+    "preferences": {
+      "quick_actions": "快速操作",
+      "auto_save": "输入时自动保存",
+      "confirm_delete": "删除想法前确认",
+      "show_tooltips": "显示有用提示",
+      "ideas_per_page": "每页想法数"
+    },
+    "achievements": {
+      "your_progress": "您的进度",
+      "achievement_stats": "成就统计",
+      "unlocked": "已解锁 {{count}} / {{total}} 个成就"
+    }
+  },
+  "themes": {
+    "default": "默认",
+    "ocean": "海洋",
+    "forest": "森林",
+    "sunset": "日落",
+    "purple": "紫色",
+    "monochrome": "单色"
+  },
+  "layout_density": {
+    "comfortable": "舒适",
+    "compact": "紧凑",
+    "cozy": "温馨",
+    "comfortable_desc": "更多间距，对眼睛更友好",
+    "compact_desc": "更少间距，显示更多内容",
+    "cozy_desc": "平衡间距，获得最佳舒适度"
+  },
+  "achievements_list": {
+    "first_step": "第一步",
+    "first_step_desc": "创建了您的第一个想法",
+    "idea_collector": "想法收集者",
+    "idea_collector_desc": "创建了10个想法",
+    "idea_master": "想法大师",
+    "idea_master_desc": "创建了50个想法",
+    "organizer": "超级组织者",
+    "organizer_desc": "使用了全部5个分类",
+    "weekly_streak": "每周战士",
+    "weekly_streak_desc": "连续7天创建想法"
   }
 }
