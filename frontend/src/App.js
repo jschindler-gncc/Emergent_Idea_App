@@ -52,59 +52,59 @@ const saveSettings = (settings) => {
 // Generate unique ID
 const generateId = () => `idea_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-// Idea Templates
+// Idea Templates - Now using translations
 const IDEA_TEMPLATES = [
   {
     id: 'business',
-    name: 'Business Idea',
+    name: 'templates.business_idea',
     icon: Briefcase,
     template: {
       title: '',
-      content: 'Problem:\n\nSolution:\n\nTarget Market:\n\nRevenue Model:\n\nNext Steps:',
+      content: 'template_content.business',
       category: 'business',
       tags: ['business', 'startup']
     }
   },
   {
     id: 'project',
-    name: 'Project Idea',
+    name: 'templates.project_idea',
     icon: Target,
     template: {
       title: '',
-      content: 'Objective:\n\nScope:\n\nRequirements:\n\nTimeline:\n\nResources Needed:',
+      content: 'template_content.project',
       category: 'general',
       tags: ['project', 'planning']
     }
   },
   {
     id: 'technical',
-    name: 'Technical Solution',
+    name: 'templates.technical_solution',
     icon: Code,
     template: {
       title: '',
-      content: 'Problem Statement:\n\nProposed Solution:\n\nTechnology Stack:\n\nImplementation Steps:\n\nPotential Challenges:',
+      content: 'template_content.technical',
       category: 'technical',
       tags: ['technical', 'development']
     }
   },
   {
     id: 'creative',
-    name: 'Creative Concept',
+    name: 'templates.creative_concept',
     icon: Lightbulb,
     template: {
       title: '',
-      content: 'Concept:\n\nInspiration:\n\nTarget Audience:\n\nExecution Ideas:\n\nResources Needed:',
+      content: 'template_content.creative',
       category: 'creative',
       tags: ['creative', 'design']
     }
   },
   {
     id: 'personal',
-    name: 'Personal Goal',
+    name: 'templates.personal_goal',
     icon: Heart,
     template: {
       title: '',
-      content: 'Goal:\n\nWhy this matters:\n\nAction Steps:\n\nSuccess Metrics:\n\nDeadline:',
+      content: 'template_content.personal',
       category: 'personal',
       tags: ['personal', 'goals']
     }
