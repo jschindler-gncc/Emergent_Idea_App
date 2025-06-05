@@ -320,8 +320,8 @@ test_plan:
   
   - task: "Multi-Language Capability (8 languages)"
     implemented: true
-    working: true
-    file: "/app/frontend/src/App.js, /app/frontend/src/i18n.js, /app/frontend/src/locales/"
+    working: false
+    file: "/app/frontend/src/App.js, /app/frontend/src/i18n.js, /app/frontend/src/locales/, /app/frontend/src/components/SettingsModal.js"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -332,6 +332,9 @@ test_plan:
         - working: true
           agent: "testing"
           comment: "Multi-language capability works correctly. Successfully tested all 8 languages with proper translation of UI elements including buttons, labels, and template content. Language settings persist across sessions. Language can be changed both from the header dropdown and in the settings modal."
+        - working: false
+          agent: "testing"
+          comment: "Found issues with multi-language functionality specifically in the Settings Modal. While the main UI elements (buttons, labels, etc.) are properly translated when switching languages, the Settings Modal content is not fully translated. The tab names (Appearance, Layout, Preferences, Achievements), layout density options (Comfortable, Compact, Cozy), theme names (Default, Ocean, Forest, etc.), and achievement names/descriptions remain in English when switching to other languages. This is because the SettingsModal.js component is not using the translation system (t function) for most of its text content. The text is hardcoded in English instead of using translation keys."
   
   - task: "Customization & Personalization Features"
     implemented: true
