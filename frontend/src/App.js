@@ -278,7 +278,7 @@ function App() {
   const addFromTemplate = (template) => {
     setNewIdea({
       title: template.title,
-      content: template.content,
+      content: t(template.content), // Translate template content
       category: template.category,
       tags: template.tags.join(', ')
     });
