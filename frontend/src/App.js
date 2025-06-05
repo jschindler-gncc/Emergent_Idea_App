@@ -6,7 +6,7 @@ import {
   CheckSquare, Copy, FileText, Lightbulb, Target, Briefcase, Code,
   Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp
 } from 'lucide-react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
 // Utility functions for localStorage
 const STORAGE_KEY = 'idea-logger-data';
