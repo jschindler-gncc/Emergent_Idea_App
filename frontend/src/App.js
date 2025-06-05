@@ -446,13 +446,15 @@ function App() {
             <div className="flex items-center space-x-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
               <button
                 onClick={() => setViewMode('card')}
-                className={`p-2 rounded ${viewMode === 'card' ? 'bg-white dark:bg-gray-600 shadow-sm' : ''}`}
+                className={`p-2 rounded transition-colors ${viewMode === 'card' ? 'bg-white dark:bg-gray-600 shadow-sm' : 'hover:bg-gray-200 dark:hover:bg-gray-600'}`}
+                title="Card View"
               >
                 <Grid className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                className={`p-2 rounded ${viewMode === 'list' ? 'bg-white dark:bg-gray-600 shadow-sm' : ''}`}
+                className={`p-2 rounded transition-colors ${viewMode === 'list' ? 'bg-white dark:bg-gray-600 shadow-sm' : 'hover:bg-gray-200 dark:hover:bg-gray-600'}`}
+                title="List View"
               >
                 <List className="w-4 h-4" />
               </button>
@@ -461,6 +463,7 @@ function App() {
             <button
               onClick={() => setBulkMode(!bulkMode)}
               className={`p-2 rounded-lg transition-colors ${bulkMode ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+              title="Bulk Select"
             >
               <CheckSquare className="w-5 h-5" />
             </button>
@@ -468,6 +471,7 @@ function App() {
             <button
               onClick={() => setShowAnalytics(!showAnalytics)}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              title="Analytics"
             >
               <BarChart3 className="w-5 h-5" />
             </button>
