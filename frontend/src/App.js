@@ -52,67 +52,8 @@ const saveSettings = (settings) => {
 // Generate unique ID
 const generateId = () => `idea_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-// Idea Templates - Now using translations
-const IDEA_TEMPLATES = [
-  {
-    id: 'business',
-    name: 'templates.business_idea',
-    icon: Briefcase,
-    template: {
-      title: '',
-      content: 'template_content.business',
-      category: 'business',
-      tags: ['business', 'startup']
-    }
-  },
-  {
-    id: 'project',
-    name: 'templates.project_idea',
-    icon: Target,
-    template: {
-      title: '',
-      content: 'template_content.project',
-      category: 'general',
-      tags: ['project', 'planning']
-    }
-  },
-  {
-    id: 'technical',
-    name: 'templates.technical_solution',
-    icon: Code,
-    template: {
-      title: '',
-      content: 'template_content.technical',
-      category: 'technical',
-      tags: ['technical', 'development']
-    }
-  },
-  {
-    id: 'creative',
-    name: 'templates.creative_concept',
-    icon: Lightbulb,
-    template: {
-      title: '',
-      content: 'template_content.creative',
-      category: 'creative',
-      tags: ['creative', 'design']
-    }
-  },
-  {
-    id: 'personal',
-    name: 'templates.personal_goal',
-    icon: Heart,
-    template: {
-      title: '',
-      content: 'template_content.personal',
-      category: 'personal',
-      tags: ['personal', 'goals']
-    }
-  }
-];
-
 // Export utilities
-const exportToJSON = (ideas) => {
+const exportToJSON = (ideas, t) => {
   const dataStr = JSON.stringify(ideas, null, 2);
   const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
   const exportFileDefaultName = `ideas-export-${new Date().toISOString().split('T')[0]}.json`;
@@ -123,8 +64,8 @@ const exportToJSON = (ideas) => {
   linkElement.click();
 };
 
-const exportToCSV = (ideas) => {
-  const headers = ['Title', 'Content', 'Category', 'Tags', 'Archived', 'Created Date', 'Updated Date'];
+const exportToCSV = (ideas, t) => {
+  const headers = [t('ideas.title_placeholder'), t('ideas.content_placeholder'), t('sidebar.categories'), t('sidebar.tags'), t('header.archived'), t('dates.created'), t('dates.updated')];
   const csvContent = [
     headers.join(','),
     ...ideas.map(idea => [
@@ -170,6 +111,65 @@ function App() {
     category: 'general',
     tags: ''
   });
+
+  // Idea Templates - Now using translations
+  const IDEA_TEMPLATES = [
+    {
+      id: 'business',
+      name: 'templates.business_idea',
+      icon: Briefcase,
+      template: {
+        title: '',
+        content: 'template_content.business',
+        category: 'business',
+        tags: ['business', 'startup']
+      }
+    },
+    {
+      id: 'project',
+      name: 'templates.project_idea',
+      icon: Target,
+      template: {
+        title: '',
+        content: 'template_content.project',
+        category: 'general',
+        tags: ['project', 'planning']
+      }
+    },
+    {
+      id: 'technical',
+      name: 'templates.technical_solution',
+      icon: Code,
+      template: {
+        title: '',
+        content: 'template_content.technical',
+        category: 'technical',
+        tags: ['technical', 'development']
+      }
+    },
+    {
+      id: 'creative',
+      name: 'templates.creative_concept',
+      icon: Lightbulb,
+      template: {
+        title: '',
+        content: 'template_content.creative',
+        category: 'creative',
+        tags: ['creative', 'design']
+      }
+    },
+    {
+      id: 'personal',
+      name: 'templates.personal_goal',
+      icon: Heart,
+      template: {
+        title: '',
+        content: 'template_content.personal',
+        category: 'personal',
+        tags: ['personal', 'goals']
+      }
+    }
+  ];
 
   // Save ideas and settings to localStorage
   useEffect(() => {
@@ -317,7 +317,7 @@ function App() {
   };
 
   const bulkDelete = () => {
-    if (window.confirm(`Delete ${selectedIdeas.size} selected ideas?`)) {
+    if (window.confirm(t('modals.confirm_delete', { count: selectedIdeas.size }))) {
       selectedIdeas.forEach(id => deleteIdea(id));
       setSelectedIdeas(new Set());
     }
@@ -437,17 +437,19 @@ function App() {
             >
               <Menu className="w-5 h-5" />
             </button>
-            <h1 className="text-2xl font-bold">💡 Ideas</h1>
+            <h1 className="text-2xl font-bold">💡 {t('app.title')}</h1>
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400">{filteredIdeas.length} ideas</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                {t('header.ideas_count', { count: filteredIdeas.length })}
+              </span>
               {showArchived && (
                 <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded">
-                  Archived
+                  {t('header.archived')}
                 </span>
               )}
               {bulkMode && selectedIdeas.size > 0 && (
                 <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">
-                  {selectedIdeas.size} selected
+                  {t('header.selected', { count: selectedIdeas.size })}
                 </span>
               )}
             </div>
@@ -461,13 +463,13 @@ function App() {
                   onClick={bulkArchive}
                   className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
                 >
-                  Archive Selected
+                  {t('actions.archive_selected')}
                 </button>
                 <button
                   onClick={bulkDelete}
                   className="px-3 py-1 text-sm bg-red-100 dark:bg-red-900 hover:bg-red-200 dark:hover:bg-red-800 text-red-700 dark:text-red-300 rounded-lg transition-colors"
                 >
-                  Delete Selected
+                  {t('actions.delete_selected')}
                 </button>
               </div>
             )}
@@ -477,14 +479,14 @@ function App() {
               <button
                 onClick={() => setViewMode('card')}
                 className={`p-2 rounded transition-colors ${viewMode === 'card' ? 'bg-white dark:bg-gray-600 shadow-sm' : 'hover:bg-gray-200 dark:hover:bg-gray-600'}`}
-                title="Card View"
+                title={t('tooltips.card_view')}
               >
                 <Grid className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded transition-colors ${viewMode === 'list' ? 'bg-white dark:bg-gray-600 shadow-sm' : 'hover:bg-gray-200 dark:hover:bg-gray-600'}`}
-                title="List View"
+                title={t('tooltips.list_view')}
               >
                 <List className="w-4 h-4" />
               </button>
@@ -493,7 +495,7 @@ function App() {
             <button
               onClick={() => setBulkMode(!bulkMode)}
               className={`p-2 rounded-lg transition-colors ${bulkMode ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}`}
-              title="Bulk Select"
+              title={t('tooltips.bulk_select')}
             >
               <CheckSquare className="w-5 h-5" />
             </button>
@@ -501,14 +503,46 @@ function App() {
             <button
               onClick={() => setShowAnalytics(!showAnalytics)}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              title="Analytics"
+              title={t('tooltips.analytics')}
             >
               <BarChart3 className="w-5 h-5" />
             </button>
 
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                title={t('sidebar.language')}
+              >
+                <Languages className="w-5 h-5" />
+              </button>
+              
+              {showLanguageMenu && (
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50">
+                  <div className="p-2">
+                    <h3 className="font-semibold mb-2 px-2">{t('sidebar.language')}</h3>
+                    {languages.map(lang => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`w-full text-left p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2 ${
+                          i18n.language === lang.code ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' : ''
+                        }`}
+                      >
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              title={t('tooltips.dark_mode')}
             >
               {settings.darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
@@ -517,15 +551,16 @@ function App() {
               <button
                 onClick={() => setShowTemplates(!showTemplates)}
                 className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+                title={t('tooltips.templates')}
               >
                 <Zap className="w-4 h-4" />
-                <span className="hidden sm:inline">Templates</span>
+                <span className="hidden sm:inline">{t('header.templates')}</span>
               </button>
               
               {showTemplates && (
                 <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50">
                   <div className="p-4">
-                    <h3 className="font-semibold mb-3">Quick Start Templates</h3>
+                    <h3 className="font-semibold mb-3">{t('templates.quick_start')}</h3>
                     <div className="space-y-2">
                       {IDEA_TEMPLATES.map(template => (
                         <button
@@ -534,7 +569,7 @@ function App() {
                           className="w-full text-left p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center space-x-3"
                         >
                           <template.icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                          <span>{template.name}</span>
+                          <span>{t(template.name)}</span>
                         </button>
                       ))}
                     </div>
@@ -548,7 +583,7 @@ function App() {
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
             >
               <Plus className="w-4 h-4" />
-              <span className="hidden sm:inline">New Idea</span>
+              <span className="hidden sm:inline">{t('header.new_idea')}</span>
             </button>
           </div>
         </div>
@@ -563,7 +598,7 @@ function App() {
               <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search ideas..."
+                placeholder={t('sidebar.search_placeholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
@@ -578,20 +613,20 @@ function App() {
             <div>
               <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center">
                 <Download className="w-4 h-4 mr-2" />
-                Export
+                {t('sidebar.export')}
               </h3>
               <div className="space-y-1">
                 <button
-                  onClick={() => exportToJSON(ideas)}
+                  onClick={() => exportToJSON(ideas, t)}
                   className="w-full text-left px-3 py-2 rounded-md text-sm transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                  Export as JSON
+                  {t('sidebar.export_json')}
                 </button>
                 <button
-                  onClick={() => exportToCSV(ideas)}
+                  onClick={() => exportToCSV(ideas, t)}
                   className="w-full text-left px-3 py-2 rounded-md text-sm transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
-                  Export as CSV
+                  {t('sidebar.export_csv')}
                 </button>
               </div>
             </div>
@@ -600,7 +635,7 @@ function App() {
             <div>
               <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center">
                 <Filter className="w-4 h-4 mr-2" />
-                Categories
+                {t('sidebar.categories')}
               </h3>
               <div className="space-y-1">
                 {categories.map(category => (
@@ -613,7 +648,7 @@ function App() {
                         : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
                     }`}
                   >
-                    {category === 'all' ? 'All Ideas' : category}
+                    {category === 'all' ? t('sidebar.all_ideas') : t(`categories.${category}`, category)}
                   </button>
                 ))}
               </div>
@@ -630,7 +665,7 @@ function App() {
                 }`}
               >
                 <Archive className="w-4 h-4 mr-2" />
-                {showArchived ? 'Hide Archived' : 'Show Archived'}
+                {showArchived ? t('sidebar.hide_archived') : t('sidebar.show_archived')}
               </button>
             </div>
 
@@ -639,7 +674,7 @@ function App() {
               <div>
                 <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center">
                   <Tag className="w-4 h-4 mr-2" />
-                  Tags
+                  {t('sidebar.tags')}
                 </h3>
                 <div className="flex flex-wrap gap-1">
                   {allTags.slice(0, 15).map(tag => (
@@ -665,7 +700,7 @@ function App() {
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold flex items-center">
                   <TrendingUp className="w-5 h-5 mr-2" />
-                  Analytics
+                  {t('analytics.title')}
                 </h2>
                 <button
                   onClick={() => setShowAnalytics(false)}
@@ -678,27 +713,27 @@ function App() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{analytics.total}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Total Ideas</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.total_ideas')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600 dark:text-green-400">{analytics.active}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Active</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.active')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">{analytics.archived}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Archived</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.archived')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{analytics.recentIdeas}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">This Week</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{t('analytics.this_week')}</div>
                 </div>
               </div>
               
               {analytics.topCategory && (
                 <div className="text-sm text-gray-600 dark:text-gray-400">
-                  Most popular category: <span className="font-semibold">{analytics.topCategory}</span>
+                  {t('analytics.most_popular_category')} <span className="font-semibold">{t(`categories.${analytics.topCategory}`, analytics.topCategory)}</span>
                   {analytics.topTag && (
-                    <span> • Top tag: <span className="font-semibold">#{analytics.topTag}</span></span>
+                    <span> • {t('analytics.top_tag')} <span className="font-semibold">#{analytics.topTag}</span></span>
                   )}
                 </div>
               )}
@@ -710,7 +745,7 @@ function App() {
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
               <div className={`rounded-lg p-6 w-full max-w-2xl ${settings.darkMode ? 'bg-gray-800' : 'bg-white'}`}>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-lg font-semibold">Add New Idea</h2>
+                  <h2 className="text-lg font-semibold">{t('modals.add_new_idea')}</h2>
                   <button
                     onClick={() => setIsAddingIdea(false)}
                     className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
@@ -722,7 +757,7 @@ function App() {
                 <div className="space-y-4">
                   <input
                     type="text"
-                    placeholder="Idea title..."
+                    placeholder={t('ideas.title_placeholder')}
                     value={newIdea.title}
                     onChange={(e) => setNewIdea(prev => ({ ...prev, title: e.target.value }))}
                     className={`w-full text-lg font-medium border-none outline-none placeholder-gray-400 ${
@@ -732,7 +767,7 @@ function App() {
                   />
                   
                   <textarea
-                    placeholder="Describe your idea..."
+                    placeholder={t('ideas.content_placeholder')}
                     value={newIdea.content}
                     onChange={(e) => setNewIdea(prev => ({ ...prev, content: e.target.value }))}
                     className={`w-full h-32 border rounded-lg p-3 resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
@@ -752,16 +787,16 @@ function App() {
                           : 'bg-white border-gray-200 text-gray-900'
                       }`}
                     >
-                      <option value="general">General</option>
-                      <option value="business">Business</option>
-                      <option value="personal">Personal</option>
-                      <option value="creative">Creative</option>
-                      <option value="technical">Technical</option>
+                      <option value="general">{t('categories.general')}</option>
+                      <option value="business">{t('categories.business')}</option>
+                      <option value="personal">{t('categories.personal')}</option>
+                      <option value="creative">{t('categories.creative')}</option>
+                      <option value="technical">{t('categories.technical')}</option>
                     </select>
                     
                     <input
                       type="text"
-                      placeholder="Tags (comma separated)"
+                      placeholder={t('ideas.tags_placeholder')}
                       value={newIdea.tags}
                       onChange={(e) => setNewIdea(prev => ({ ...prev, tags: e.target.value }))}
                       className={`flex-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
@@ -778,13 +813,13 @@ function App() {
                     onClick={() => setIsAddingIdea(false)}
                     className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
                   >
-                    Cancel
+                    {t('actions.cancel')}
                   </button>
                   <button
                     onClick={() => addIdea()}
                     className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
                   >
-                    Add Idea
+                    {t('actions.add_idea')}
                   </button>
                 </div>
               </div>
@@ -806,12 +841,12 @@ function App() {
                         <Plus className="w-12 h-12 mx-auto mb-4" />
                       </div>
                       <h3 className="text-lg font-medium text-gray-500 dark:text-gray-400 mb-2">
-                        {searchTerm ? 'No ideas found' : 'No ideas yet'}
+                        {searchTerm ? t('ideas.no_search_results') : t('ideas.no_ideas_title')}
                       </h3>
                       <p className="text-gray-400 mb-4">
                         {searchTerm 
-                          ? 'Try adjusting your search or filters'
-                          : 'Start capturing your brilliant ideas!'
+                          ? t('ideas.search_help')
+                          : t('ideas.no_ideas_subtitle')
                         }
                       </p>
                       {!searchTerm && (
@@ -819,7 +854,7 @@ function App() {
                           onClick={() => setIsAddingIdea(true)}
                           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
                         >
-                          Add Your First Idea
+                          {t('ideas.add_first_idea')}
                         </button>
                       )}
                     </div>
@@ -874,16 +909,16 @@ function App() {
                                         : 'bg-white border-gray-200 text-gray-900'
                                     }`}
                                   >
-                                    <option value="general">General</option>
-                                    <option value="business">Business</option>
-                                    <option value="personal">Personal</option>
-                                    <option value="creative">Creative</option>
-                                    <option value="technical">Technical</option>
+                                    <option value="general">{t('categories.general')}</option>
+                                    <option value="business">{t('categories.business')}</option>
+                                    <option value="personal">{t('categories.personal')}</option>
+                                    <option value="creative">{t('categories.creative')}</option>
+                                    <option value="technical">{t('categories.technical')}</option>
                                   </select>
                                   
                                   <input
                                     type="text"
-                                    placeholder="Tags (comma separated)"
+                                    placeholder={t('ideas.tags_placeholder')}
                                     value={editingIdea.tags}
                                     onChange={(e) => setEditingIdea(prev => ({ ...prev, tags: e.target.value }))}
                                     className={`flex-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
@@ -899,13 +934,13 @@ function App() {
                                     onClick={cancelEdit}
                                     className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
                                   >
-                                    Cancel
+                                    {t('actions.cancel')}
                                   </button>
                                   <button
                                     onClick={saveEdit}
                                     className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
                                   >
-                                    Save
+                                    {t('actions.save')}
                                   </button>
                                 </div>
                               </div>
@@ -930,18 +965,21 @@ function App() {
                                       <button
                                         onClick={() => startEdit(idea)}
                                         className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                                        title={t('actions.edit')}
                                       >
                                         <Edit3 className="w-4 h-4" />
                                       </button>
                                       <button
                                         onClick={() => toggleArchive(idea.id)}
                                         className="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                                        title={idea.archived ? t('actions.unarchive') : t('actions.archive')}
                                       >
                                         <Archive className="w-4 h-4" />
                                       </button>
                                       <button
                                         onClick={() => deleteIdea(idea.id)}
                                         className="p-1 text-gray-400 hover:text-red-600 transition-colors"
+                                        title={t('actions.delete')}
                                       >
                                         <Trash2 className="w-4 h-4" />
                                       </button>
@@ -966,7 +1004,7 @@ function App() {
                                           ? 'bg-gray-700 text-gray-300' 
                                           : 'bg-gray-100 text-gray-600'
                                       }`}>
-                                        {idea.category}
+                                        {t(`categories.${idea.category}`, idea.category)}
                                       </span>
                                       
                                       {idea.tags && idea.tags.length > 0 && (
