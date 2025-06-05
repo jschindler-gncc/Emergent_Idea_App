@@ -246,7 +246,7 @@ const SettingsModal = ({
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Dark Mode</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.appearance.dark_mode')}</h3>
                 <div className="flex items-center space-x-4">
                   <button
                     onClick={() => updateSettings({ ...settings, darkMode: false })}
@@ -257,7 +257,7 @@ const SettingsModal = ({
                     }`}
                   >
                     <Sun className="w-4 h-4" />
-                    <span>Light</span>
+                    <span>{t('settings.appearance.light')}</span>
                   </button>
                   <button
                     onClick={() => updateSettings({ ...settings, darkMode: true })}
@@ -268,7 +268,7 @@ const SettingsModal = ({
                     }`}
                   >
                     <Moon className="w-4 h-4" />
-                    <span>Dark</span>
+                    <span>{t('settings.appearance.dark')}</span>
                   </button>
                   <button
                     onClick={() => updateSettings({ 
@@ -282,7 +282,7 @@ const SettingsModal = ({
                     }`}
                   >
                     <Monitor className="w-4 h-4" />
-                    <span>System</span>
+                    <span>{t('settings.appearance.system')}</span>
                   </button>
                 </div>
               </div>
