@@ -9,6 +9,7 @@ import {
   Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp, Languages
 } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
+import SettingsModal from './components/SettingsModal';
 
 // Utility functions for localStorage
 const STORAGE_KEY = 'idea-logger-data';
