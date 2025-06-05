@@ -149,6 +149,7 @@ const exportToCSV = (ideas) => {
 
 // Main App Component
 function App() {
+  const { t, i18n } = useTranslation();
   const [ideas, setIdeas] = useState(loadIdeas);
   const [settings, setSettings] = useState(loadSettings);
   const [searchTerm, setSearchTerm] = useState('');
@@ -158,6 +159,7 @@ function App() {
   const [editingIdea, setEditingIdea] = useState(null);
   const [showTemplates, setShowTemplates] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [viewMode, setViewMode] = useState('card'); // 'card' or 'list'
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedIdeas, setSelectedIdeas] = useState(new Set());
