@@ -94,8 +94,8 @@ const SettingsModal = ({
   const achievements = [
     {
       id: 'first_idea',
-      name: 'First Step',
-      description: 'Created your first idea',
+      name: t('achievements_list.first_step'),
+      description: t('achievements_list.first_step_desc'),
       icon: Target,
       unlocked: analytics.total >= 1,
       progress: Math.min(analytics.total, 1),
@@ -103,8 +103,8 @@ const SettingsModal = ({
     },
     {
       id: 'idea_collector',
-      name: 'Idea Collector',
-      description: 'Created 10 ideas',
+      name: t('achievements_list.idea_collector'),
+      description: t('achievements_list.idea_collector_desc'),
       icon: Star,
       unlocked: analytics.total >= 10,
       progress: Math.min(analytics.total, 10),
@@ -112,8 +112,8 @@ const SettingsModal = ({
     },
     {
       id: 'idea_master',
-      name: 'Idea Master',
-      description: 'Created 50 ideas',
+      name: t('achievements_list.idea_master'),
+      description: t('achievements_list.idea_master_desc'),
       icon: Award,
       unlocked: analytics.total >= 50,
       progress: Math.min(analytics.total, 50),
@@ -121,8 +121,8 @@ const SettingsModal = ({
     },
     {
       id: 'organizer',
-      name: 'Super Organizer',
-      description: 'Used all 5 categories',
+      name: t('achievements_list.organizer'),
+      description: t('achievements_list.organizer_desc'),
       icon: CheckCircle,
       unlocked: Object.keys(analytics.categoryCounts || {}).length >= 5,
       progress: Object.keys(analytics.categoryCounts || {}).length,
@@ -130,8 +130,8 @@ const SettingsModal = ({
     },
     {
       id: 'weekly_streak',
-      name: 'Weekly Warrior',
-      description: 'Created ideas for 7 consecutive days',
+      name: t('achievements_list.weekly_streak'),
+      description: t('achievements_list.weekly_streak_desc'),
       icon: Zap,
       unlocked: analytics.recentIdeas >= 7,
       progress: Math.min(analytics.recentIdeas, 7),
