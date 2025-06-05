@@ -335,6 +335,9 @@ test_plan:
         - working: false
           agent: "testing"
           comment: "Drag and drop functionality has implementation issues. Console shows errors from react-beautiful-dnd: 'Invariant failed: isDropDisabled must be a boolean'. This suggests there's a configuration issue with the drag and drop implementation that needs to be fixed."
+        - working: false
+          agent: "testing"
+          comment: "Drag and drop still has issues. Console shows errors from react-beautiful-dnd: 'Invariant failed: isCombineEnabled must be a boolean'. The drag and drop functionality needs further configuration fixes."
   
   - task: "Bulk operations (multi-select and batch actions)"
     implemented: true
