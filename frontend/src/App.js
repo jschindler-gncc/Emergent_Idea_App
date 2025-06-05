@@ -763,7 +763,7 @@ function App() {
 
           {/* Ideas List */}
           <DragDropContext onDragEnd={handleDragEnd}>
-            <Droppable droppableId="ideas" isCombineEnabled={false}>
+            <Droppable droppableId="ideas" isDropDisabled={false}>
               {(provided, snapshot) => (
                 <div
                   {...provided.droppableProps}
