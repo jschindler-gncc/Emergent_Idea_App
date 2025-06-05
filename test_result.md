@@ -362,23 +362,35 @@ test_plan:
           agent: "testing"
           comment: "Bulk operations button is now visible in the UI. Successfully tested activating bulk mode which shows checkboxes for each idea. Selecting ideas shows the bulk action buttons (Archive Selected and Delete Selected). Bulk mode can be properly toggled on and off."
   
-  - task: "Multiple view modes (card and list view)"
+  - task: "Drag and drop reordering"
     implemented: true
     working: true
     file: "/app/frontend/src/App.js"
-    stuck_count: 1
+    stuck_count: 2
     priority: "medium"
     needs_retesting: false
     status_history:
         - working: true
           agent: "main"
-          comment: "Implemented card and list view modes with optimized layouts for different use cases"
+          comment: "Implemented drag-and-drop reordering using react-beautiful-dnd library"
         - working: false
           agent: "testing"
-          comment: "Multiple view modes have implementation issues. The list view button is visible, but the grid view button could not be found during testing. This suggests there's an issue with the view mode toggle implementation that needs to be fixed."
+          comment: "Drag and drop functionality has implementation issues. Console shows errors from react-beautiful-dnd: 'Invariant failed: isDropDisabled must be a boolean'. This suggests there's a configuration issue with the drag and drop implementation that needs to be fixed."
+        - working: false
+          agent: "testing"
+          comment: "Drag and drop still has issues. Console shows errors from react-beautiful-dnd: 'Invariant failed: isCombineEnabled must be a boolean'. The drag and drop functionality needs further configuration fixes."
+        - working: false
+          agent: "testing"
+          comment: "Drag and drop functionality still has issues. Console shows errors: 'Invariant failed: isDropDisabled must be a boolean' and when attempting to drag, 'Invariant failed: Cannot find droppable entry with id [ideas]'. The drag and drop functionality doesn't work as expected - items cannot be reordered."
+        - working: false
+          agent: "testing"
+          comment: "Final validation confirms drag and drop functionality still has issues. Console consistently shows errors: 'Invariant failed: isCombineEnabled must be a boolean'. This is a configuration issue with the react-beautiful-dnd library. The Droppable component in App.js needs the isCombineEnabled prop set to a boolean value."
+        - working: false
+          agent: "testing"
+          comment: "Drag and drop functionality is still not working correctly. Testing shows two persistent console errors: 1) 'Invariant failed: isDropDisabled must be a boolean' when the page loads, and 2) 'Invariant failed: Cannot find droppable entry with id [ideas]' when attempting to drag items. When trying to drag an idea card, a red error screen appears showing the 'Cannot find droppable entry with id [ideas]' error. The drag operation cannot be completed, and items cannot be reordered."
         - working: true
           agent: "testing"
-          comment: "Both grid view and list view buttons are now visible in the UI. Successfully tested switching between grid and list views. The layout changes appropriately when switching between views."
+          comment: "Drag and drop functionality is now working correctly after migrating from react-beautiful-dnd to @hello-pangea/dnd. No console errors were detected during testing. Successfully tested dragging and dropping items in both card view and list view. The order of items changes correctly after drag operations, and the new order persists. Visual feedback during dragging works as expected."
 
 agent_communication:
     - agent: "main"
