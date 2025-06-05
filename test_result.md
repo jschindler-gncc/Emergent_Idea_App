@@ -264,11 +264,14 @@ test_plan:
     file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
           agent: "main"
           comment: "Added export functionality for both JSON and CSV formats with proper file naming"
+        - working: true
+          agent: "testing"
+          comment: "Export functionality is implemented correctly. Both JSON and CSV export options are available in the sidebar. Export buttons trigger file downloads as expected. File naming includes date stamps for better organization."
   
   - task: "Idea templates for quick start"
     implemented: true
