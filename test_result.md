@@ -305,11 +305,11 @@ test_plan:
   
   - task: "Analytics dashboard with insights"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 1
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: true
           agent: "main"
@@ -317,6 +317,9 @@ test_plan:
         - working: false
           agent: "testing"
           comment: "Analytics dashboard button is not visible in the UI. The code shows implementation of analytics features, but the button to access the dashboard could not be found during testing. This feature needs to be fixed to make the analytics dashboard accessible."
+        - working: true
+          agent: "testing"
+          comment: "Analytics button is now visible in the UI. Successfully tested opening the analytics dashboard which shows total ideas count, active/archived counts, and other metrics. The dashboard can be properly closed as well."
   
   - task: "Drag and drop reordering"
     implemented: true
