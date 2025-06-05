@@ -198,6 +198,20 @@ function App() {
   useEffect(() => {
     saveSettings(settings);
     document.documentElement.classList.toggle('dark', settings.darkMode);
+    
+    // Apply custom theme colors
+    if (settings.customColors) {
+      const root = document.documentElement;
+      root.style.setProperty('--color-primary', settings.customColors.primary);
+      root.style.setProperty('--color-secondary', settings.customColors.secondary);
+      root.style.setProperty('--color-accent', settings.customColors.accent);
+      root.style.setProperty('--color-background', settings.customColors.background);
+    }
+    
+    // Apply layout density
+    const body = document.body;
+    body.classList.remove('layout-comfortable', 'layout-compact', 'layout-cozy');
+    body.classList.add(`layout-${settings.layoutDensity || 'comfortable'}`);
   }, [settings]);
 
   // Get all categories and tags
