@@ -231,15 +231,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Analytics dashboard with insights"
     - "Drag and drop reordering"
-    - "Bulk operations (multi-select and batch actions)"
-    - "Multiple view modes (card and list view)"
   stuck_tasks:
-    - "Analytics dashboard with insights"
     - "Drag and drop reordering"
-    - "Bulk operations (multi-select and batch actions)"
-    - "Multiple view modes (card and list view)"
   test_all: true
   test_priority: "high_first"
 
