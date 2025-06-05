@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "想法",
+    "subtitle": "捕获和整理您的绝妙想法"
+  },
+  "header": {
+    "ideas_count": "{{count}} 个想法",
+    "archived": "已归档",
+    "selected": "已选择 {{count}} 个",
+    "new_idea": "新想法",
+    "templates": "模板"
+  },
+  "sidebar": {
+    "search_placeholder": "搜索想法...",
+    "export": "导出",
+    "export_json": "导出为 JSON",
+    "export_csv": "导出为 CSV",
+    "categories": "分类",
+    "all_ideas": "所有想法",
+    "show_archived": "显示已归档",
+    "hide_archived": "隐藏已归档",
+    "tags": "标签",
+    "language": "语言",
+    "settings": "设置"
+  },
+  "ideas": {
+    "no_ideas_title": "还没有想法",
+    "no_ideas_subtitle": "开始捕获您的绝妙想法吧！",
+    "no_search_results": "未找到想法",
+    "search_help": "尝试调整您的搜索或筛选条件",
+    "add_first_idea": "添加您的第一个想法",
+    "title_placeholder": "想法标题...",
+    "content_placeholder": "描述您的想法...",
+    "tags_placeholder": "标签（用逗号分隔）"
+  },
+  "categories": {
+    "general": "一般",
+    "business": "商业",
+    "personal": "个人",
+    "creative": "创意",
+    "technical": "技术"
+  },
+  "templates": {
+    "quick_start": "快速开始模板",
+    "business_idea": "商业想法",
+    "project_idea": "项目想法",
+    "technical_solution": "技术解决方案",
+    "creative_concept": "创意概念",
+    "personal_goal": "个人目标"
+  },
+  "template_content": {
+    "business": "问题：\n\n解决方案：\n\n目标市场：\n\n收入模式：\n\n下一步：",
+    "project": "目标：\n\n范围：\n\n需求：\n\n时间表：\n\n所需资源：",
+    "technical": "问题陈述：\n\n建议解决方案：\n\n技术栈：\n\n实施步骤：\n\n潜在挑战：",
+    "creative": "概念：\n\n灵感：\n\n目标受众：\n\n执行想法：\n\n所需资源：",
+    "personal": "目标：\n\n为什么重要：\n\n行动步骤：\n\n成功指标：\n\n截止日期："
+  },
+  "actions": {
+    "add": "添加",
+    "edit": "编辑",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "archive": "归档",
+    "unarchive": "取消归档",
+    "add_idea": "添加想法",
+    "archive_selected": "归档选中项",
+    "delete_selected": "删除选中项",
+    "bulk_select": "批量选择",
+    "analytics": "分析",
+    "card_view": "卡片视图",
+    "list_view": "列表视图"
+  },
+  "analytics": {
+    "title": "分析",
+    "total_ideas": "总想法数",
+    "active": "活跃",
+    "archived": "已归档",
+    "this_week": "本周",
+    "most_popular_category": "最受欢迎的分类：",
+    "top_tag": "热门标签："
+  },
+  "modals": {
+    "add_new_idea": "添加新想法",
+    "confirm_delete": "删除 {{count}} 个选中的想法？"
+  },
+  "tooltips": {
+    "dark_mode": "切换暗黑模式",
+    "analytics": "查看分析",
+    "bulk_select": "批量选择模式",
+    "card_view": "切换到卡片视图",
+    "list_view": "切换到列表视图",
+    "templates": "使用模板",
+    "settings": "设置"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文",
+    "ja": "日本語"
+  },
+  "dates": {
+    "created": "创建于 {{date}}",
+    "updated": "更新于 {{date}}"
+  }
+}

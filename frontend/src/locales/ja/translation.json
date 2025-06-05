@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "アイデア",
+    "subtitle": "素晴らしいアイデアを記録・整理しましょう"
+  },
+  "header": {
+    "ideas_count": "{{count}} のアイデア",
+    "archived": "アーカイブ済み",
+    "selected": "{{count}} 個選択中",
+    "new_idea": "新しいアイデア",
+    "templates": "テンプレート"
+  },
+  "sidebar": {
+    "search_placeholder": "アイデアを検索...",
+    "export": "エクスポート",
+    "export_json": "JSONでエクスポート",
+    "export_csv": "CSVでエクスポート",
+    "categories": "カテゴリ",
+    "all_ideas": "すべてのアイデア",
+    "show_archived": "アーカイブを表示",
+    "hide_archived": "アーカイブを非表示",
+    "tags": "タグ",
+    "language": "言語",
+    "settings": "設定"
+  },
+  "ideas": {
+    "no_ideas_title": "まだアイデアがありません",
+    "no_ideas_subtitle": "素晴らしいアイデアの記録を始めましょう！",
+    "no_search_results": "アイデアが見つかりません",
+    "search_help": "検索条件やフィルターを調整してみてください",
+    "add_first_idea": "最初のアイデアを追加",
+    "title_placeholder": "アイデアのタイトル...",
+    "content_placeholder": "アイデアを説明してください...",
+    "tags_placeholder": "タグ（カンマ区切り）"
+  },
+  "categories": {
+    "general": "一般",
+    "business": "ビジネス",
+    "personal": "個人",
+    "creative": "クリエイティブ",
+    "technical": "技術"
+  },
+  "templates": {
+    "quick_start": "クイックスタートテンプレート",
+    "business_idea": "ビジネスアイデア",
+    "project_idea": "プロジェクトアイデア",
+    "technical_solution": "技術的解決策",
+    "creative_concept": "クリエイティブコンセプト",
+    "personal_goal": "個人的目標"
+  },
+  "template_content": {
+    "business": "問題：\n\n解決策：\n\nターゲット市場：\n\n収益モデル：\n\n次のステップ：",
+    "project": "目的：\n\n範囲：\n\n要件：\n\nタイムライン：\n\n必要なリソース：",
+    "technical": "問題の概要：\n\n提案する解決策：\n\n技術スタック：\n\n実装手順：\n\n潜在的課題：",
+    "creative": "コンセプト：\n\nインスピレーション：\n\nターゲット層：\n\n実行アイデア：\n\n必要なリソース：",
+    "personal": "目標：\n\nなぜ重要か：\n\nアクション手順：\n\n成功指標：\n\n期限："
+  },
+  "actions": {
+    "add": "追加",
+    "edit": "編集",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "archive": "アーカイブ",
+    "unarchive": "アーカイブ解除",
+    "add_idea": "アイデアを追加",
+    "archive_selected": "選択項目をアーカイブ",
+    "delete_selected": "選択項目を削除",
+    "bulk_select": "一括選択",
+    "analytics": "分析",
+    "card_view": "カードビュー",
+    "list_view": "リストビュー"
+  },
+  "analytics": {
+    "title": "分析",
+    "total_ideas": "アイデア総数",
+    "active": "アクティブ",
+    "archived": "アーカイブ済み",
+    "this_week": "今週",
+    "most_popular_category": "最も人気のカテゴリ：",
+    "top_tag": "トップタグ："
+  },
+  "modals": {
+    "add_new_idea": "新しいアイデアを追加",
+    "confirm_delete": "選択した {{count}} 個のアイデアを削除しますか？"
+  },
+  "tooltips": {
+    "dark_mode": "ダークモードを切り替え",
+    "analytics": "分析を表示",
+    "bulk_select": "一括選択モード",
+    "card_view": "カードビューに切り替え",
+    "list_view": "リストビューに切り替え",
+    "templates": "テンプレートを使用",
+    "settings": "設定"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文",
+    "ja": "日本語"
+  },
+  "dates": {
+    "created": "作成日 {{date}}",
+    "updated": "更新日 {{date}}"
+  }
+}

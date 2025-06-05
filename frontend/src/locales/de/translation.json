@@ -1,0 +1,110 @@
+{
+  "app": {
+    "title": "Ideen",
+    "subtitle": "Erfassen und organisieren Sie Ihre brillanten Ideen"
+  },
+  "header": {
+    "ideas_count": "{{count}} Ideen",
+    "archived": "Archiviert",
+    "selected": "{{count}} ausgewählt",
+    "new_idea": "Neue Idee",
+    "templates": "Vorlagen"
+  },
+  "sidebar": {
+    "search_placeholder": "Ideen suchen...",
+    "export": "Exportieren",
+    "export_json": "Als JSON exportieren",
+    "export_csv": "Als CSV exportieren",
+    "categories": "Kategorien",
+    "all_ideas": "Alle Ideen",
+    "show_archived": "Archivierte anzeigen",
+    "hide_archived": "Archivierte ausblenden",
+    "tags": "Tags",
+    "language": "Sprache",
+    "settings": "Einstellungen"
+  },
+  "ideas": {
+    "no_ideas_title": "Noch keine Ideen",
+    "no_ideas_subtitle": "Beginnen Sie, Ihre brillanten Ideen zu erfassen!",
+    "no_search_results": "Keine Ideen gefunden",
+    "search_help": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
+    "add_first_idea": "Ihre erste Idee hinzufügen",
+    "title_placeholder": "Ideen-Titel...",
+    "content_placeholder": "Beschreiben Sie Ihre Idee...",
+    "tags_placeholder": "Tags (durch Kommas getrennt)"
+  },
+  "categories": {
+    "general": "Allgemein",
+    "business": "Geschäft",
+    "personal": "Persönlich",
+    "creative": "Kreativ",
+    "technical": "Technisch"
+  },
+  "templates": {
+    "quick_start": "Schnellstart-Vorlagen",
+    "business_idea": "Geschäftsidee",
+    "project_idea": "Projektidee",
+    "technical_solution": "Technische Lösung",
+    "creative_concept": "Kreatives Konzept",
+    "personal_goal": "Persönliches Ziel"
+  },
+  "template_content": {
+    "business": "Problem:\n\nLösung:\n\nZielmarkt:\n\nErlösmodell:\n\nNächste Schritte:",
+    "project": "Ziel:\n\nUmfang:\n\nAnforderungen:\n\nZeitplan:\n\nBenötigte Ressourcen:",
+    "technical": "Problembeschreibung:\n\nVorgeschlagene Lösung:\n\nTechnologie-Stack:\n\nImplementierungsschritte:\n\nPotenzielle Herausforderungen:",
+    "creative": "Konzept:\n\nInspiration:\n\nZielgruppe:\n\nUmsetzungsideen:\n\nBenötigte Ressourcen:",
+    "personal": "Ziel:\n\nWarum es wichtig ist:\n\nHandlungsschritte:\n\nErfolgsmetriken:\n\nDeadline:"
+  },
+  "actions": {
+    "add": "Hinzufügen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "archive": "Archivieren",
+    "unarchive": "Entarchivieren",
+    "add_idea": "Idee hinzufügen",
+    "archive_selected": "Ausgewählte archivieren",
+    "delete_selected": "Ausgewählte löschen",
+    "bulk_select": "Mehrfachauswahl",
+    "analytics": "Analytik",
+    "card_view": "Kartenansicht",
+    "list_view": "Listenansicht"
+  },
+  "analytics": {
+    "title": "Analytik",
+    "total_ideas": "Gesamte Ideen",
+    "active": "Aktiv",
+    "archived": "Archiviert",
+    "this_week": "Diese Woche",
+    "most_popular_category": "Beliebteste Kategorie:",
+    "top_tag": "Top-Tag:"
+  },
+  "modals": {
+    "add_new_idea": "Neue Idee hinzufügen",
+    "confirm_delete": "{{count}} ausgewählte Ideen löschen?"
+  },
+  "tooltips": {
+    "dark_mode": "Dunklen Modus umschalten",
+    "analytics": "Analytik anzeigen",
+    "bulk_select": "Mehrfachauswahl-Modus",
+    "card_view": "Zur Kartenansicht wechseln",
+    "list_view": "Zur Listenansicht wechseln",
+    "templates": "Vorlagen verwenden",
+    "settings": "Einstellungen"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "it": "Italiano",
+    "zh": "中文",
+    "ja": "日本語"
+  },
+  "dates": {
+    "created": "Erstellt {{date}}",
+    "updated": "Aktualisiert {{date}}"
+  }
+}
