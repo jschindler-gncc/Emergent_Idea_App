@@ -808,9 +808,7 @@ function App() {
                             } ${viewMode === 'list' ? 'flex items-center space-x-4' : ''}`}
                             style={{
                               ...provided.draggableProps.style,
-                              ...(snapshot.isDragging && {
-                                transform: `${provided.draggableProps.style?.transform} rotate(2deg)`,
-                              }),
+                              userSelect: 'none',
                             }}
                           >
                             {editingIdea && editingIdea.id === idea.id ? (
