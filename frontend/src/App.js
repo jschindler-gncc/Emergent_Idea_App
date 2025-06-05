@@ -573,7 +573,7 @@ function App() {
             </div>
 
             <button
-              onClick={toggleDarkMode}
+              onClick={() => updateSettings({ ...settings, darkMode: !settings.darkMode })}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               title={t('tooltips.dark_mode')}
             >
