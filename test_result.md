@@ -230,9 +230,17 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Dark mode toggle with system preference detection"
+    - "Export functionality (JSON and CSV)"
+    - "Idea templates for quick start"
+    - "Enhanced mobile responsive design"
+    - "Analytics dashboard with insights"
+    - "Drag and drop reordering"
+    - "Bulk operations (multi-select and batch actions)"
+    - "Multiple view modes (card and list view)"
   stuck_tasks: []
-  test_all: false
+  test_all: true
   test_priority: "high_first"
 
   - task: "Dark mode toggle with system preference detection"
