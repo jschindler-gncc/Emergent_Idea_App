@@ -190,17 +190,16 @@ const SettingsModal = ({
     }
   };
 
-  // Handle overlay click to close modal
-  const handleOverlayClick = (e) => {
-    // Only close if clicking on the overlay, not the modal content
+  // Handle overlay click to close modal  
+  const handleBackdropClick = (e) => {
+    // Only close if clicking directly on the backdrop
     if (e.target === e.currentTarget) {
       onClose();
     }
   };
 
   // Handle close button click
-  const handleCloseClick = (e) => {
-    e.stopPropagation();
+  const handleCloseClick = () => {
     onClose();
   };
 
