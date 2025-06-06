@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings Modal Test</title>
+    <script>
+        function checkSettingsModal() {
+            const frontendUrl = 'http://localhost:3000'; // Assuming default React dev server port
+            
+            console.log('Testing Settings Modal functionality...');
+            console.log('Please manually test the following:');
+            console.log('1. Click the Settings button in the header');
+            console.log('2. Try to close the modal with:');
+            console.log('   - X button in top-right corner');
+            console.log('   - Clicking outside the modal content');
+            console.log('   - Pressing the Escape key');
+            console.log('3. Check browser console for any JavaScript errors');
+            console.log('4. Verify all tabs work: Appearance, Layout, Preferences, Achievements');
+            
+            // Open the application
+            window.open(frontendUrl, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <h1>Settings Modal Test</h1>
+    <p>Click the button below to open the application and test the Settings Modal:</p>
+    <button onclick="checkSettingsModal()">Open Application & Test Settings Modal</button>
+    
+    <div>
+        <h2>What to Test:</h2>
+        <ol>
+            <li><strong>Login</strong>: Use admin@example.com / admin123</li>
+            <li><strong>Select Tenant</strong>: Choose any available tenant</li>
+            <li><strong>Open Settings</strong>: Click the Settings button (gear icon) in the header</li>
+            <li><strong>Test Closing Methods</strong>:
+                <ul>
+                    <li>X button in top-right corner of modal</li>
+                    <li>Click outside the modal (on the dark overlay)</li>
+                    <li>Press Escape key</li>
+                </ul>
+            </li>
+            <li><strong>Test Content</strong>: Make sure tabs work and settings can be changed</li>
+        </ol>
+        
+        <h2>Expected Behavior:</h2>
+        <ul>
+            <li>Modal should open when clicking Settings button</li>
+            <li>Modal should close with any of the three closing methods</li>
+            <li>No JavaScript errors in console</li>
+            <li>All tabs should be functional</li>
+            <li>Theme switching should work</li>
+        </ul>
+    </div>
+</body>
+</html>
