@@ -225,7 +225,7 @@ frontend:
 
   - task: "Multi-tenant authentication system"
     implemented: true
-    working: false
+    working: true
     file: "/app/frontend/src/components/auth/LoginModal.js, /app/frontend/src/services/authService.js"
     stuck_count: 0
     priority: "high"
@@ -234,6 +234,9 @@ frontend:
         - working: false
           agent: "testing"
           comment: "The multi-tenant authentication system is implemented in the code with LoginModal.js and authService.js, but the login modal does not appear when accessing the application. The application appears to be in a logged-in state by default, bypassing the authentication flow. The code shows a comprehensive authentication system with tenant selection, login/register functionality, and social login options, but this cannot be tested as the login modal is not triggered."
+        - working: true
+          agent: "testing"
+          comment: "The authentication system is now working correctly. The login modal appears when loading the application, showing tabs for Sign In, Sign Up, and Create Organization. Successfully logged in with the demo credentials (admin@example.com/admin123) and the main application interface appeared. Basic idea management functionality works after login - was able to create a new idea. The only missing feature is a logout button, which could not be found in the UI, but this is a minor issue as the authentication flow itself is working properly."
 
 metadata:
   created_by: "main_agent"
