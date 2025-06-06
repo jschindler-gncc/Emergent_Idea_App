@@ -193,9 +193,16 @@ const SettingsModal = ({
     <div 
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[60]"
       onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
         // Close modal when clicking on overlay
         if (e.target === e.currentTarget) {
           onClose();
+        }
+      }}
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) {
+          e.preventDefault();
         }
       }}
     >
@@ -205,6 +212,9 @@ const SettingsModal = ({
         }`}
         onClick={(e) => {
           // Prevent modal from closing when clicking inside the modal content
+          e.stopPropagation();
+        }}
+        onMouseDown={(e) => {
           e.stopPropagation();
         }}
       >
