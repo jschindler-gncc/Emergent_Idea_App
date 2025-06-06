@@ -154,7 +154,14 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
   ];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[55]">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[55]"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
       <div className={`rounded-lg w-full h-[90vh] flex ${
         darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
       }`} style={{ maxWidth: '1400px' }}>
