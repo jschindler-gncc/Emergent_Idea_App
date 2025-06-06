@@ -16,13 +16,18 @@ import authService from './services/authService';
 import tenantService from './services/tenantService';
 import collaborationService from './services/collaborationService';
 
-// Utility functions for localStorage
+// Utility functions for multi-tenant localStorage
 const STORAGE_KEY = 'idea-logger-data';
 const SETTINGS_KEY = 'idea-logger-settings';
 
-const loadIdeas = () => {
+const getTenantStorageKey = (key, tenantId) => {
+  return tenantId ? `${key}_${tenantId}` : key;
+};
+
+const loadIdeas = (tenantId = null) => {
   try {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const storageKey = getTenantStorageKey(STORAGE_KEY, tenantId);
+    const stored = localStorage.getItem(storageKey);
     return stored ? JSON.parse(stored) : [];
   } catch (error) {
     console.error('Error loading ideas:', error);
@@ -30,9 +35,15 @@ const loadIdeas = () => {
   }
 };
 
-const saveIdeas = (ideas) => {
+const saveIdeas = (ideas, tenantId = null) => {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(ideas));
+    const storageKey = getTenantStorageKey(STORAGE_KEY, tenantId);
+    localStorage.setItem(storageKey, JSON.stringify(ideas));
+    
+    // Update tenant usage metrics
+    if (tenantId) {
+      tenantService.updateUsageMetrics(tenantId, 'totalIdeas', ideas.length);
+    }
   } catch (error) {
     console.error('Error saving ideas:', error);
   }
