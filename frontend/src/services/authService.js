@@ -71,7 +71,7 @@ class AuthService {
   }
 
   // Authentication helpers
-  setAuthData(user, tenantId) {
+  setAuthData(user) {
     localStorage.setItem(this.STORAGE_KEYS.AUTH_TOKEN, user.token);
     localStorage.setItem(this.STORAGE_KEYS.CURRENT_USER, JSON.stringify(user));
     
@@ -80,11 +80,7 @@ class AuthService {
       localStorage.setItem(this.STORAGE_KEYS.USER_TENANTS, JSON.stringify(user.tenants));
     }
     
-    if (tenantId) {
-      this.switchTenant(tenantId);
-    } else if (user.tenants && user.tenants.length > 0) {
-      this.switchTenant(user.tenants[0].id);
-    }
+    // Don't auto-select tenant - let the app handle tenant selection
   }
 
   getCurrentUser() {
