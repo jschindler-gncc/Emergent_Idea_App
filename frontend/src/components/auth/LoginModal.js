@@ -253,25 +253,6 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
           {activeTab === 'login' && (
             <div className="space-y-4">
               <form onSubmit={handleLogin} className="space-y-4">
-                {/* Tenant Selection */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Organization (Optional)
-                  </label>
-                  <select
-                    value={loginForm.tenantId}
-                    onChange={(e) => setLoginForm({ ...loginForm, tenantId: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                  >
-                    <option value="">Select Organization</option>
-                    {availableTenants.map(tenant => (
-                      <option key={tenant.id} value={tenant.id}>
-                        {tenant.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
                 {/* Email */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
