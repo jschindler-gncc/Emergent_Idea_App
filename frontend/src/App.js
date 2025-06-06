@@ -1426,6 +1426,16 @@ function App() {
         analytics={analytics}
         darkMode={settings.darkMode}
       />
+
+      {/* Super Admin Dashboard */}
+      {isSuperAdmin() && (
+        <SuperAdminDashboard
+          isOpen={showSuperAdmin}
+          onClose={() => setShowSuperAdmin(false)}
+          currentUser={currentUser}
+          darkMode={settings.darkMode}
+        />
+      )}
     </div>
   );
 }
