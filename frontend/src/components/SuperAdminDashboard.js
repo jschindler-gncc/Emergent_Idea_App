@@ -198,23 +198,23 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
           }`}>
             <h3 className="font-semibold mb-3 flex items-center">
               <Target className="w-4 h-4 mr-2 text-yellow-500" />
-              Quick Stats
+              {t('superadmin.quick_stats')}
             </h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Tenants</span>
+                <span className="text-gray-500 dark:text-gray-400">{t('superadmin.tenants_label')}</span>
                 <span className="font-medium">{platformStats.totalTenants}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Users</span>
+                <span className="text-gray-500 dark:text-gray-400">{t('superadmin.users_label')}</span>
                 <span className="font-medium">{platformStats.totalUsers}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Ideas</span>
+                <span className="text-gray-500 dark:text-gray-400">{t('superadmin.ideas_label')}</span>
                 <span className="font-medium">{platformStats.totalIdeas}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Revenue</span>
+                <span className="text-gray-500 dark:text-gray-400">{t('superadmin.revenue_label')}</span>
                 <span className="font-medium text-green-600">${platformStats.totalRevenue}/mo</span>
               </div>
             </div>
