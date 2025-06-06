@@ -236,7 +236,9 @@ const SettingsModal = ({
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
-                    activeTab === tab.id ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100'
+                    activeTab === tab.id 
+                      ? (darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-100 text-blue-700')
+                      : (darkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-600 hover:bg-gray-100')
                   }`}
                 >
                   <tab.icon className="w-5 h-5" />
@@ -250,14 +252,18 @@ const SettingsModal = ({
           <div className="flex-1">
             {activeTab === 'appearance' && (
               <div>
-                <h3 className="text-lg font-semibold mb-4">Theme Selection</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.theme_selection')}</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {themes.map(theme => (
                     <button
                       key={theme.id}
                       onClick={() => updateTheme(theme.id)}
                       className={`p-4 rounded-lg border-2 transition-all ${
-                        settings.theme === theme.id ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'
+                        settings.theme === theme.id 
+                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
+                          : (darkMode 
+                              ? 'border-gray-600 hover:border-gray-500 bg-gray-700' 
+                              : 'border-gray-200 hover:border-gray-300 bg-white')
                       }`}
                     >
                       <div className="flex items-center space-x-3 mb-2">
@@ -275,18 +281,24 @@ const SettingsModal = ({
             
             {activeTab === 'layout' && (
               <div>
-                <h3 className="text-lg font-semibold mb-4">Layout Density</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('settings.layout_density')}</h3>
                 <div className="space-y-3">
                   {layoutOptions.map(layout => (
                     <button
                       key={layout.id}
                       onClick={() => updateSettings({ ...settings, layoutDensity: layout.id })}
                       className={`w-full p-4 rounded-lg border text-left transition-all ${
-                        settings.layoutDensity === layout.id ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'
+                        settings.layoutDensity === layout.id 
+                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
+                          : (darkMode 
+                              ? 'border-gray-600 hover:border-gray-500 bg-gray-700' 
+                              : 'border-gray-200 hover:border-gray-300 bg-white')
                       }`}
                     >
                       <div className="font-medium">{layout.name}</div>
-                      <div className="text-sm text-gray-500 mt-1">{layout.description}</div>
+                      <div className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        {layout.description}
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -295,8 +307,9 @@ const SettingsModal = ({
             
             {activeTab === 'preferences' && (
               <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
-                <div className="space-y-3">
+                <h3 className="text-lg font-semibold mb-4">{t('settings.preferences')}</h3>
+                <div className="space-y-4">
+                  {/* Auto Save */}
                   <label className="flex items-center space-x-3">
                     <input
                       type="checkbox"
@@ -304,7 +317,44 @@ const SettingsModal = ({
                       onChange={(e) => updateSettings({ ...settings, autoSave: e.target.checked })}
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <span>Auto Save</span>
+                    <span>{t('settings.auto_save')}</span>
+                  </label>
+                  
+                  {/* Language Selection */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2">{t('sidebar.language')}</label>
+                    <select
+                      value={i18n.language}
+                      onChange={(e) => i18n.changeLanguage(e.target.value)}
+                      className={`px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        darkMode 
+                          ? 'bg-gray-700 border-gray-600 text-white' 
+                          : 'bg-white border-gray-300 text-gray-900'
+                      }`}
+                    >
+                      <option value="en">🇺🇸 English</option>
+                      <option value="es">🇪🇸 Español</option>
+                      <option value="fr">🇫🇷 Français</option>
+                      <option value="de">🇩🇪 Deutsch</option>
+                      <option value="pt">🇧🇷 Português</option>
+                      <option value="it">🇮🇹 Italiano</option>
+                      <option value="zh">🇨🇳 中文</option>
+                      <option value="ja">🇯🇵 日本語</option>
+                    </select>
+                  </div>
+                  
+                  {/* Dark Mode Toggle */}
+                  <label className="flex items-center space-x-3">
+                    <input
+                      type="checkbox"
+                      checked={settings.darkMode}
+                      onChange={(e) => updateSettings({ ...settings, darkMode: e.target.checked })}
+                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                    />
+                    <span className="flex items-center space-x-2">
+                      {settings.darkMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+                      <span>{t('settings.dark_mode')}</span>
+                    </span>
                   </label>
                 </div>
               </div>
@@ -312,21 +362,37 @@ const SettingsModal = ({
             
             {activeTab === 'achievements' && (
               <div>
-                <h3 className="text-lg font-semibold mb-4">Your Progress</h3>
+                <h3 className="text-lg font-semibold mb-4">{t('achievements.your_progress')}</h3>
                 <div className="grid gap-4">
                   {achievements.map(achievement => (
                     <div
                       key={achievement.id}
                       className={`p-4 rounded-lg border ${
-                        achievement.unlocked ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-gray-50'
+                        achievement.unlocked 
+                          ? (darkMode ? 'border-green-600 bg-green-900/20' : 'border-green-500 bg-green-50')
+                          : (darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-gray-50')
                       }`}
                     >
                       <div className="flex items-center space-x-3 mb-2">
-                        <achievement.icon className={`w-6 h-6 ${achievement.unlocked ? 'text-green-600' : 'text-gray-400'}`} />
+                        <achievement.icon className={`w-6 h-6 ${
+                          achievement.unlocked 
+                            ? (darkMode ? 'text-green-400' : 'text-green-600')
+                            : (darkMode ? 'text-gray-500' : 'text-gray-400')
+                        }`} />
                         <div className="flex-1">
                           <div className="font-medium">{achievement.name}</div>
-                          <div className="text-sm text-gray-500">{achievement.description}</div>
+                          <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                            {achievement.description}
+                          </div>
+                          {!achievement.unlocked && (
+                            <div className={`text-xs mt-1 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                              {t('achievements.progress')}: {achievement.progress}/{achievement.max}
+                            </div>
+                          )}
                         </div>
+                        {achievement.unlocked && (
+                          <CheckCircle className={`w-5 h-5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} />
+                        )}
                       </div>
                     </div>
                   ))}
