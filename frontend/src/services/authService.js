@@ -11,12 +11,12 @@ class AuthService {
   }
 
   // User Authentication
-  async login(email, password, tenantId = null) {
+  async login(email, password) {
     try {
       // Simulate API call - replace with actual backend
       const user = await this.authenticateUser(email, password);
       if (user) {
-        this.setAuthData(user, tenantId);
+        this.setAuthData(user);
         return { success: true, user };
       }
       return { success: false, error: 'Invalid credentials' };
@@ -25,12 +25,12 @@ class AuthService {
     }
   }
 
-  async socialLogin(provider, tenantId = null) {
+  async socialLogin(provider) {
     try {
       // Implement social login (Google, Microsoft, GitHub)
       const authResult = await this.handleSocialAuth(provider);
       if (authResult.success) {
-        this.setAuthData(authResult.user, tenantId);
+        this.setAuthData(authResult.user);
         return authResult;
       }
       return authResult;
