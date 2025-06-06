@@ -395,6 +395,7 @@
     "achievements": {
       "your_progress": "Your Progress",
       "achievement_stats": "Achievement Stats",
+      "progress": "Progress",
       "unlocked": "{{count}} of {{total}} achievements unlocked"
     },
     "appearance": "Appearance",
