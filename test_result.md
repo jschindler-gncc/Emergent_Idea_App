@@ -482,8 +482,7 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus:
-    - "Settings Modal Functionality"
+  current_focus: []
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
