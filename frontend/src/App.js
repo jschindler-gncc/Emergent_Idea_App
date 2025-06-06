@@ -126,21 +126,21 @@ const exportToCSV = (ideas, t) => {
 function App() {
   const { t, i18n } = useTranslation();
   
+  // Authentication State - Initialize as not authenticated to show login modal
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentTenant, setCurrentTenant] = useState(null);
+  const [showLogin, setShowLogin] = useState(true);
+  
   // Clear any existing auth tokens for demo purposes
   React.useEffect(() => {
-    // Clear auth tokens to ensure login modal shows
+    // Clear auth tokens to ensure clean state
     localStorage.removeItem('auth_token');
     localStorage.removeItem('current_user');
     localStorage.removeItem('current_tenant');
     localStorage.removeItem('user_tenants');
     localStorage.removeItem('tenant_permissions');
   }, []);
-  
-  // Authentication State
-  const [isAuthenticated, setIsAuthenticated] = useState(authService.isAuthenticated());
-  const [currentUser, setCurrentUser] = useState(authService.getCurrentUser());
-  const [currentTenant, setCurrentTenant] = useState(authService.getCurrentTenant());
-  const [showLogin, setShowLogin] = useState(!authService.isAuthenticated());
   
   // Load tenant-specific ideas
   const [ideas, setIdeas] = useState(() => loadIdeas(currentTenant?.id));
