@@ -200,7 +200,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
         <div className="flex items-center justify-between p-6 border-b dark:border-gray-700">
           <div className="flex items-center space-x-2">
             <Shield className="w-6 h-6 text-blue-600" />
-            <h2 className="text-xl font-bold">💡 Ideas Platform</h2>
+            <h2 className="text-xl font-bold">{t('auth.platform_title')}</h2>
           </div>
           <button
             onClick={onClose}
