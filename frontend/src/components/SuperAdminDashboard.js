@@ -229,9 +229,9 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
             {activeTab === 'overview' && (
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-2xl font-bold mb-2">Platform Overview</h1>
+                  <h1 className="text-2xl font-bold mb-2">{t('superadmin.overview.title')}</h1>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Comprehensive statistics and health metrics for the entire platform
+                    {t('superadmin.overview.subtitle')}
                   </p>
                 </div>
 
