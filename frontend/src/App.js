@@ -629,6 +629,14 @@ function App() {
               <Menu className="w-5 h-5" />
             </button>
             <h1 className="text-2xl font-bold">💡 {t('app.title')}</h1>
+            {currentTenant && (
+              <div className="flex items-center space-x-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                <Building className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  {currentTenant.name}
+                </span>
+              </div>
+            )}
             <div className="flex items-center space-x-2">
               <span className="text-sm text-gray-500 dark:text-gray-400">
                 {t('header.ideas_count', { count: filteredIdeas.length })}
