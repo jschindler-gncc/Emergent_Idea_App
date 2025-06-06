@@ -758,6 +758,17 @@ function App() {
               <Settings className="w-5 h-5" />
             </button>
 
+            {/* Super Admin Button */}
+            {isSuperAdmin() && (
+              <button
+                onClick={() => setShowSuperAdmin(true)}
+                className="p-2 rounded-lg hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-colors text-yellow-600 dark:text-yellow-400"
+                title="Super Admin Dashboard"
+              >
+                <Crown className="w-5 h-5" />
+              </button>
+            )}
+
             {/* User Menu */}
             <div className="relative">
               <button
