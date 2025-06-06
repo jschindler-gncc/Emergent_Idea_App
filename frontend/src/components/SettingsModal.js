@@ -203,15 +203,23 @@ const SettingsModal = ({
     onClose();
   };
 
+  // Prevent modal content clicks from bubbling to overlay
+  const handleContentClick = (e) => {
+    e.stopPropagation();
+  };
+
   // Proper modal implementation with dark mode and accessibility
   return (
     <div 
       className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex"
       onClick={handleOverlayClick}
     >
-      <div className={`relative p-8 w-full max-w-4xl m-auto flex flex-col rounded-lg ${
-        darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
-      }`}>
+      <div 
+        className={`relative p-8 w-full max-w-4xl m-auto flex flex-col rounded-lg ${
+          darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+        }`}
+        onClick={handleContentClick}
+      >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">{t('settings.title')}</h2>
           <button 
