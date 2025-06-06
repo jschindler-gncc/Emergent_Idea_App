@@ -1228,6 +1228,13 @@ function App() {
         </div>
       </div>
 
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={showLogin}
+        onClose={() => setShowLogin(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
+
       {/* Settings Modal */}
       <SettingsModal
         key={i18n.language} // Force re-render when language changes
