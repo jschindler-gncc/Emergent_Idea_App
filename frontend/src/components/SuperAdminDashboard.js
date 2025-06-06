@@ -471,8 +471,8 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                                 </span>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-sm">
-                                <div>{analytics.users} users</div>
-                                <div className="text-gray-500 dark:text-gray-400">{analytics.ideas} ideas</div>
+                                <div>{t('superadmin.tenants.users_count', { count: analytics.users })}</div>
+                                <div className="text-gray-500 dark:text-gray-400">{t('superadmin.tenants.ideas_count', { count: analytics.ideas })}</div>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap">
                                 <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
@@ -480,7 +480,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                                     ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
                                     : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
                                 }`}>
-                                  {tenant.status}
+                                  {t(`superadmin.tenants.${tenant.status}`)}
                                 </span>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
