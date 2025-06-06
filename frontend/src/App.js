@@ -216,10 +216,39 @@ function App() {
     }
   ];
 
-  // Save ideas and settings to localStorage
+  // Authentication Effects
   useEffect(() => {
-    saveIdeas(ideas);
-  }, [ideas]);
+    const checkAuth = () => {
+      const authenticated = authService.isAuthenticated();
+      const user = authService.getCurrentUser();
+      const tenant = authService.getCurrentTenant();
+      
+      setIsAuthenticated(authenticated);
+      setCurrentUser(user);
+      setCurrentTenant(tenant);
+      
+      if (!authenticated) {
+        setShowLogin(true);
+      } else {
+        // Load tenant-specific ideas when authentication state changes
+        const tenantIdeas = loadIdeas(tenant?.id);
+        setIdeas(tenantIdeas);
+      }
+    };
+
+    checkAuth();
+    
+    // Listen for auth changes (logout, tenant switch, etc.)
+    window.addEventListener('storage', checkAuth);
+    return () => window.removeEventListener('storage', checkAuth);
+  }, []);
+
+  // Save ideas to tenant-specific storage
+  useEffect(() => {
+    if (currentTenant) {
+      saveIdeas(ideas, currentTenant.id);
+    }
+  }, [ideas, currentTenant]);
 
   useEffect(() => {
     saveSettings(settings);
