@@ -288,13 +288,13 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                   }`}>
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Monthly Revenue</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.overview.monthly_revenue')}</p>
                         <p className="text-2xl font-bold text-yellow-600">${platformStats.totalRevenue}</p>
                       </div>
                       <DollarSign className="w-8 h-8 text-yellow-600" />
                     </div>
                     <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                      From {platformStats.activeTenants} paying tenants
+                      {t('superadmin.overview.paying_tenants', { count: platformStats.activeTenants })}
                     </div>
                   </div>
                 </div>
