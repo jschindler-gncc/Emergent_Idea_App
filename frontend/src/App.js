@@ -125,7 +125,15 @@ const exportToCSV = (ideas, t) => {
 // Main App Component
 function App() {
   const { t, i18n } = useTranslation();
-  const [ideas, setIdeas] = useState(loadIdeas);
+  
+  // Authentication State
+  const [isAuthenticated, setIsAuthenticated] = useState(authService.isAuthenticated());
+  const [currentUser, setCurrentUser] = useState(authService.getCurrentUser());
+  const [currentTenant, setCurrentTenant] = useState(authService.getCurrentTenant());
+  const [showLogin, setShowLogin] = useState(!authService.isAuthenticated());
+  
+  // Load tenant-specific ideas
+  const [ideas, setIdeas] = useState(() => loadIdeas(currentTenant?.id));
   const [settings, setSettings] = useState(loadSettings);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -136,7 +144,9 @@ function App() {
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [viewMode, setViewMode] = useState(settings.defaultView || 'card'); // 'card' or 'list'
+  const [showTenantSwitcher, setShowTenantSwitcher] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const [viewMode, setViewMode] = useState(settings.defaultView || 'card');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedIdeas, setSelectedIdeas] = useState(new Set());
   const [bulkMode, setBulkMode] = useState(false);
