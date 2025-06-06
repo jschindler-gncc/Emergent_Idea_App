@@ -305,7 +305,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                 }`}>
                   <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <Activity className="w-5 h-5 mr-2" />
-                    Recent Platform Activity
+                    {t('superadmin.overview.recent_activity')}
                   </h3>
                   <div className="space-y-3">
                     {tenants.slice(0, 5).map(tenant => {
