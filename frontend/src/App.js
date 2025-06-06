@@ -1451,6 +1451,7 @@ function App() {
       {/* Super Admin Dashboard */}
       {isSuperAdmin() && (
         <SuperAdminDashboard
+          key={i18n.language} // Force re-render when language changes
           isOpen={showSuperAdmin}
           onClose={() => setShowSuperAdmin(false)}
           currentUser={currentUser}
