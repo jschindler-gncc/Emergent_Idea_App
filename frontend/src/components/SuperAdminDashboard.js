@@ -426,22 +426,22 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                       <thead className={darkMode ? 'bg-gray-700' : 'bg-gray-50'}>
                         <tr>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                            Tenant
+                            {t('superadmin.tenants.tenant_name')}
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                            Plan
+                            {t('superadmin.tenants.plan')}
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                            Users/Ideas
+                            {t('superadmin.tenants.users_ideas')}
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                            Status
+                            {t('superadmin.tenants.status')}
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                            Created
+                            {t('superadmin.tenants.created')}
                           </th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                            Actions
+                            {t('superadmin.tenants.actions')}
                           </th>
                         </tr>
                       </thead>
