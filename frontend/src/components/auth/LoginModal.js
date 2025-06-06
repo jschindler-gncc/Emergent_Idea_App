@@ -363,10 +363,10 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
 
               {/* Demo Credentials */}
               <div className="mt-4 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Demo Credentials:</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">{t('auth.demo_credentials')}:</p>
                 <p className="text-xs text-gray-500 dark:text-gray-500">
-                  Email: admin@example.com<br />
-                  Password: admin123
+                  {t('auth.email')}: admin@example.com<br />
+                  {t('auth.password')}: admin123
                 </p>
               </div>
             </div>
