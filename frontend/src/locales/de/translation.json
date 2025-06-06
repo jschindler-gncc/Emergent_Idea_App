@@ -28,8 +28,8 @@
     "no_ideas_subtitle": "Beginnen Sie, Ihre brillanten Ideen zu erfassen!",
     "no_search_results": "Keine Ideen gefunden",
     "search_help": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
-    "add_first_idea": "Ihre erste Idee hinzufügen",
-    "title_placeholder": "Ideen-Titel...",
+    "add_first_idea": "Fügen Sie Ihre Erste Idee Hinzu",
+    "title_placeholder": "Ideentitel...",
     "content_placeholder": "Beschreiben Sie Ihre Idee...",
     "tags_placeholder": "Tags (durch Kommas getrennt)"
   },
@@ -48,50 +48,49 @@
     "creative_concept": "Kreatives Konzept",
     "personal_goal": "Persönliches Ziel"
   },
-  "template_content": {
-    "business": "Problem:\n\nLösung:\n\nZielmarkt:\n\nErlösmodell:\n\nNächste Schritte:",
-    "project": "Ziel:\n\nUmfang:\n\nAnforderungen:\n\nZeitplan:\n\nBenötigte Ressourcen:",
-    "technical": "Problembeschreibung:\n\nVorgeschlagene Lösung:\n\nTechnologie-Stack:\n\nImplementierungsschritte:\n\nPotenzielle Herausforderungen:",
-    "creative": "Konzept:\n\nInspiration:\n\nZielgruppe:\n\nUmsetzungsideen:\n\nBenötigte Ressourcen:",
-    "personal": "Ziel:\n\nWarum es wichtig ist:\n\nHandlungsschritte:\n\nErfolgsmetriken:\n\nDeadline:"
-  },
-  "actions": {
-    "add": "Hinzufügen",
-    "edit": "Bearbeiten",
+  "modal": {
+    "edit_idea": "Idee Bearbeiten",
+    "new_idea": "Neue Idee",
     "save": "Speichern",
     "cancel": "Abbrechen",
     "delete": "Löschen",
     "archive": "Archivieren",
-    "unarchive": "Entarchivieren",
-    "add_idea": "Idee hinzufügen",
-    "archive_selected": "Ausgewählte archivieren",
-    "delete_selected": "Ausgewählte löschen",
-    "bulk_select": "Mehrfachauswahl",
-    "analytics": "Analytik",
-    "card_view": "Kartenansicht",
-    "list_view": "Listenansicht"
+    "unarchive": "Dearchivieren",
+    "title": "Titel",
+    "category": "Kategorie",
+    "content": "Inhalt",
+    "tags": "Tags",
+    "created": "Erstellt",
+    "updated": "Aktualisiert"
+  },
+  "actions": {
+    "bulk_actions": "Massenaktionen",
+    "select_all": "Alle Auswählen",
+    "deselect_all": "Alle Abwählen",
+    "archive_selected": "Ausgewählte Archivieren",
+    "delete_selected": "Ausgewählte Löschen",
+    "cancel_selection": "Auswahl Abbrechen",
+    "confirm_delete": "Sind Sie sicher, dass Sie die ausgewählten Ideen löschen möchten?",
+    "confirm_archive": "Sind Sie sicher, dass Sie die ausgewählten Ideen archivieren möchten?",
+    "reorder_drag": "Ziehen, um Ideen neu zu ordnen"
   },
   "analytics": {
     "title": "Analytik",
-    "total_ideas": "Gesamte Ideen",
-    "active": "Aktiv",
-    "archived": "Archiviert",
-    "this_week": "Diese Woche",
-    "most_popular_category": "Beliebteste Kategorie:",
-    "top_tag": "Top-Tag:"
+    "ideas_over_time": "Ideen im Zeitverlauf",
+    "category_distribution": "Kategorienverteilung",
+    "tag_usage": "Tag-Verwendung",
+    "total_ideas": "Gesamtideen",
+    "this_month": "Diesen Monat",
+    "total_categories": "Gesamtkategorien",
+    "total_tags": "Gesamt-Tags",
+    "most_popular_category": "Beliebteste Kategorie",
+    "most_used_tag": "Meistverwendeter Tag",
+    "ideas_created": "Erstellte Ideen",
+    "weekly_goal": "Wochenziel"
   },
-  "modals": {
-    "add_new_idea": "Neue Idee hinzufügen",
-    "confirm_delete": "{{count}} ausgewählte Ideen löschen?"
-  },
-  "tooltips": {
-    "dark_mode": "Dunklen Modus umschalten",
-    "analytics": "Analytik anzeigen",
-    "bulk_select": "Mehrfachauswahl-Modus",
-    "card_view": "Zur Kartenansicht wechseln",
-    "list_view": "Zur Listenansicht wechseln",
-    "templates": "Vorlagen verwenden",
-    "settings": "Einstellungen"
+  "view_modes": {
+    "card_view": "Kartenansicht",
+    "list_view": "Listenansicht"
   },
   "languages": {
     "en": "English",
@@ -103,43 +102,25 @@
     "zh": "中文",
     "ja": "日本語"
   },
-  "dates": {
-    "created": "Erstellt {{date}}",
-    "updated": "Aktualisiert {{date}}"
-  },
   "settings": {
     "title": "Einstellungen",
-    "tabs": {
-      "appearance": "Erscheinungsbild",
-      "layout": "Layout",
-      "preferences": "Einstellungen",
-      "achievements": "Errungenschaften"
-    },
-    "appearance": {
-      "theme_selection": "Thema-Auswahl",
-      "dark_mode": "Dunkler Modus",
-      "light": "Hell",
-      "dark": "Dunkel",
-      "system": "System"
-    },
-    "layout": {
-      "layout_density": "Layout-Dichte",
-      "default_view": "Standard-Ansicht",
-      "sidebar_settings": "Seitenleisten-Einstellungen",
-      "collapse_sidebar": "Seitenleiste standardmäßig einklappen",
-      "show_sidebar_icons": "Seitenleisten-Symbole anzeigen"
-    },
-    "preferences": {
-      "quick_actions": "Schnelle Aktionen",
-      "auto_save": "Automatisches Speichern beim Tippen",
-      "confirm_delete": "Vor dem Löschen von Ideen bestätigen",
-      "show_tooltips": "Hilfreiche Tooltips anzeigen",
-      "ideas_per_page": "Ideen pro Seite"
-    },
-    "achievements": {
+    "appearance": "Erscheinungsbild",
+    "behavior": "Verhalten",
+    "data": "Daten",
+    "achievements": "Erfolge",
+    "theme": "Thema",
+    "dark_mode": "Dunkler Modus",
+    "language": "Sprache",
+    "layout_density": "Layout-Dichte",
+    "auto_save": "Automatisches Speichern",
+    "export_data": "Daten Exportieren",
+    "import_data": "Daten Importieren",
+    "reset_data": "Daten Zurücksetzen",
+    "reset_confirm": "Sind Sie sicher, dass Sie alle Daten zurücksetzen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "achievement_progress": {
       "your_progress": "Ihr Fortschritt",
-      "achievement_stats": "Errungenschaften-Statistiken",
-      "unlocked": "{{count}} von {{total}} Errungenschaften freigeschaltet"
+      "achievement_stats": "Erfolgsstatistiken",
+      "unlocked": "{{count}} von {{total}} Erfolgen freigeschaltet"
     }
   },
   "themes": {
@@ -152,22 +133,155 @@
   },
   "layout_density": {
     "comfortable": "Komfortabel",
-    "compact": "Kompakt",
+    "compact": "Kompakt", 
     "cozy": "Gemütlich",
-    "comfortable_desc": "Mehr Abstand, schonender für die Augen",
+    "comfortable_desc": "Mehr Abstand, angenehmer für die Augen",
     "compact_desc": "Weniger Abstand, mehr sichtbarer Inhalt",
     "cozy_desc": "Ausgewogener Abstand für optimalen Komfort"
   },
   "achievements_list": {
     "first_step": "Erster Schritt",
-    "first_step_desc": "Ihre erste Idee erstellt",
-    "idea_collector": "Ideen-Sammler",
-    "idea_collector_desc": "10 Ideen erstellt",
-    "idea_master": "Ideen-Meister",
-    "idea_master_desc": "50 Ideen erstellt",
-    "organizer": "Super-Organisator",
-    "organizer_desc": "Alle 5 Kategorien verwendet",
+    "first_step_desc": "Sie haben Ihre erste Idee erstellt",
+    "idea_collector": "Ideensammler",
+    "idea_collector_desc": "Sie haben 10 Ideen erstellt",
+    "idea_master": "Ideenmeister", 
+    "idea_master_desc": "Sie haben 50 Ideen erstellt",
+    "organizer": "Super Organisator",
+    "organizer_desc": "Sie haben alle 5 Kategorien verwendet",
     "weekly_streak": "Wöchentlicher Krieger",
-    "weekly_streak_desc": "7 Tage hintereinander Ideen erstellt"
+    "weekly_streak_desc": "Sie haben 7 Tage in Folge Ideen erstellt"
+  },
+  "superadmin": {
+    "title": "Super Administrator",
+    "dashboard": "Super Admin Dashboard",
+    "platform_overview": "Plattformübersicht",
+    "tenant_management": "Mandantenverwaltung",
+    "usage_analytics": "Nutzungsanalytik",
+    "platform_settings": "Plattformeinstellungen",
+    "overview": {
+      "title": "Plattformübersicht",
+      "subtitle": "Umfassende Statistiken und Gesundheitsmetriken für die gesamte Plattform",
+      "total_tenants": "Gesamtmandanten",
+      "total_users": "Gesamtbenutzer",
+      "total_ideas": "Gesamtideen",
+      "monthly_revenue": "Monatlicher Umsatz",
+      "active_tenants": "{{count}} aktiv",
+      "avg_per_tenant": "Durchschnitt {{count}} pro Mandant",
+      "paying_tenants": "Von {{count}} zahlenden Mandanten",
+      "recent_activity": "Aktuelle Plattformaktivität",
+      "growth_trends": "Wachstumstrends",
+      "fastest_growing": "Am Schnellsten Wachsend",
+      "most_active": "Am Aktivsten",
+      "api_calls": "{{count}} API-Aufrufe",
+      "growth_percent": "+{{percent}}% Wachstum"
+    },
+    "tenants": {
+      "title": "Mandantenverwaltung",
+      "subtitle": "Erstellen, verwalten und überwachen Sie alle Plattformmandanten",
+      "create_tenant": "Mandant Erstellen",
+      "tenant_name": "Mandant",
+      "plan": "Plan",
+      "users_ideas": "Benutzer/Ideen",
+      "status": "Status",
+      "created": "Erstellt",
+      "actions": "Aktionen",
+      "users_count": "{{count}} Benutzer",
+      "ideas_count": "{{count}} Ideen",
+      "active": "aktiv",
+      "inactive": "inaktiv"
+    },
+    "analytics": {
+      "title": "Nutzungsanalytik",
+      "subtitle": "Detaillierte Nutzungsstatistiken und Leistungsmetriken für alle Mandanten",
+      "total_users": "Gesamtbenutzer",
+      "total_ideas": "Gesamtideen",
+      "active_users": "Aktive Benutzer",
+      "monthly_revenue": "Monatlicher Umsatz",
+      "api_calls": "API-Aufrufe",
+      "collaboration_events": "Kollaborationsereignisse",
+      "cross_tenant_shares": "Mandantenübergreifende Freigaben",
+      "last_active": "Zuletzt Aktiv"
+    },
+    "settings": {
+      "title": "Plattformeinstellungen",
+      "subtitle": "Globale Plattformkonfiguration und Sicherheitseinstellungen",
+      "coming_soon": "Demnächst Verfügbar",
+      "coming_soon_desc": "Plattformeinstellungen werden globale Konfigurationsoptionen, Sicherheitsrichtlinien und systemweite Feature-Verwaltung umfassen."
+    },
+    "create_tenant": {
+      "title": "Neuen Mandanten Erstellen",
+      "organization_name": "Organisationsname",
+      "organization_name_placeholder": "Organisationsname eingeben",
+      "domain": "Domain",
+      "domain_placeholder": "organisation-domain",
+      "industry": "Branche",
+      "select_industry": "Branche Auswählen",
+      "company_size": "Unternehmensgröße",
+      "select_size": "Größe Auswählen",
+      "plan": "Plan",
+      "admin_email": "Administrator E-Mail",
+      "admin_email_placeholder": "admin@unternehmen.com",
+      "admin_password": "Administrator Passwort",
+      "admin_password_placeholder": "Administrator-Passwort erstellen",
+      "max_users": "Maximale Benutzer",
+      "max_ideas": "Maximale Ideen",
+      "storage_limit": "Speicherlimit",
+      "creating": "Erstellen...",
+      "create": "Mandant Erstellen",
+      "cancel": "Abbrechen",
+      "industries": {
+        "technology": "Technologie",
+        "finance": "Finanzen",
+        "healthcare": "Gesundheitswesen",
+        "education": "Bildung",
+        "retail": "Einzelhandel",
+        "manufacturing": "Fertigung",
+        "other": "Andere"
+      },
+      "sizes": {
+        "startup": "1-10 Mitarbeiter",
+        "small": "11-50 Mitarbeiter",
+        "medium": "51-200 Mitarbeiter",
+        "large": "201-1000 Mitarbeiter",
+        "enterprise": "1000+ Mitarbeiter"
+      },
+      "plans": {
+        "starter": "Starter (Kostenlos)",
+        "professional": "Professionell (29$/Monat)",
+        "enterprise": "Enterprise (99$/Monat)"
+      }
+    },
+    "quick_stats": "Schnellstatistiken",
+    "tenants_label": "Mandanten",
+    "users_label": "Benutzer",
+    "ideas_label": "Ideen",
+    "revenue_label": "Umsatz"
+  },
+  "auth": {
+    "sign_in": "Anmelden",
+    "sign_up": "Registrieren",
+    "create_organization": "Organisation Erstellen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "remember_me": "Angemeldet bleiben",
+    "sign_in_button": "Anmelden",
+    "sign_up_button": "Registrieren",
+    "social_login": "Oder weiter mit",
+    "logout": "Abmelden",
+    "user_menu": "Benutzermenü",
+    "switch_organization": "Organisation Wechseln"
+  },
+  "tenant_selection": {
+    "title": "Organisation Auswählen",
+    "subtitle": "Wählen Sie, mit welcher Organisation Sie arbeiten möchten",
+    "switch_anytime": "Sie können Organisationen jederzeit über das Benutzermenü wechseln"
+  },
+  "tooltips": {
+    "settings": "Einstellungen",
+    "super_admin": "Super Admin Dashboard",
+    "user_menu": "Benutzermenü",
+    "logout": "Abmelden",
+    "templates": "Ideenvorlagen",
+    "new_idea": "Neue Idee Erstellen"
   }
 }

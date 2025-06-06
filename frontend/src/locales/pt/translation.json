@@ -48,50 +48,49 @@
     "creative_concept": "Conceito Criativo",
     "personal_goal": "Meta Pessoal"
   },
-  "template_content": {
-    "business": "Problema:\n\nSolução:\n\nMercado Alvo:\n\nModelo de Receita:\n\nPróximos Passos:",
-    "project": "Objetivo:\n\nEscopo:\n\nRequisitos:\n\nCronograma:\n\nRecursos Necessários:",
-    "technical": "Declaração do Problema:\n\nSolução Proposta:\n\nStack Tecnológico:\n\nPassos de Implementação:\n\nDesafios Potenciais:",
-    "creative": "Conceito:\n\nInspiração:\n\nPúblico Alvo:\n\nIdeias de Execução:\n\nRecursos Necessários:",
-    "personal": "Meta:\n\nPor que importa:\n\nPassos de Ação:\n\nMétricas de Sucesso:\n\nPrazo Final:"
-  },
-  "actions": {
-    "add": "Adicionar",
-    "edit": "Editar",
+  "modal": {
+    "edit_idea": "Editar Ideia",
+    "new_idea": "Nova Ideia",
     "save": "Salvar",
     "cancel": "Cancelar",
     "delete": "Excluir",
     "archive": "Arquivar",
     "unarchive": "Desarquivar",
-    "add_idea": "Adicionar Ideia",
+    "title": "Título",
+    "category": "Categoria",
+    "content": "Conteúdo",
+    "tags": "Tags",
+    "created": "Criado",
+    "updated": "Atualizado"
+  },
+  "actions": {
+    "bulk_actions": "Ações em Lote",
+    "select_all": "Selecionar Tudo",
+    "deselect_all": "Deselecionar Tudo",
     "archive_selected": "Arquivar Selecionadas",
     "delete_selected": "Excluir Selecionadas",
-    "bulk_select": "Seleção Múltipla",
-    "analytics": "Análises",
-    "card_view": "Visualização em Cartões",
-    "list_view": "Visualização em Lista"
+    "cancel_selection": "Cancelar Seleção",
+    "confirm_delete": "Tem certeza de que deseja excluir as ideias selecionadas?",
+    "confirm_archive": "Tem certeza de que deseja arquivar as ideias selecionadas?",
+    "reorder_drag": "Arraste para reordenar as ideias"
   },
   "analytics": {
     "title": "Análises",
-    "total_ideas": "Total de Ideias",
-    "active": "Ativas",
-    "archived": "Arquivadas",
-    "this_week": "Esta Semana",
-    "most_popular_category": "Categoria mais popular:",
-    "top_tag": "Tag principal:"
+    "ideas_over_time": "Ideias ao Longo do Tempo",
+    "category_distribution": "Distribuição por Categorias",
+    "tag_usage": "Uso de Tags",
+    "total_ideas": "Ideias Totais",
+    "this_month": "Este Mês",
+    "total_categories": "Categorias Totais",
+    "total_tags": "Tags Totais",
+    "most_popular_category": "Categoria Mais Popular",
+    "most_used_tag": "Tag Mais Usada",
+    "ideas_created": "Ideias Criadas",
+    "weekly_goal": "Meta Semanal"
   },
-  "modals": {
-    "add_new_idea": "Adicionar Nova Ideia",
-    "confirm_delete": "Excluir {{count}} ideias selecionadas?"
-  },
-  "tooltips": {
-    "dark_mode": "Alternar modo escuro",
-    "analytics": "Ver análises",
-    "bulk_select": "Modo de seleção múltipla",
-    "card_view": "Mudar para visualização em cartões",
-    "list_view": "Mudar para visualização em lista",
-    "templates": "Usar modelos",
-    "settings": "Configurações"
+  "view_modes": {
+    "card_view": "Visualização em Cartões",
+    "list_view": "Visualização em Lista"
   },
   "languages": {
     "en": "English",
@@ -103,40 +102,22 @@
     "zh": "中文",
     "ja": "日本語"
   },
-  "dates": {
-    "created": "Criado {{date}}",
-    "updated": "Atualizado {{date}}"
-  },
   "settings": {
     "title": "Configurações",
-    "tabs": {
-      "appearance": "Aparência",
-      "layout": "Layout",
-      "preferences": "Preferências",
-      "achievements": "Conquistas"
-    },
-    "appearance": {
-      "theme_selection": "Seleção de Tema",
-      "dark_mode": "Modo Escuro",
-      "light": "Claro",
-      "dark": "Escuro",
-      "system": "Sistema"
-    },
-    "layout": {
-      "layout_density": "Densidade do Layout",
-      "default_view": "Visualização Padrão",
-      "sidebar_settings": "Configurações da Barra Lateral",
-      "collapse_sidebar": "Recolher barra lateral por padrão",
-      "show_sidebar_icons": "Mostrar ícones da barra lateral"
-    },
-    "preferences": {
-      "quick_actions": "Ações Rápidas",
-      "auto_save": "Salvar automaticamente ao digitar",
-      "confirm_delete": "Confirmar antes de excluir ideias",
-      "show_tooltips": "Mostrar dicas úteis",
-      "ideas_per_page": "Ideias por Página"
-    },
-    "achievements": {
+    "appearance": "Aparência",
+    "behavior": "Comportamento",
+    "data": "Dados",
+    "achievements": "Conquistas",
+    "theme": "Tema",
+    "dark_mode": "Modo Escuro",
+    "language": "Idioma",
+    "layout_density": "Densidade do Layout",
+    "auto_save": "Salvamento Automático",
+    "export_data": "Exportar Dados",
+    "import_data": "Importar Dados",
+    "reset_data": "Redefinir Dados",
+    "reset_confirm": "Tem certeza de que deseja redefinir todos os dados? Esta ação não pode ser desfeita.",
+    "achievement_progress": {
       "your_progress": "Seu Progresso",
       "achievement_stats": "Estatísticas de Conquistas",
       "unlocked": "{{count}} de {{total}} conquistas desbloqueadas"
@@ -152,7 +133,7 @@
   },
   "layout_density": {
     "comfortable": "Confortável",
-    "compact": "Compacto",
+    "compact": "Compacto", 
     "cozy": "Aconchegante",
     "comfortable_desc": "Mais espaçamento, mais fácil para os olhos",
     "compact_desc": "Menos espaçamento, mais conteúdo visível",
@@ -160,14 +141,147 @@
   },
   "achievements_list": {
     "first_step": "Primeiro Passo",
-    "first_step_desc": "Criou sua primeira ideia",
+    "first_step_desc": "Você criou sua primeira ideia",
     "idea_collector": "Colecionador de Ideias",
-    "idea_collector_desc": "Criou 10 ideias",
-    "idea_master": "Mestre das Ideias",
-    "idea_master_desc": "Criou 50 ideias",
+    "idea_collector_desc": "Você criou 10 ideias",
+    "idea_master": "Mestre das Ideias", 
+    "idea_master_desc": "Você criou 50 ideias",
     "organizer": "Super Organizador",
-    "organizer_desc": "Usou todas as 5 categorias",
+    "organizer_desc": "Você usou todas as 5 categorias",
     "weekly_streak": "Guerreiro Semanal",
-    "weekly_streak_desc": "Criou ideias por 7 dias consecutivos"
+    "weekly_streak_desc": "Você criou ideias por 7 dias consecutivos"
+  },
+  "superadmin": {
+    "title": "Super Administrador",
+    "dashboard": "Painel do Super Admin",
+    "platform_overview": "Visão Geral da Plataforma",
+    "tenant_management": "Gestão de Inquilinos",
+    "usage_analytics": "Análises de Uso",
+    "platform_settings": "Configurações da Plataforma",
+    "overview": {
+      "title": "Visão Geral da Plataforma",
+      "subtitle": "Estatísticas abrangentes e métricas de saúde para toda a plataforma",
+      "total_tenants": "Inquilinos Totais",
+      "total_users": "Usuários Totais",
+      "total_ideas": "Ideias Totais",
+      "monthly_revenue": "Receita Mensal",
+      "active_tenants": "{{count}} ativos",
+      "avg_per_tenant": "Média {{count}} por inquilino",
+      "paying_tenants": "De {{count}} inquilinos pagantes",
+      "recent_activity": "Atividade Recente da Plataforma",
+      "growth_trends": "Tendências de Crescimento",
+      "fastest_growing": "Crescimento Mais Rápido",
+      "most_active": "Mais Ativo",
+      "api_calls": "{{count}} chamadas API",
+      "growth_percent": "+{{percent}}% crescimento"
+    },
+    "tenants": {
+      "title": "Gestão de Inquilinos",
+      "subtitle": "Criar, gerenciar e monitorar todos os inquilinos da plataforma",
+      "create_tenant": "Criar Inquilino",
+      "tenant_name": "Inquilino",
+      "plan": "Plano",
+      "users_ideas": "Usuários/Ideias",
+      "status": "Status",
+      "created": "Criado",
+      "actions": "Ações",
+      "users_count": "{{count}} usuários",
+      "ideas_count": "{{count}} ideias",
+      "active": "ativo",
+      "inactive": "inativo"
+    },
+    "analytics": {
+      "title": "Análises de Uso",
+      "subtitle": "Estatísticas detalhadas de uso e métricas de desempenho para todos os inquilinos",
+      "total_users": "Usuários Totais",
+      "total_ideas": "Ideias Totais",
+      "active_users": "Usuários Ativos",
+      "monthly_revenue": "Receita Mensal",
+      "api_calls": "Chamadas API",
+      "collaboration_events": "Eventos de Colaboração",
+      "cross_tenant_shares": "Compartilhamentos Entre Inquilinos",
+      "last_active": "Última Atividade"
+    },
+    "settings": {
+      "title": "Configurações da Plataforma",
+      "subtitle": "Configuração global da plataforma e configurações de segurança",
+      "coming_soon": "Em Breve",
+      "coming_soon_desc": "As configurações da plataforma incluirão opções de configuração global, políticas de segurança e gerenciamento de recursos em todo o sistema."
+    },
+    "create_tenant": {
+      "title": "Criar Novo Inquilino",
+      "organization_name": "Nome da Organização",
+      "organization_name_placeholder": "Digite o nome da organização",
+      "domain": "Domínio",
+      "domain_placeholder": "dominio-organizacao",
+      "industry": "Setor",
+      "select_industry": "Selecionar Setor",
+      "company_size": "Tamanho da Empresa",
+      "select_size": "Selecionar Tamanho",
+      "plan": "Plano",
+      "admin_email": "Email do Administrador",
+      "admin_email_placeholder": "admin@empresa.com",
+      "admin_password": "Senha do Administrador",
+      "admin_password_placeholder": "Criar senha do administrador",
+      "max_users": "Usuários Máximos",
+      "max_ideas": "Ideias Máximas",
+      "storage_limit": "Limite de Armazenamento",
+      "creating": "Criando...",
+      "create": "Criar Inquilino",
+      "cancel": "Cancelar",
+      "industries": {
+        "technology": "Tecnologia",
+        "finance": "Finanças",
+        "healthcare": "Saúde",
+        "education": "Educação",
+        "retail": "Varejo",
+        "manufacturing": "Manufatura",
+        "other": "Outro"
+      },
+      "sizes": {
+        "startup": "1-10 funcionários",
+        "small": "11-50 funcionários",
+        "medium": "51-200 funcionários",
+        "large": "201-1000 funcionários",
+        "enterprise": "1000+ funcionários"
+      },
+      "plans": {
+        "starter": "Iniciante (Grátis)",
+        "professional": "Profissional ($29/mês)",
+        "enterprise": "Empresarial ($99/mês)"
+      }
+    },
+    "quick_stats": "Estatísticas Rápidas",
+    "tenants_label": "Inquilinos",
+    "users_label": "Usuários",
+    "ideas_label": "Ideias",
+    "revenue_label": "Receita"
+  },
+  "auth": {
+    "sign_in": "Entrar",
+    "sign_up": "Cadastrar",
+    "create_organization": "Criar Organização",
+    "email": "Email",
+    "password": "Senha",
+    "remember_me": "Lembrar de mim",
+    "sign_in_button": "Entrar",
+    "sign_up_button": "Cadastrar",
+    "social_login": "Ou continue com",
+    "logout": "Sair",
+    "user_menu": "Menu do usuário",
+    "switch_organization": "Trocar Organização"
+  },
+  "tenant_selection": {
+    "title": "Selecionar Organização",
+    "subtitle": "Escolha com qual organização você gostaria de trabalhar",
+    "switch_anytime": "Você pode trocar de organização a qualquer momento no menu do usuário"
+  },
+  "tooltips": {
+    "settings": "Configurações",
+    "super_admin": "Painel do Super Admin",
+    "user_menu": "Menu do usuário",
+    "logout": "Sair",
+    "templates": "Modelos de Ideias",
+    "new_idea": "Criar Nova Ideia"
   }
 }
