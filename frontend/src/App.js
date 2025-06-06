@@ -6,10 +6,15 @@ import {
   Search, Plus, Tag, Archive, Edit3, Trash2, X, Hash, Calendar, Filter,
   Moon, Sun, Download, BarChart3, Menu, Grid, List, Settings, Zap,
   CheckSquare, Copy, FileText, Lightbulb, Target, Briefcase, Code,
-  Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp, Languages
+  Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp, Languages,
+  LogOut, Users, Building, UserPlus, Shield, Crown
 } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import SettingsModal from './components/SettingsModal';
+import LoginModal from './components/auth/LoginModal';
+import authService from './services/authService';
+import tenantService from './services/tenantService';
+import collaborationService from './services/collaborationService';
 
 // Utility functions for localStorage
 const STORAGE_KEY = 'idea-logger-data';
