@@ -267,10 +267,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Multi-Language Capability (8 languages)"
-    - "Customization & Personalization Features"
     - "Multi-tenant authentication system"
-  stuck_tasks: []
+  stuck_tasks: 
+    - "Multi-tenant authentication system"
   test_all: true
   test_priority: "high_first"
   
