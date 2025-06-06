@@ -142,10 +142,10 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
   if (!isOpen) return null;
 
   const tabs = [
-    { id: 'overview', name: 'Platform Overview', icon: BarChart3 },
-    { id: 'tenants', name: 'Tenant Management', icon: Building },
-    { id: 'analytics', name: 'Usage Analytics', icon: TrendingUp },
-    { id: 'settings', name: 'Platform Settings', icon: Settings }
+    { id: 'overview', name: t('superadmin.platform_overview'), icon: BarChart3 },
+    { id: 'tenants', name: t('superadmin.tenant_management'), icon: Building },
+    { id: 'analytics', name: t('superadmin.usage_analytics'), icon: TrendingUp },
+    { id: 'settings', name: t('superadmin.platform_settings'), icon: Settings }
   ];
 
   return (
