@@ -403,9 +403,9 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h1 className="text-2xl font-bold mb-2">Tenant Management</h1>
+                    <h1 className="text-2xl font-bold mb-2">{t('superadmin.tenants.title')}</h1>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Create, manage, and monitor all platform tenants
+                      {t('superadmin.tenants.subtitle')}
                     </p>
                   </div>
                   <button
@@ -413,7 +413,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                     className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
                   >
                     <Plus className="w-4 h-4" />
-                    <span>Create Tenant</span>
+                    <span>{t('superadmin.tenants.create_tenant')}</span>
                   </button>
                 </div>
 
