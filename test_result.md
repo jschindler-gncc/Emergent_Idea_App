@@ -267,8 +267,7 @@ test_plan:
     - "Multi-Language Capability (8 languages)"
     - "Customization & Personalization Features"
     - "Multi-tenant authentication system"
-  stuck_tasks: 
-    - "Multi-tenant authentication system"
+  stuck_tasks: []
   test_all: true
   test_priority: "high_first"
   
