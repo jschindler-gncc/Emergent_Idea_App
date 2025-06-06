@@ -761,7 +761,7 @@ function App() {
               </button>
               
               {showUserMenu && (
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50">
+                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50">
                   <div className="p-2">
                     {currentUser && (
                       <div className="px-3 py-2 border-b dark:border-gray-700">
@@ -772,6 +772,30 @@ function App() {
                         )}
                       </div>
                     )}
+                    
+                    {/* Tenant Switching */}
+                    {currentUser?.tenants && currentUser.tenants.length > 1 && (
+                      <div className="border-b dark:border-gray-700 py-2">
+                        <p className="px-3 py-1 text-xs text-gray-500 dark:text-gray-400 uppercase font-semibold">Switch Organization</p>
+                        {currentUser.tenants.map(tenant => (
+                          <button
+                            key={tenant.id}
+                            onClick={() => {
+                              handleTenantSelection(tenant.id);
+                              setShowUserMenu(false);
+                            }}
+                            className={`w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2 ${
+                              currentTenant?.id === tenant.id ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' : ''
+                            }`}
+                          >
+                            <Building className="w-4 h-4" />
+                            <span className="text-sm">{tenant.name}</span>
+                            {currentTenant?.id === tenant.id && <CheckCircle className="w-3 h-3 ml-auto" />}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    
                     <button
                       onClick={handleLogout}
                       className="w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2 text-red-600 dark:text-red-400"
