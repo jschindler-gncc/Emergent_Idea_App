@@ -167,7 +167,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
         });
 
         if (userResult.success) {
-          setSuccess('Tenant created successfully! Please log in with your admin credentials.');
+          setSuccess(t('auth.tenant_created_successful'));
           setTimeout(() => {
             setActiveTab('login');
             setSuccess('');
@@ -179,7 +179,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
         setError(tenantResult.error);
       }
     } catch (err) {
-      setError('Tenant registration failed. Please try again.');
+      setError(t('auth.tenant_registration_failed'));
     } finally {
       setLoading(false);
     }
