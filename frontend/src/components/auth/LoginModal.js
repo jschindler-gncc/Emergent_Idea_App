@@ -56,8 +56,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
     try {
       const result = await authService.login(
         loginForm.email, 
-        loginForm.password, 
-        loginForm.tenantId
+        loginForm.password
       );
 
       if (result.success) {
