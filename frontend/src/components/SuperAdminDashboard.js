@@ -632,7 +632,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
             darkMode ? 'bg-gray-800' : 'bg-white'
           }`}>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold">Create New Tenant</h2>
+              <h2 className="text-xl font-bold">{t('superadmin.create_tenant.title')}</h2>
               <button
                 onClick={() => setShowCreateTenant(false)}
                 className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
@@ -644,7 +644,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Organization Name</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.organization_name')}</label>
                   <input
                     type="text"
                     value={newTenant.name}
@@ -652,11 +652,11 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                     className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
                       darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                     }`}
-                    placeholder="Enter organization name"
+                    placeholder={t('superadmin.create_tenant.organization_name_placeholder')}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Domain</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.domain')}</label>
                   <input
                     type="text"
                     value={newTenant.domain}
@@ -664,14 +664,14 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                     className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
                       darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                     }`}
-                    placeholder="organization-domain"
+                    placeholder={t('superadmin.create_tenant.domain_placeholder')}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Industry</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.industry')}</label>
                   <select
                     value={newTenant.industry}
                     onChange={(e) => setNewTenant(prev => ({ ...prev, industry: e.target.value }))}
@@ -679,18 +679,18 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                       darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                     }`}
                   >
-                    <option value="">Select Industry</option>
-                    <option value="technology">Technology</option>
-                    <option value="finance">Finance</option>
-                    <option value="healthcare">Healthcare</option>
-                    <option value="education">Education</option>
-                    <option value="retail">Retail</option>
-                    <option value="manufacturing">Manufacturing</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('superadmin.create_tenant.select_industry')}</option>
+                    <option value="technology">{t('superadmin.create_tenant.industries.technology')}</option>
+                    <option value="finance">{t('superadmin.create_tenant.industries.finance')}</option>
+                    <option value="healthcare">{t('superadmin.create_tenant.industries.healthcare')}</option>
+                    <option value="education">{t('superadmin.create_tenant.industries.education')}</option>
+                    <option value="retail">{t('superadmin.create_tenant.industries.retail')}</option>
+                    <option value="manufacturing">{t('superadmin.create_tenant.industries.manufacturing')}</option>
+                    <option value="other">{t('superadmin.create_tenant.industries.other')}</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Company Size</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.company_size')}</label>
                   <select
                     value={newTenant.size}
                     onChange={(e) => setNewTenant(prev => ({ ...prev, size: e.target.value }))}
@@ -698,18 +698,18 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                       darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                     }`}
                   >
-                    <option value="">Select Size</option>
-                    <option value="startup">1-10 employees</option>
-                    <option value="small">11-50 employees</option>
-                    <option value="medium">51-200 employees</option>
-                    <option value="large">201-1000 employees</option>
-                    <option value="enterprise">1000+ employees</option>
+                    <option value="">{t('superadmin.create_tenant.select_size')}</option>
+                    <option value="startup">{t('superadmin.create_tenant.sizes.startup')}</option>
+                    <option value="small">{t('superadmin.create_tenant.sizes.small')}</option>
+                    <option value="medium">{t('superadmin.create_tenant.sizes.medium')}</option>
+                    <option value="large">{t('superadmin.create_tenant.sizes.large')}</option>
+                    <option value="enterprise">{t('superadmin.create_tenant.sizes.enterprise')}</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Plan</label>
+                <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.plan')}</label>
                 <select
                   value={newTenant.plan}
                   onChange={(e) => setNewTenant(prev => ({ ...prev, plan: e.target.value }))}
@@ -717,15 +717,15 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                     darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                   }`}
                 >
-                  <option value="starter">Starter (Free)</option>
-                  <option value="professional">Professional ($29/month)</option>
-                  <option value="enterprise">Enterprise ($99/month)</option>
+                  <option value="starter">{t('superadmin.create_tenant.plans.starter')}</option>
+                  <option value="professional">{t('superadmin.create_tenant.plans.professional')}</option>
+                  <option value="enterprise">{t('superadmin.create_tenant.plans.enterprise')}</option>
                 </select>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Admin Email</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.admin_email')}</label>
                   <input
                     type="email"
                     value={newTenant.adminEmail}
@@ -733,11 +733,11 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                     className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
                       darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                     }`}
-                    placeholder="admin@company.com"
+                    placeholder={t('superadmin.create_tenant.admin_email_placeholder')}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Admin Password</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.admin_password')}</label>
                   <input
                     type="password"
                     value={newTenant.adminPassword}
@@ -745,14 +745,14 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                     className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
                       darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'
                     }`}
-                    placeholder="Create admin password"
+                    placeholder={t('superadmin.create_tenant.admin_password_placeholder')}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Max Users</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.max_users')}</label>
                   <input
                     type="number"
                     value={newTenant.settings.maxUsers}
@@ -766,7 +766,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Max Ideas</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.max_ideas')}</label>
                   <input
                     type="number"
                     value={newTenant.settings.maxIdeas}
@@ -780,7 +780,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Storage Limit</label>
+                  <label className="block text-sm font-medium mb-1">{t('superadmin.create_tenant.storage_limit')}</label>
                   <select
                     value={newTenant.settings.storageLimit}
                     onChange={(e) => setNewTenant(prev => ({ 
@@ -806,14 +806,14 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                 onClick={() => setShowCreateTenant(false)}
                 className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
               >
-                Cancel
+                {t('superadmin.create_tenant.cancel')}
               </button>
               <button
                 onClick={handleCreateTenant}
                 disabled={loading || !newTenant.name || !newTenant.domain}
                 className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg disabled:opacity-50"
               >
-                {loading ? 'Creating...' : 'Create Tenant'}
+                {loading ? t('superadmin.create_tenant.creating') : t('superadmin.create_tenant.create')}
               </button>
             </div>
           </div>
