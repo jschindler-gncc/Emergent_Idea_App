@@ -242,14 +242,14 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                   }`}>
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Total Tenants</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.overview.total_tenants')}</p>
                         <p className="text-2xl font-bold text-blue-600">{platformStats.totalTenants}</p>
                       </div>
                       <Building className="w-8 h-8 text-blue-600" />
                     </div>
                     <div className="mt-2 flex items-center text-sm">
                       <CheckCircle className="w-4 h-4 text-green-500 mr-1" />
-                      <span className="text-green-600">{platformStats.activeTenants} active</span>
+                      <span className="text-green-600">{t('superadmin.overview.active_tenants', { count: platformStats.activeTenants })}</span>
                     </div>
                   </div>
 
