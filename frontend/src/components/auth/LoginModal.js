@@ -319,12 +319,12 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                   {loading ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Signing In...</span>
+                      <span>{t('auth.signing_in')}</span>
                     </>
                   ) : (
                     <>
                       <LogIn className="w-4 h-4" />
-                      <span>Sign In</span>
+                      <span>{t('auth.sign_in_button')}</span>
                     </>
                   )}
                 </button>
@@ -336,7 +336,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                   <div className="w-full border-t border-gray-300 dark:border-gray-600" />
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">Or continue with</span>
+                  <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">{t('auth.social_login')}</span>
                 </div>
               </div>
 
