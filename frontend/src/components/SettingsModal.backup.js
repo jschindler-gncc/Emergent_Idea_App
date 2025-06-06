@@ -190,31 +190,40 @@ const SettingsModal = ({
     }
   };
 
-  // Simplified event handlers
-  const closeModal = () => {
+  // Handle overlay click to close modal  
+  const handleBackdropClick = (e) => {
+    // Only close if clicking directly on the backdrop
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  // Handle close button click
+  const handleCloseClick = () => {
     onClose();
   };
 
+  // Prevent modal content clicks from bubbling to overlay
+  const handleContentClick = (e) => {
+    e.stopPropagation();
+  };
+
+  // Proper modal implementation with dark mode and accessibility
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+    <div 
+      className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex"
+      onClick={handleBackdropClick}
+    >
       <div 
-        className="absolute inset-0 bg-black bg-opacity-50"
-        onClick={closeModal}
-      />
-      
-      {/* Modal Content */}
-      <div 
-        className={`relative w-full max-w-4xl max-h-[90vh] overflow-auto rounded-lg shadow-xl ${
+        className={`relative p-8 w-full max-w-4xl m-auto flex flex-col rounded-lg ${
           darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
         }`}
-        onClick={(e) => e.stopPropagation()}
+        onClick={handleContentClick}
       >
-        {/* Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">{t('settings.title')}</h2>
           <button 
-            onClick={closeModal}
+            onClick={handleCloseClick}
             className={`p-2 rounded-full transition-colors ${
               darkMode 
                 ? 'hover:bg-gray-700 text-gray-300 hover:text-white' 
@@ -225,11 +234,10 @@ const SettingsModal = ({
             <X size={24} />
           </button>
         </div>
-
-        {/* Content */}
+        
         <div className="flex">
           {/* Sidebar */}
-          <div className="w-64 p-6 border-r border-gray-200 dark:border-gray-700">
+          <div className="w-64 pr-4">
             <nav className="space-y-2">
               {tabs.map(tab => (
                 <button
@@ -248,8 +256,8 @@ const SettingsModal = ({
             </nav>
           </div>
           
-          {/* Main Content */}
-          <div className="flex-1 p-6">
+          {/* Content */}
+          <div className="flex-1">
             {activeTab === 'appearance' && (
               <div>
                 <h3 className="text-lg font-semibold mb-4">{t('settings.theme_selection')}</h3>
