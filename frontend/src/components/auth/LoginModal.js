@@ -126,7 +126,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
       });
 
       if (result.success) {
-        setSuccess('Registration successful! Please check your email for verification.');
+        setSuccess(t('auth.registration_successful'));
         setTimeout(() => {
           setActiveTab('login');
           setSuccess('');
@@ -135,7 +135,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
         setError(result.error);
       }
     } catch (err) {
-      setError('Registration failed. Please try again.');
+      setError(t('auth.registration_failed'));
     } finally {
       setLoading(false);
     }
