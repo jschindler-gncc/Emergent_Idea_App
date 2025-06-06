@@ -332,7 +332,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                                 ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
                                 : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
                             }`}>
-                              {tenant.status}
+                              {t(`superadmin.tenants.${tenant.status}`)}
                             </div>
                             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 capitalize">
                               {tenant.plan} plan
