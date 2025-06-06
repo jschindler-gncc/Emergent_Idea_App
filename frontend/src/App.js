@@ -126,6 +126,16 @@ const exportToCSV = (ideas, t) => {
 function App() {
   const { t, i18n } = useTranslation();
   
+  // Clear any existing auth tokens for demo purposes
+  React.useEffect(() => {
+    // Clear auth tokens to ensure login modal shows
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('current_user');
+    localStorage.removeItem('current_tenant');
+    localStorage.removeItem('user_tenants');
+    localStorage.removeItem('tenant_permissions');
+  }, []);
+  
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(authService.isAuthenticated());
   const [currentUser, setCurrentUser] = useState(authService.getCurrentUser());
