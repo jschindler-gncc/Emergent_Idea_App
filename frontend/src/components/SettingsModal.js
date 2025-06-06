@@ -212,7 +212,7 @@ const SettingsModal = ({
   return (
     <div 
       className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex"
-      onClick={handleOverlayClick}
+      onClick={handleBackdropClick}
     >
       <div 
         className={`relative p-8 w-full max-w-4xl m-auto flex flex-col rounded-lg ${
