@@ -355,7 +355,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-sm text-gray-500 dark:text-gray-400">Fastest Growing</p>
-                      {(() => {
+                      {tenants.length > 0 && (() => {
                         const fastestGrowing = tenants.reduce((prev, current) => 
                           (current.usage?.monthlyGrowth || 0) > (prev.usage?.monthlyGrowth || 0) ? current : prev
                         );
@@ -369,10 +369,13 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                           </div>
                         );
                       })()}
+                      {tenants.length === 0 && (
+                        <p className="text-sm text-gray-400 mt-1">No data available</p>
+                      )}
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 dark:text-gray-400">Most Active</p>
-                      {(() => {
+                      {tenants.length > 0 && (() => {
                         const mostActive = tenants.reduce((prev, current) => 
                           (current.usage?.apiCallsThisMonth || 0) > (prev.usage?.apiCallsThisMonth || 0) ? current : prev
                         );
@@ -386,6 +389,9 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                           </div>
                         );
                       })()}
+                      {tenants.length === 0 && (
+                        <p className="text-sm text-gray-400 mt-1">No data available</p>
+                      )}
                     </div>
                   </div>
                 </div>
