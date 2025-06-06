@@ -317,10 +317,10 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                             <div>
                               <p className="font-medium">{tenant.name}</p>
                               <p className="text-sm text-gray-500 dark:text-gray-400">
-                                {analytics.users} users, {analytics.ideas} ideas
+                                {t('superadmin.tenants.users_count', { count: analytics.users })}, {t('superadmin.tenants.ideas_count', { count: analytics.ideas })}
                                 {analytics.monthlyGrowth > 0 && (
                                   <span className="ml-2 text-green-600 text-xs">
-                                    +{analytics.monthlyGrowth}% growth
+                                    {t('superadmin.overview.growth_percent', { percent: analytics.monthlyGrowth })}
                                   </span>
                                 )}
                               </p>
