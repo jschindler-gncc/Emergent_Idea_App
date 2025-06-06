@@ -134,7 +134,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
   };
 
   const handleDeleteTenant = async (tenantId) => {
-    if (window.confirm('Are you sure you want to delete this tenant? This action cannot be undone.')) {
+    if (window.confirm(t('superadmin.confirm_delete_tenant'))) {
       setTenants(prev => prev.filter(t => t.id !== tenantId));
     }
   };
