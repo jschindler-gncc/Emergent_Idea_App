@@ -60,7 +60,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
       );
 
       if (result.success) {
-        setSuccess('Login successful!');
+        setSuccess(t('auth.login_successful'));
         setTimeout(() => {
           onLoginSuccess(result.user);
           onClose();
@@ -69,7 +69,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
         setError(result.error);
       }
     } catch (err) {
-      setError('Login failed. Please try again.');
+      setError(t('auth.login_failed'));
     } finally {
       setLoading(false);
     }
