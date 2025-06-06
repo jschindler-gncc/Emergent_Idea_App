@@ -350,11 +350,11 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                 }`}>
                   <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <TrendingUp className="w-5 h-5 mr-2" />
-                    Growth Trends
+                    {t('superadmin.overview.growth_trends')}
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Fastest Growing</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.overview.fastest_growing')}</p>
                       {tenants.length > 0 && (() => {
                         const fastestGrowing = tenants.reduce((prev, current) => 
                           (current.usage?.monthlyGrowth || 0) > (prev.usage?.monthlyGrowth || 0) ? current : prev
@@ -364,7 +364,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                             <Building className="w-4 h-4 text-green-600" />
                             <div>
                               <p className="font-medium">{fastestGrowing.name}</p>
-                              <p className="text-sm text-green-600">+{fastestGrowing.usage?.monthlyGrowth || 0}%</p>
+                              <p className="text-sm text-green-600">{t('superadmin.overview.growth_percent', { percent: fastestGrowing.usage?.monthlyGrowth || 0 })}</p>
                             </div>
                           </div>
                         );
@@ -374,7 +374,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                       )}
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Most Active</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.overview.most_active')}</p>
                       {tenants.length > 0 && (() => {
                         const mostActive = tenants.reduce((prev, current) => 
                           (current.usage?.apiCallsThisMonth || 0) > (prev.usage?.apiCallsThisMonth || 0) ? current : prev
@@ -384,7 +384,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                             <Zap className="w-4 h-4 text-blue-600" />
                             <div>
                               <p className="font-medium">{mostActive.name}</p>
-                              <p className="text-sm text-blue-600">{(mostActive.usage?.apiCallsThisMonth || 0).toLocaleString()} API calls</p>
+                              <p className="text-sm text-blue-600">{t('superadmin.overview.api_calls', { count: (mostActive.usage?.apiCallsThisMonth || 0).toLocaleString() })}</p>
                             </div>
                           </div>
                         );
