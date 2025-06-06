@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import SettingsModal from './components/SettingsModal';
+import SuperAdminDashboard from './components/SuperAdminDashboard';
 import LoginModal from './components/auth/LoginModal';
 import authService from './services/authService';
 import tenantService from './services/tenantService';
