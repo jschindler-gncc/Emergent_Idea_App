@@ -553,38 +553,38 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                         <div className="grid grid-cols-2 gap-4">
                           <div className="text-center">
                             <p className="text-2xl font-bold text-blue-600">{analytics.users}</p>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">Total Users</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.analytics.total_users')}</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-green-600">{analytics.ideas}</p>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">Total Ideas</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.analytics.total_ideas')}</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-purple-600">{analytics.activeUsers}</p>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">Active Users</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.analytics.active_users')}</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-yellow-600">${analytics.revenue}</p>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">Monthly Revenue</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.analytics.monthly_revenue')}</p>
                           </div>
                         </div>
 
                         <div className="mt-4 pt-4 border-t dark:border-gray-700">
                           <div className="flex justify-between text-sm">
-                            <span className="text-gray-500 dark:text-gray-400">API Calls</span>
+                            <span className="text-gray-500 dark:text-gray-400">{t('superadmin.analytics.api_calls')}</span>
                             <span className="font-medium">{analytics.apiCalls.toLocaleString()}</span>
                           </div>
                           <div className="flex justify-between text-sm mt-1">
-                            <span className="text-gray-500 dark:text-gray-400">Collaboration Events</span>
+                            <span className="text-gray-500 dark:text-gray-400">{t('superadmin.analytics.collaboration_events')}</span>
                             <span className="font-medium">{analytics.collaborationEvents}</span>
                           </div>
                           <div className="flex justify-between text-sm mt-1">
-                            <span className="text-gray-500 dark:text-gray-400">Cross-Tenant Shares</span>
+                            <span className="text-gray-500 dark:text-gray-400">{t('superadmin.analytics.cross_tenant_shares')}</span>
                             <span className="font-medium">{analytics.crossTenantShares}</span>
                           </div>
                           {analytics.lastActive && (
                             <div className="flex justify-between text-sm mt-1">
-                              <span className="text-gray-500 dark:text-gray-400">Last Active</span>
+                              <span className="text-gray-500 dark:text-gray-400">{t('superadmin.analytics.last_active')}</span>
                               <span className="font-medium">{new Date(analytics.lastActive).toLocaleDateString()}</span>
                             </div>
                           )}
