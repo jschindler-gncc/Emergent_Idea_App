@@ -714,6 +714,43 @@ function App() {
             >
               <Settings className="w-5 h-5" />
             </button>
+
+            {/* User Menu */}
+            <div className="relative">
+              <button
+                onClick={() => setShowUserMenu(!showUserMenu)}
+                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                title={currentUser?.name || 'User menu'}
+              >
+                <Users className="w-5 h-5" />
+                {currentUser && (
+                  <span className="hidden sm:inline text-sm">{currentUser.name}</span>
+                )}
+              </button>
+              
+              {showUserMenu && (
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50">
+                  <div className="p-2">
+                    {currentUser && (
+                      <div className="px-3 py-2 border-b dark:border-gray-700">
+                        <p className="font-semibold">{currentUser.name}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{currentUser.email}</p>
+                        {currentTenant && (
+                          <p className="text-xs text-gray-400 dark:text-gray-500">{currentTenant.name}</p>
+                        )}
+                      </div>
+                    )}
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2 text-red-600 dark:text-red-400"
+                    >
+                      <LogOut className="w-4 h-4" />
+                      <span>Logout</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
             
             <div className="relative">
               <button
