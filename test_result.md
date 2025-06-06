@@ -225,9 +225,9 @@ frontend:
 
   - task: "Multi-tenant authentication system"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/components/auth/LoginModal.js, /app/frontend/src/services/authService.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
     needs_retesting: false
     status_history:
@@ -237,6 +237,9 @@ frontend:
         - working: true
           agent: "testing"
           comment: "The authentication system is now working correctly. The login modal appears when loading the application, showing tabs for Sign In, Sign Up, and Create Organization. Successfully logged in with the demo credentials (admin@example.com/admin123) and the main application interface appeared. Basic idea management functionality works after login - was able to create a new idea. The only missing feature is a logout button, which could not be found in the UI, but this is a minor issue as the authentication flow itself is working properly."
+        - working: false
+          agent: "testing"
+          comment: "Comprehensive testing of the authentication flow revealed issues. The login modal appears correctly on page load, but the login process is not working properly. When entering the demo credentials (admin@example.com/admin123) and clicking the Sign In button, the login modal remains visible and the user is not authenticated. After multiple attempts, we were able to get past the login screen, but the main application interface is incomplete. The user menu with logout functionality could not be found, and other UI elements like language switcher and theme toggle were also missing. This suggests there are issues with the authentication flow and the rendering of the authenticated UI."
 
 metadata:
   created_by: "main_agent"
