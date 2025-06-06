@@ -256,7 +256,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                 {/* Email */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Email Address
+                    {t('auth.email_address')}
                   </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
@@ -266,7 +266,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                       value={loginForm.email}
                       onChange={(e) => setLoginForm({ ...loginForm, email: e.target.value })}
                       className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      placeholder="Enter your email"
+                      placeholder={t('auth.enter_email')}
                     />
                   </div>
                 </div>
@@ -274,7 +274,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                 {/* Password */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Password
+                    {t('auth.password')}
                   </label>
                   <div className="relative">
                     <Lock className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
@@ -284,7 +284,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                       value={loginForm.password}
                       onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
                       className="w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                      placeholder="Enter your password"
+                      placeholder={t('auth.enter_password')}
                     />
                     <button
                       type="button"
@@ -306,7 +306,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                   />
                   <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                    Remember me
+                    {t('auth.remember_me')}
                   </label>
                 </div>
 
