@@ -75,6 +75,11 @@ class AuthService {
     localStorage.setItem(this.STORAGE_KEYS.AUTH_TOKEN, user.token);
     localStorage.setItem(this.STORAGE_KEYS.CURRENT_USER, JSON.stringify(user));
     
+    // Store user tenants
+    if (user.tenants) {
+      localStorage.setItem(this.STORAGE_KEYS.USER_TENANTS, JSON.stringify(user.tenants));
+    }
+    
     if (tenantId) {
       this.switchTenant(tenantId);
     } else if (user.tenants && user.tenants.length > 0) {
