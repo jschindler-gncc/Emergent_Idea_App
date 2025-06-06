@@ -563,6 +563,11 @@ function App() {
     setSelectedIdeas(newSelected);
   };
 
+  // Update settings function
+  const updateSettings = (newSettings) => {
+    setSettings(newSettings);
+  };
+
   const themeClasses = settings.darkMode 
     ? 'dark bg-gray-900 text-white' 
     : 'bg-gray-50 text-gray-900';
