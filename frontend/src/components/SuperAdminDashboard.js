@@ -162,9 +162,13 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
         }
       }}
     >
-      <div className={`rounded-lg w-full h-[90vh] flex ${
-        darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
-      }`} style={{ maxWidth: '1400px' }}>
+      <div 
+        className={`rounded-lg w-full h-[90vh] flex ${
+          darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+        }`} 
+        style={{ maxWidth: '1400px' }}
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Sidebar */}
         <div className={`w-64 p-6 border-r ${
