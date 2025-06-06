@@ -600,19 +600,18 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
             {activeTab === 'settings' && (
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-2xl font-bold mb-2">Platform Settings</h1>
+                  <h1 className="text-2xl font-bold mb-2">{t('superadmin.settings.title')}</h1>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Global platform configuration and security settings
+                    {t('superadmin.settings.subtitle')}
                   </p>
                 </div>
 
                 <div className={`p-6 rounded-lg border ${
                   darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
                 }`}>
-                  <h3 className="text-lg font-semibold mb-4">Coming Soon</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('superadmin.settings.coming_soon')}</h3>
                   <p className="text-gray-500 dark:text-gray-400">
-                    Platform settings will include global configuration options, security policies, 
-                    and system-wide features management.
+                    {t('superadmin.settings.coming_soon_desc')}
                   </p>
                 </div>
               </div>
