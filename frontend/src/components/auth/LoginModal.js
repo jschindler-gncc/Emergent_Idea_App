@@ -80,7 +80,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
     setError('');
 
     try {
-      const result = await authService.socialLogin(provider, loginForm.tenantId);
+      const result = await authService.socialLogin(provider);
       
       if (result.success) {
         setSuccess(`${provider} login successful!`);
