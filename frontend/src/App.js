@@ -787,7 +787,12 @@ function App() {
                   <div className="p-2">
                     {currentUser && (
                       <div className="px-3 py-2 border-b dark:border-gray-700">
-                        <p className="font-semibold">{currentUser.name}</p>
+                        <div className="flex items-center space-x-2">
+                          <p className="font-semibold">{currentUser.name}</p>
+                          {isSuperAdmin() && (
+                            <Crown className="w-4 h-4 text-yellow-500" title="Super Admin" />
+                          )}
+                        </div>
                         <p className="text-sm text-gray-500 dark:text-gray-400">{currentUser.email}</p>
                         {currentTenant && (
                           <p className="text-xs text-gray-400 dark:text-gray-500">{currentTenant.name}</p>
