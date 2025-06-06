@@ -823,6 +823,22 @@ function App() {
                       </div>
                     )}
                     
+                    {/* Super Admin Access */}
+                    {isSuperAdmin() && (
+                      <div className="border-b dark:border-gray-700 py-2">
+                        <button
+                          onClick={() => {
+                            setShowSuperAdmin(true);
+                            setShowUserMenu(false);
+                          }}
+                          className="w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2 text-yellow-600 dark:text-yellow-400"
+                        >
+                          <Crown className="w-4 h-4" />
+                          <span>Super Admin Dashboard</span>
+                        </button>
+                      </div>
+                    )}
+                    
                     <button
                       onClick={handleLogout}
                       className="w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2 text-red-600 dark:text-red-400"
