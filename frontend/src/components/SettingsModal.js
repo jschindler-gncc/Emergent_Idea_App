@@ -215,8 +215,14 @@ const SettingsModal = ({
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('settings.title')}</h2>
             <button
-              onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onClose();
+              }}
+              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              type="button"
+              aria-label="Close settings"
             >
               <X className="w-5 h-5" />
             </button>
