@@ -258,13 +258,13 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
                   }`}>
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Total Users</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{t('superadmin.overview.total_users')}</p>
                         <p className="text-2xl font-bold text-green-600">{platformStats.totalUsers}</p>
                       </div>
                       <Users className="w-8 h-8 text-green-600" />
                     </div>
                     <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                      Avg {platformStats.avgUsersPerTenant} per tenant
+                      {t('superadmin.overview.avg_per_tenant', { count: platformStats.avgUsersPerTenant })}
                     </div>
                   </div>
 
