@@ -63,6 +63,7 @@
     "delete": "Delete",
     "archive": "Archive",
     "unarchive": "Unarchive",
+    "close": "Close",
     "add_idea": "Add Idea",
     "archive_selected": "Archive Selected",
     "delete_selected": "Delete Selected",
