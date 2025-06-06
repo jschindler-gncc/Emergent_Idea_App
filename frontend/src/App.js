@@ -157,6 +157,7 @@ function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [showTenantSwitcher, setShowTenantSwitcher] = useState(false);
   const [showTenantSelection, setShowTenantSelection] = useState(false);
+  const [showSuperAdmin, setShowSuperAdmin] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [viewMode, setViewMode] = useState(settings.defaultView || 'card');
   const [sidebarOpen, setSidebarOpen] = useState(true);
