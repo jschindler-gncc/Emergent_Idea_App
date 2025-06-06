@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { 
   X, Palette, Layout, Settings as SettingsIcon, Trophy, 
@@ -17,6 +17,13 @@ const SettingsModal = ({
   const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState('appearance');
 
+  // Memoize the close handler to prevent unnecessary re-renders
+  const handleClose = useCallback(() => {
+    if (typeof onClose === 'function') {
+      onClose();
+    }
+  }, [onClose]);
+
   // Force re-render when language changes
   useEffect(() => {
     // This effect will trigger a re-render when the language changes
@@ -26,7 +33,7 @@ const SettingsModal = ({
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && isOpen) {
-        onClose();
+        handleClose();
       }
     };
 
@@ -40,7 +47,7 @@ const SettingsModal = ({
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleClose]);
 
   if (!isOpen) return null;
 
@@ -189,22 +196,10 @@ const SettingsModal = ({
     }
   };
 
-  // Handle overlay click - simplified to fix closing issue
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  // Handle close button click - simplified to fix closing issue
-  const handleCloseClick = () => {
-    onClose();
-  };
-
   return (
     <div 
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[60]"
-      onClick={handleOverlayClick}
+      onClick={handleClose}
     >
       <div 
         className={`rounded-lg w-full max-w-4xl h-[80vh] flex ${
@@ -219,7 +214,7 @@ const SettingsModal = ({
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('settings.title')}</h2>
             <button
-              onClick={handleCloseClick}
+              onClick={handleClose}
               className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               type="button"
               aria-label="Close settings"
