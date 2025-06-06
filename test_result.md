@@ -271,8 +271,7 @@ metadata:
 test_plan:
   current_focus:
     - "Multi-tenant authentication system"
-  stuck_tasks: 
-    - "Multi-tenant authentication system"
+  stuck_tasks: []
   test_all: true
   test_priority: "high_first"
   
