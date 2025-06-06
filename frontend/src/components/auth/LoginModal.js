@@ -83,7 +83,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
       const result = await authService.socialLogin(provider);
       
       if (result.success) {
-        setSuccess(`${provider} login successful!`);
+        setSuccess(t('auth.social_login_successful', { provider }));
         setTimeout(() => {
           onLoginSuccess(result.user);
           onClose();
@@ -92,7 +92,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
         setError(result.error);
       }
     } catch (err) {
-      setError(`${provider} login failed.`);
+      setError(t('auth.social_login_failed', { provider }));
     } finally {
       setLoading(false);
     }
