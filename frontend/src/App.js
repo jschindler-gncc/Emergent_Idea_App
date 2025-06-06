@@ -7,7 +7,7 @@ import {
   Moon, Sun, Download, BarChart3, Menu, Grid, List, Settings, Zap,
   CheckSquare, Copy, FileText, Lightbulb, Target, Briefcase, Code,
   Heart, Globe, Smartphone, ChevronDown, ChevronUp, TrendingUp, Languages,
-  LogOut, Users, Building, UserPlus, Shield, Crown
+  LogOut, Users, Building, UserPlus, Shield, Crown, CheckCircle
 } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import SettingsModal from './components/SettingsModal';
