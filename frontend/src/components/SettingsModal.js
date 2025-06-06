@@ -170,10 +170,24 @@ const SettingsModal = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className={`rounded-lg w-full max-w-4xl h-[80vh] flex ${
-        darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
-      }`}>
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+      onClick={(e) => {
+        // Close modal when clicking on overlay
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      <div 
+        className={`rounded-lg w-full max-w-4xl h-[80vh] flex ${
+          darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+        }`}
+        onClick={(e) => {
+          // Prevent modal from closing when clicking inside the modal content
+          e.stopPropagation();
+        }}
+      >
         {/* Sidebar */}
         <div className={`w-64 p-6 border-r ${
           darkMode ? 'border-gray-700 bg-gray-900' : 'border-gray-200 bg-gray-50'
