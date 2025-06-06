@@ -169,5 +169,138 @@
     "organizer_desc": "Used all 5 categories",
     "weekly_streak": "Weekly Warrior",
     "weekly_streak_desc": "Created ideas for 7 consecutive days"
+  },
+  "superadmin": {
+    "title": "Super Admin",
+    "dashboard": "Super Admin Dashboard",
+    "platform_overview": "Platform Overview",
+    "tenant_management": "Tenant Management",
+    "usage_analytics": "Usage Analytics",
+    "platform_settings": "Platform Settings",
+    "overview": {
+      "title": "Platform Overview",
+      "subtitle": "Comprehensive statistics and health metrics for the entire platform",
+      "total_tenants": "Total Tenants",
+      "total_users": "Total Users",
+      "total_ideas": "Total Ideas",
+      "monthly_revenue": "Monthly Revenue",
+      "active_tenants": "{{count}} active",
+      "avg_per_tenant": "Avg {{count}} per tenant",
+      "paying_tenants": "From {{count}} paying tenants",
+      "recent_activity": "Recent Platform Activity",
+      "growth_trends": "Growth Trends",
+      "fastest_growing": "Fastest Growing",
+      "most_active": "Most Active",
+      "api_calls": "{{count}} API calls",
+      "growth_percent": "+{{percent}}% growth"
+    },
+    "tenants": {
+      "title": "Tenant Management",
+      "subtitle": "Create, manage, and monitor all platform tenants",
+      "create_tenant": "Create Tenant",
+      "tenant_name": "Tenant",
+      "plan": "Plan",
+      "users_ideas": "Users/Ideas",
+      "status": "Status",
+      "created": "Created",
+      "actions": "Actions",
+      "users_count": "{{count}} users",
+      "ideas_count": "{{count}} ideas",
+      "active": "active",
+      "inactive": "inactive"
+    },
+    "analytics": {
+      "title": "Usage Analytics",
+      "subtitle": "Detailed usage statistics and performance metrics for all tenants",
+      "total_users": "Total Users",
+      "total_ideas": "Total Ideas",
+      "active_users": "Active Users",
+      "monthly_revenue": "Monthly Revenue",
+      "api_calls": "API Calls",
+      "collaboration_events": "Collaboration Events",
+      "cross_tenant_shares": "Cross-Tenant Shares",
+      "last_active": "Last Active"
+    },
+    "settings": {
+      "title": "Platform Settings",
+      "subtitle": "Global platform configuration and security settings",
+      "coming_soon": "Coming Soon",
+      "coming_soon_desc": "Platform settings will include global configuration options, security policies, and system-wide features management."
+    },
+    "create_tenant": {
+      "title": "Create New Tenant",
+      "organization_name": "Organization Name",
+      "organization_name_placeholder": "Enter organization name",
+      "domain": "Domain",
+      "domain_placeholder": "organization-domain",
+      "industry": "Industry",
+      "select_industry": "Select Industry",
+      "company_size": "Company Size",
+      "select_size": "Select Size",
+      "plan": "Plan",
+      "admin_email": "Admin Email",
+      "admin_email_placeholder": "admin@company.com",
+      "admin_password": "Admin Password",
+      "admin_password_placeholder": "Create admin password",
+      "max_users": "Max Users",
+      "max_ideas": "Max Ideas",
+      "storage_limit": "Storage Limit",
+      "creating": "Creating...",
+      "create": "Create Tenant",
+      "cancel": "Cancel",
+      "industries": {
+        "technology": "Technology",
+        "finance": "Finance",
+        "healthcare": "Healthcare",
+        "education": "Education",
+        "retail": "Retail",
+        "manufacturing": "Manufacturing",
+        "other": "Other"
+      },
+      "sizes": {
+        "startup": "1-10 employees",
+        "small": "11-50 employees",
+        "medium": "51-200 employees",
+        "large": "201-1000 employees",
+        "enterprise": "1000+ employees"
+      },
+      "plans": {
+        "starter": "Starter (Free)",
+        "professional": "Professional ($29/month)",
+        "enterprise": "Enterprise ($99/month)"
+      }
+    },
+    "quick_stats": "Quick Stats",
+    "tenants_label": "Tenants",
+    "users_label": "Users",
+    "ideas_label": "Ideas",
+    "revenue_label": "Revenue"
+  },
+  "auth": {
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "create_organization": "Create Organization",
+    "email": "Email",
+    "password": "Password",
+    "remember_me": "Remember me",
+    "sign_in_button": "Sign In",
+    "sign_up_button": "Sign Up",
+    "social_login": "Or continue with",
+    "logout": "Logout",
+    "user_menu": "User menu",
+    "switch_organization": "Switch Organization"
+  },
+  "tenant_selection": {
+    "title": "Select Organization",
+    "subtitle": "Choose which organization you'd like to work with",
+    "switch_anytime": "You can switch organizations anytime from the user menu"
+  },
+  "tooltips": {
+    "settings": "Settings",
+    "super_admin": "Super Admin Dashboard",
+    "user_menu": "User menu",
+    "logout": "Logout",
+    "templates": "Idea Templates",
+    "new_idea": "Create New Idea"
   }
 }
