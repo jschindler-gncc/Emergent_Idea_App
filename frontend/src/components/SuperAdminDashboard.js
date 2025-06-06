@@ -9,13 +9,18 @@ import {
 import tenantService from '../services/tenantService';
 
 const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState('overview');
   const [tenants, setTenants] = useState([]);
   const [selectedTenant, setSelectedTenant] = useState(null);
   const [showCreateTenant, setShowCreateTenant] = useState(false);
   const [showTenantDetails, setShowTenantDetails] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // Force re-render when language changes
+  useEffect(() => {
+    // This will ensure the component re-renders when language changes
+  }, [i18n.language]);
 
   // New Tenant Form State
   const [newTenant, setNewTenant] = useState({
