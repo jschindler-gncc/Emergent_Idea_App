@@ -572,6 +572,7 @@ function App() {
   const canManageUsers = () => hasPermission('user_admin') || hasPermission('tenant_admin');
   const canManageTenant = () => hasPermission('tenant_admin');
   const isAdmin = () => currentUser?.role === 'super_admin' || hasPermission('tenant_admin');
+  const isSuperAdmin = () => currentUser?.role === 'super_admin';
 
   // Change language
   const changeLanguage = (lng) => {
