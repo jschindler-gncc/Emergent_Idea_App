@@ -475,10 +475,59 @@ function App() {
     setEditingIdea(null);
   };
 
-  // Update settings
-  const updateSettings = (newSettings) => {
-    setSettings(newSettings);
+  // Authentication handlers
+  const handleLoginSuccess = (user) => {
+    setIsAuthenticated(true);
+    setCurrentUser(user);
+    const tenant = authService.getCurrentTenant();
+    setCurrentTenant(tenant);
+    setShowLogin(false);
+    
+    // Load tenant-specific ideas
+    if (tenant) {
+      const tenantIdeas = loadIdeas(tenant.id);
+      setIdeas(tenantIdeas);
+    }
   };
+
+  const handleLogout = () => {
+    authService.logout();
+    setIsAuthenticated(false);
+    setCurrentUser(null);
+    setCurrentTenant(null);
+    setIdeas([]);
+    setShowLogin(true);
+  };
+
+  const handleTenantSwitch = (tenantId) => {
+    if (authService.switchTenant(tenantId)) {
+      const newTenant = authService.getCurrentTenant();
+      setCurrentTenant(newTenant);
+      
+      // Load ideas for new tenant
+      const tenantIdeas = loadIdeas(tenantId);
+      setIdeas(tenantIdeas);
+      
+      setShowTenantSwitcher(false);
+      
+      // Reset UI state
+      setSelectedCategory('all');
+      setSearchTerm('');
+      setShowArchived(false);
+      setSelectedIdeas(new Set());
+      setBulkMode(false);
+    }
+  };
+
+  // Permission checking
+  const hasPermission = (permission) => {
+    if (!currentUser || !currentTenant) return false;
+    return authService.hasPermission(permission);
+  };
+
+  const canManageUsers = () => hasPermission('user_admin') || hasPermission('tenant_admin');
+  const canManageTenant = () => hasPermission('tenant_admin');
+  const isAdmin = () => currentUser?.role === 'super_admin' || hasPermission('tenant_admin');
 
   // Change language
   const changeLanguage = (lng) => {
