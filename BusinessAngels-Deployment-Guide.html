@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusinessAngels Marketplace - Deployment Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        h1 {
+            color: #2563eb;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            page-break-before: always;
+        }
+        
+        h2 {
+            color: #059669;
+            border-bottom: 2px solid #059669;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #7c3aed;
+            margin-top: 25px;
+        }
+        
+        .toc {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .toc h2 {
+            margin-top: 0;
+            color: #1e40af;
+            border: none;
+        }
+        
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .toc a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        code {
+            background: #f1f5f9;
+            color: #e11d48;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+        
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .warning {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning strong {
+            color: #92400e;
+        }
+        
+        .success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success strong {
+            color: #047857;
+        }
+        
+        .info {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .info strong {
+            color: #1e40af;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .checklist {
+            background: #f0fdf4;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .checklist ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .checklist li::before {
+            content: "☐ ";
+            color: #22c55e;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .architecture-overview {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .architecture-overview h3 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+        
+        @media print {
+            body {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            
+            h1 {
+                page-break-before: always;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+            
+            pre {
+                page-break-inside: avoid;
+                font-size: 10px;
+            }
+            
+            .warning, .success, .info, .checklist {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .header-logo {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #2563eb, #059669);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .header-logo h1 {
+            margin: 0;
+            border: none;
+            color: white;
+            page-break-before: auto;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-logo">
+        <h1>🚀 BusinessAngels Marketplace</h1>
+        <div class="subtitle">Complete Step-by-Step Deployment Guide</div>
+        <div style="margin-top: 10px; font-size: 0.9em;">
+            Fiverr-style Marketplace for Business Consulting Services<br>
+            Angular + Spring Boot + MongoDB
+        </div>
+    </div>
+
+    <div class="toc">
+        <h2>📋 Table of Contents</h2>
+        <ol>
+            <li><a href="#project-overview">Project Overview</a></li>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#server-preparation">Server Preparation</a></li>
+            <li><a href="#file-transfer">File Transfer</a></li>
+            <li><a href="#environment-configuration">Environment Configuration</a></li>
+            <li><a href="#application-configuration">Application Configuration</a></li>
+            <li><a href="#firewall-setup">Firewall Setup</a></li>
+            <li><a href="#deployment-execution">Deployment Execution</a></li>
+            <li><a href="#verification">Verification</a></li>
+            <li><a href="#access-testing">Access & Testing</a></li>
+            <li><a href="#security-hardening">Security Hardening</a></li>
+            <li><a href="#monitoring-maintenance">Monitoring & Maintenance</a></li>
+            <li><a href="#backup-setup">Backup Setup</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ol>
+    </div>
+
+    <h1 id="project-overview">1. Project Overview</h1>
+
+    <div class="architecture-overview">
+        <h3>🏗️ System Architecture</h3>
+        <p><strong>Frontend:</strong> Angular 16+ with Tailwind CSS (Port 3000)</p>
+        <p><strong>Backend:</strong> Spring Boot 3.2 with JWT authentication (Port 8080)</p>
+        <p><strong>Database:</strong> MongoDB 7.0 with optimized indexes (Port 27017)</p>
+        <p><strong>Deployment:</strong> Docker containerization with Nginx reverse proxy</p>
+    </div>
+
+    <p><strong>BusinessAngels Marketplace</strong> is a complete Fiverr-style online marketplace specifically designed for business consulting services. The platform connects experienced professionals ("Business Angels") with companies seeking expert guidance.</p>
+
+    <h3>🌟 Key Features</h3>
+    <ul>
+        <li><strong>Multi-user system:</strong> Buyers, Business Angels, or Both user types</li>
+        <li><strong>Service listings:</strong> Professional "Boards" instead of "Gigs"</li>
+        <li><strong>JWT-secured authentication:</strong> Secure login/registration system</li>
+        <li><strong>Advanced search:</strong> Category filtering and text search</li>
+        <li><strong>Professional UI:</strong> Optimized for business professionals</li>
+        <li><strong>Role-based access:</strong> Different features for different user types</li>
+    </ul>
+
+    <h3>💼 Business Categories</h3>
+    <ul>
+        <li>Business Consulting</li>
+        <li>Financial Services</li>
+        <li>Startup Consulting</li>
+        <li>Strategic Planning</li>
+    </ul>
+
+    <h1 id="prerequisites">2. Prerequisites</h1>
+
+    <h3>🖥️ Server Requirements</h3>
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Minimum</th>
+            <th>Recommended</th>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>2 cores</td>
+            <td>4+ cores</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>4GB</td>
+            <td>8GB+</td>
+        </tr>
+        <tr>
+            <td>Storage</td>
+            <td>20GB</td>
+            <td>50GB+ SSD</td>
+        </tr>
+        <tr>
+            <td>OS</td>
+            <td>Ubuntu 20.04+ / CentOS 7+</td>
+            <td>Ubuntu 22.04+ LTS</td>
+        </tr>
+        <tr>
+            <td>Network</td>
+            <td>Public IP</td>
+            <td>Static IP + Domain</td>
+        </tr>
+    </table>
+
+    <h3>🔑 Required Access</h3>
+    <div class="checklist">
+        <ul>
+            <li>Root or sudo access to server</li>
+            <li>SSH access configured</li>
+            <li>Domain name (optional, can use IP)</li>
+            <li>Deployment package: <code>businessangels-marketplace-20250606.tar.gz</code></li>
+        </ul>
+    </div>
+
+    <h1 id="server-preparation">3. Server Preparation</h1>
+
+    <h3>Step 1: Connect to Server</h3>
+    <pre><code>ssh root@your-server-ip
+# OR
+ssh username@your-server-ip</code></pre>
+
+    <h3>Step 2: Update System</h3>
+    <p><strong>Ubuntu/Debian:</strong></p>
+    <pre><code>sudo apt update && sudo apt upgrade -y</code></pre>
+
+    <p><strong>CentOS/RHEL:</strong></p>
+    <pre><code>sudo yum update -y</code></pre>
+
+    <h3>Step 3: Install Docker</h3>
+    <p><strong>Ubuntu/Debian:</strong></p>
+    <pre><code># Remove old versions
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+# Install dependencies
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Add Docker repository
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+
+    <p><strong>CentOS/RHEL:</strong></p>
+    <pre><code># Install required packages
+sudo yum install -y yum-utils
+
+# Add Docker repository
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# Install Docker
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+
+    <h3>Step 4: Start Docker Services</h3>
+    <pre><code># Start and enable Docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Add current user to docker group
+sudo usermod -aG docker $USER
+
+# Logout and login again, or run:
+newgrp docker
+
+# Verify installation
+docker --version
+docker-compose --version</code></pre>
+
+    <div class="success">
+        <strong>✅ Success:</strong> Docker should show version numbers (e.g., Docker 24.0+ and Docker Compose 2.20+)
+    </div>
+
+    <h1 id="file-transfer">4. File Transfer</h1>
+
+    <h3>Step 1: Upload Deployment Package</h3>
+    <p><strong>Option A: Using SCP (from your local machine):</strong></p>
+    <pre><code>scp businessangels-marketplace-20250606.tar.gz username@your-server-ip:/home/username/</code></pre>
+
+    <p><strong>Option B: Using wget (if package is hosted online):</strong></p>
+    <pre><code>wget https://your-download-link/businessangels-marketplace-20250606.tar.gz</code></pre>
+
+    <p><strong>Option C: Using SFTP:</strong></p>
+    <pre><code>sftp username@your-server-ip
+put businessangels-marketplace-20250606.tar.gz
+exit</code></pre>
+
+    <h3>Step 2: Extract Files</h3>
+    <pre><code># Navigate to uploaded location
+cd /home/username/
+
+# Extract the package
+tar -xzf businessangels-marketplace-20250606.tar.gz
+
+# Navigate to application directory
+cd businessangels-marketplace-deployment
+
+# Verify files
+ls -la</code></pre>
+
+    <div class="info">
+        <strong>📁 Expected Files:</strong>
+        <ul>
+            <li><code>apps/</code> - Angular frontend source</li>
+            <li><code>backend-springboot/</code> - Spring Boot backend source</li>
+            <li><code>libs/</code> - Shared libraries</li>
+            <li><code>docker-compose.yml</code> - Service orchestration</li>
+            <li><code>Dockerfile.frontend</code> - Frontend container config</li>
+            <li><code>Dockerfile.backend</code> - Backend container config</li>
+            <li><code>nginx.conf</code> - Web server configuration</li>
+            <li><code>mongo-init.js</code> - Database initialization</li>
+            <li><code>.env.production</code> - Environment template</li>
+            <li><code>deploy.sh</code> - Deployment script</li>
+            <li><code>README-DEPLOYMENT.md</code> - Documentation</li>
+        </ul>
+    </div>
+
+    <h1 id="environment-configuration">5. Environment Configuration</h1>
+
+    <h3>Step 1: Create Environment File</h3>
+    <pre><code># Copy production template
+cp .env.production .env
+
+# Edit configuration
+nano .env</code></pre>
+
+    <h3>Step 2: Configure Critical Settings</h3>
+    <div class="warning">
+        <strong>🔒 Security Critical:</strong> You MUST change these default values for production use!
+    </div>
+
+    <p>Update these values in <code>.env</code>:</p>
+    <pre><code># Database Configuration (CRITICAL - Change these!)
+MONGO_ROOT_PASSWORD=your_very_secure_password_here_2025
+
+# JWT Configuration (CRITICAL - Change this!)
+JWT_SECRET=your_super_secure_jwt_secret_key_minimum_32_characters_long_for_production
+
+# Application URLs (Update with your domain/IP)
+FRONTEND_URL=http://your-server-ip:3000
+BACKEND_URL=http://your-server-ip:8080
+
+# OR if using domain:
+# FRONTEND_URL=https://yourdomain.com
+# BACKEND_URL=https://api.yourdomain.com
+
+# Server Configuration
+SERVER_PORT=8080
+
+# Email Configuration (Optional)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=your-email@domain.com
+SMTP_PASSWORD=your-email-password
+
+# File Upload Configuration (Optional)
+MAX_FILE_SIZE=10MB
+UPLOAD_PATH=/app/uploads
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_FILE=/app/logs/application.log</code></pre>
+
+    <div class="warning">
+        <strong>🔐 Security Notes:</strong>
+        <ul>
+            <li>Replace <code>your_very_secure_password_here_2025</code> with a strong 20+ character password</li>
+            <li>Replace <code>your_super_secure_jwt_secret_key_minimum_32_characters_long_for_production</code> with a random 64+ character string</li>
+            <li>Replace <code>your-server-ip</code> with your actual server IP address</li>
+            <li>Use strong, unique passwords for production deployment</li>
+        </ul>
+    </div>
+
+    <h3>Step 3: Make Scripts Executable</h3>
+    <pre><code>chmod +x deploy.sh
+chmod +x update-backend-config.sh
+chmod +x quick-start.sh</code></pre>
+
+    <h1 id="application-configuration">6. Application Configuration</h1>
+
+    <h3>Step 1: Update Backend Configuration</h3>
+    <pre><code># Run configuration update script
+./update-backend-config.sh</code></pre>
+
+    <p>This script creates:</p>
+    <ul>
+        <li><code>backend-springboot/src/main/resources/application-production.yml</code></li>
+        <li><code>apps/dashboard/src/environments/environment.prod.ts</code></li>
+        <li><code>apps/dashboard/src/environments/environment.ts</code></li>
+    </ul>
+
+    <h3>Step 2: Verify Configuration Files</h3>
+    <pre><code># Check if production files were created
+ls -la backend-springboot/src/main/resources/
+ls -la apps/dashboard/src/environments/</code></pre>
+
+    <div class="success">
+        <strong>✅ Expected Output:</strong> You should see the newly created configuration files with recent timestamps.
+    </div>
+
+    <h1 id="firewall-setup">7. Firewall Setup</h1>
+
+    <h3>Step 1: Setup UFW Firewall (Ubuntu/Debian)</h3>
+    <pre><code># Enable firewall
+sudo ufw enable
+
+# Allow essential ports
+sudo ufw allow 22      # SSH
+sudo ufw allow 80      # HTTP
+sudo ufw allow 443     # HTTPS
+sudo ufw allow 3000    # Frontend (temporary)
+sudo ufw allow 8080    # Backend API (temporary)
+
+# Check firewall status
+sudo ufw status</code></pre>
+
+    <h3>Step 2: Setup Firewalld (CentOS/RHEL)</h3>
+    <pre><code># Start firewall
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+
+# Allow ports
+sudo firewall-cmd --permanent --add-port=22/tcp
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+sudo firewall-cmd --permanent --add-port=3000/tcp
+sudo firewall-cmd --permanent --add-port=8080/tcp
+
+# Reload firewall
+sudo firewall-cmd --reload</code></pre>
+
+    <div class="info">
+        <strong>📝 Note:</strong> Ports 3000 and 8080 are opened temporarily for initial testing. In production, you should use a reverse proxy on ports 80/443.
+    </div>
+
+    <h1 id="deployment-execution">8. Deployment Execution</h1>
+
+    <h3>Step 1: Run Deployment Script</h3>
+    <pre><code># Execute deployment
+./deploy.sh</code></pre>
+
+    <p>The deployment script performs these actions:</p>
+    <ol>
+        <li>Stops any existing containers</li>
+        <li>Builds Docker images for frontend and backend</li>
+        <li>Starts MongoDB, backend, and frontend services</li>
+        <li>Runs health checks for all services</li>
+        <li>Displays service status and access URLs</li>
+    </ol>
+
+    <h3>Step 2: Monitor Deployment Progress</h3>
+    <pre><code># Watch deployment logs
+docker-compose logs -f
+
+# Check specific service logs
+docker-compose logs -f backend
+docker-compose logs -f frontend
+docker-compose logs -f mongodb</code></pre>
+
+    <h3>Step 3: Verify Services are Running</h3>
+    <pre><code># Check container status
+docker-compose ps</code></pre>
+
+    <div class="success">
+        <strong>✅ Expected Output:</strong>
+        <pre><code>NAME                      STATUS
+businessangels-mongodb    Up
+businessangels-backend    Up
+businessangels-frontend   Up</code></pre>
+    </div>
+
+    <h1 id="verification">9. Verification</h1>
+
+    <h3>Step 1: Test Backend API</h3>
+    <pre><code># Test health endpoint
+curl http://localhost:8080/api/auth/validate
+# Expected: {"valid":false}
+
+# Test public endpoint
+curl http://localhost:8080/api/users/public/business-angels
+# Expected: []
+
+# Test with verbose output
+curl -v http://localhost:8080/api/auth/validate</code></pre>
+
+    <h3>Step 2: Test Frontend</h3>
+    <pre><code># Test frontend
+curl http://localhost:3000
+# Should return HTML content
+
+# Test with headers
+curl -I http://localhost:3000
+# Should return HTTP 200 OK</code></pre>
+
+    <h3>Step 3: Test Database</h3>
+    <pre><code># Check MongoDB
+docker-compose exec mongodb mongosh -u admin -p your_password_here
+
+# In MongoDB shell, run:
+show dbs
+use business-angel-marketplace
+show collections
+db.users.find().count()
+db.boards.find().count()
+exit</code></pre>
+
+    <div class="success">
+        <strong>✅ All Tests Pass:</strong> If all commands return expected results, your deployment is successful!
+    </div>
+
+    <h1 id="access-testing">10. Access & Testing</h1>
+
+    <h3>Step 1: Open in Browser</h3>
+    <p>Visit: <code>http://your-server-ip:3000</code></p>
+
+    <div class="info">
+        <strong>🎯 Expected Homepage Features:</strong>
+        <ul>
+            <li>Professional business consulting theme</li>
+            <li>Hero section with search functionality</li>
+            <li>Category sections (Business Consulting, Financial Services, etc.)</li>
+            <li>Registration/login options</li>
+            <li>Professional navigation menu</li>
+        </ul>
+    </div>
+
+    <h3>Step 2: Test Core Functions</h3>
+
+    <p><strong>User Registration:</strong></p>
+    <ol>
+        <li>Click "Become a Business Angel"</li>
+        <li>Fill registration form with:
+            <ul>
+                <li>First Name, Last Name</li>
+                <li>Email address</li>
+                <li>Password (6+ characters)</li>
+                <li>User type selection:
+                    <ul>
+                        <li>Buyer (hire experts)</li>
+                        <li>Business Angel (offer services)</li>
+                        <li>Both (dual functionality)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Submit and verify auto-login</li>
+    </ol>
+
+    <p><strong>User Authentication:</strong></p>
+    <ol>
+        <li>Click "Sign In"</li>
+        <li>Use registered credentials</li>
+        <li>Verify JWT token handling</li>
+        <li>Check redirect to dashboard</li>
+    </ol>
+
+    <p><strong>Search Functionality:</strong></p>
+    <ol>
+        <li>Use search bar on homepage</li>
+        <li>Try search terms like "business plan", "fundraising"</li>
+        <li>Browse category sections</li>
+        <li>Test search results display</li>
+    </ol>
+
+    <p><strong>Business Angel Features (if registered as Business Angel):</strong></p>
+    <ol>
+        <li>Access dashboard</li>
+        <li>Create service "Board"</li>
+        <li>Set pricing and delivery times</li>
+        <li>Add service description and categories</li>
+    </ol>
+
+    <h1 id="security-hardening">11. Security Hardening</h1>
+
+    <h3>Step 1: Change Default Ports (Recommended)</h3>
+    <pre><code># Edit docker-compose.yml
+nano docker-compose.yml
+
+# Change ports section for production:
+frontend:
+  ports:
+    - "80:80"    # Instead of 3000:80
+
+backend:
+  ports:
+    - "8080:8080"  # Keep as is or change to 8000</code></pre>
+
+    <h3>Step 2: Setup SSL Certificate (Production)</h3>
+    <pre><code># Install Certbot (Ubuntu/Debian)
+sudo apt install certbot
+
+# Get SSL certificate (if using domain)
+sudo certbot certonly --standalone -d yourdomain.com
+
+# The certificates will be saved at:
+# /etc/letsencrypt/live/yourdomain.com/fullchain.pem
+# /etc/letsencrypt/live/yourdomain.com/privkey.pem</code></pre>
+
+    <h3>Step 3: Restrict Database Access</h3>
+    <pre><code># Update docker-compose.yml to remove exposed MongoDB port
+# Comment out or remove:
+# ports:
+#   - "27017:27017"</code></pre>
+
+    <div class="warning">
+        <strong>🔒 Production Security Checklist:</strong>
+        <ul>
+            <li>Change all default passwords</li>
+            <li>Use strong JWT secret (64+ characters)</li>
+            <li>Enable HTTPS with SSL certificates</li>
+            <li>Configure firewall properly</li>
+            <li>Remove database port exposure</li>
+            <li>Set up regular backups</li>
+            <li>Enable log rotation</li>
+            <li>Monitor system resources</li>
+        </ul>
+    </div>
+
+    <h1 id="monitoring-maintenance">12. Monitoring & Maintenance</h1>
+
+    <h3>Step 1: View Application Logs</h3>
+    <pre><code># All services
+docker-compose logs -f
+
+# Specific service with timestamp
+docker-compose logs -f --timestamps backend
+
+# Last 100 lines
+docker-compose logs --tail=100 frontend
+
+# Follow logs for specific time
+docker-compose logs --since="2024-01-01T10:00:00"</code></pre>
+
+    <h3>Step 2: Monitor System Resources</h3>
+    <pre><code># Check Docker resource usage
+docker stats
+
+# Check disk usage
+df -h
+du -sh /var/lib/docker
+
+# Check memory usage
+free -h
+
+# Check running processes
+htop</code></pre>
+
+    <h3>Step 3: Service Management</h3>
+    <pre><code># Restart all services
+docker-compose restart
+
+# Restart specific service
+docker-compose restart backend
+
+# Scale services (if needed)
+docker-compose up --scale backend=2 -d
+
+# View service status
+docker-compose ps</code></pre>
+
+    <h3>Step 4: Update Application</h3>
+    <pre><code># Pull new code (if using git)
+git pull
+
+# Rebuild and restart
+docker-compose down
+docker-compose up --build -d
+
+# Or update specific service
+docker-compose up --build -d backend</code></pre>
+
+    <h1 id="backup-setup">13. Backup Setup</h1>
+
+    <h3>Step 1: Create Database Backup Script</h3>
+    <pre><code># Create backup script
+nano backup-database.sh</code></pre>
+
+    <p>Add this content:</p>
+    <pre><code>#!/bin/bash
+
+# BusinessAngels Database Backup Script
+DATE=$(date +%Y%m%d_%H%M%S)
+BACKUP_DIR="/home/backups"
+DB_PASSWORD="your_password_here"
+
+# Create backup directory
+mkdir -p $BACKUP_DIR
+
+# Create database backup
+echo "Creating database backup..."
+docker-compose exec -T mongodb mongodump \\
+    --authenticationDatabase admin \\
+    -u admin \\
+    -p $DB_PASSWORD \\
+    --db business-angel-marketplace \\
+    --archive | gzip > $BACKUP_DIR/db_backup_$DATE.gz
+
+# Create application backup
+echo "Creating application backup..."
+tar -czf $BACKUP_DIR/app_backup_$DATE.tar.gz \\
+    --exclude=node_modules \\
+    --exclude=target \\
+    --exclude=dist \\
+    .
+
+# Keep only last 7 days of backups
+find $BACKUP_DIR -name "*.gz" -mtime +7 -delete
+find $BACKUP_DIR -name "*.tar.gz" -mtime +7 -delete
+
+echo "Backup completed: db_backup_$DATE.gz"
+echo "Application backup: app_backup_$DATE.tar.gz"</code></pre>
+
+    <pre><code># Make executable
+chmod +x backup-database.sh
+
+# Test backup
+./backup-database.sh</code></pre>
+
+    <h3>Step 2: Setup Automated Backups</h3>
+    <pre><code># Add to crontab for daily backups at 2 AM
+crontab -e
+
+# Add this line:
+0 2 * * * /path/to/your/app/backup-database.sh >> /var/log/backup.log 2>&1</code></pre>
+
+    <h1 id="troubleshooting">14. Troubleshooting</h1>
+
+    <h3>Issue 1: Services won't start</h3>
+    <p><strong>Symptoms:</strong> Containers exit immediately or fail to start</p>
+    <p><strong>Solutions:</strong></p>
+    <pre><code># Check Docker daemon
+sudo systemctl status docker
+
+# Restart Docker daemon
+sudo systemctl restart docker
+
+# Check system resources
+df -h
+free -h
+
+# Clean Docker system
+docker system prune -f
+
+# Check logs for specific errors
+docker-compose logs</code></pre>
+
+    <h3>Issue 2: Can't access from browser</h3>
+    <p><strong>Symptoms:</strong> Connection refused or timeout</p>
+    <p><strong>Solutions:</strong></p>
+    <pre><code># Check if services are listening on ports
+netstat -tlnp | grep :3000
+netstat -tlnp | grep :8080
+
+# Check firewall rules
+sudo ufw status
+sudo iptables -L
+
+# Test local connectivity
+curl http://localhost:3000
+curl http://localhost:8080/api/auth/validate
+
+# Check Docker port mapping
+docker-compose ps</code></pre>
+
+    <h3>Issue 3: Database connection failed</h3>
+    <p><strong>Symptoms:</strong> Backend can't connect to MongoDB</p>
+    <p><strong>Solutions:</strong></p>
+    <pre><code># Check MongoDB logs
+docker-compose logs mongodb
+
+# Verify password in .env file
+cat .env | grep MONGO_ROOT_PASSWORD
+
+# Test MongoDB connection
+docker-compose exec mongodb mongosh -u admin -p your_password
+
+# Check MongoDB service status
+docker-compose ps mongodb
+
+# Restart MongoDB
+docker-compose restart mongodb</code></pre>
+
+    <h3>Issue 4: Backend API not responding</h3>
+    <p><strong>Symptoms:</strong> Frontend can't reach backend APIs</p>
+    <p><strong>Solutions:</strong></p>
+    <pre><code># Check backend logs
+docker-compose logs backend
+
+# Test API directly
+curl -v http://localhost:8080/api/auth/validate
+
+# Check backend container
+docker-compose exec backend ps aux
+
+# Verify backend health
+curl http://localhost:8080/actuator/health
+
+# Check environment variables
+docker-compose exec backend env | grep MONGO</code></pre>
+
+    <div class="success">
+        <h2>🎉 Success Checklist</h2>
+        <div class="checklist">
+            <h3>Deployment Verification</h3>
+            <ul>
+                <li>All Docker containers are running</li>
+                <li>Frontend accessible at http://your-server-ip:3000</li>
+                <li>Backend API responding at http://your-server-ip:8080</li>
+                <li>Database connections working</li>
+                <li>User registration functional</li>
+                <li>User login working</li>
+                <li>Search functionality operational</li>
+                <li>Service creation working (Business Angels)</li>
+            </ul>
+
+            <h3>Security Verification</h3>
+            <ul>
+                <li>Strong passwords set in .env</li>
+                <li>Firewall configured and active</li>
+                <li>Database ports not exposed externally</li>
+                <li>SSL certificate installed (if using domain)</li>
+                <li>Regular backups configured</li>
+                <li>Log rotation enabled</li>
+            </ul>
+
+            <h3>Production Readiness</h3>
+            <ul>
+                <li>Domain name configured (optional)</li>
+                <li>Email service configured (optional)</li>
+                <li>Monitoring system in place</li>
+                <li>Backup procedures tested</li>
+                <li>Documentation accessible to team</li>
+                <li>Support procedures defined</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-logo" style="margin-top: 40px;">
+        <h1>🎉 Congratulations!</h1>
+        <div class="subtitle">Your BusinessAngels Marketplace is Live!</div>
+        <div style="margin-top: 15px; font-size: 0.9em;">
+            <strong>Frontend:</strong> http://your-server-ip:3000<br>
+            <strong>Backend API:</strong> http://your-server-ip:8080<br>
+            <strong>Ready to connect business experts with companies worldwide!</strong>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #e2e8f0;">
+        <p><em>Generated on: $(date)</em></p>
+        <p><em>Version: 1.0.0 | Platform: BusinessAngels Marketplace</em></p>
+        <p><strong>Your marketplace is now ready to transform how businesses connect with expert consultants!</strong></p>
+    </div>
+
+</body>
+</html>
