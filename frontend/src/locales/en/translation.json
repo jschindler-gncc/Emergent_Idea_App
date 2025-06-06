@@ -110,6 +110,11 @@
   },
   "settings": {
     "title": "Settings",
+    "theme_selection": "Theme Selection",
+    "layout_density": "Layout Density", 
+    "preferences": "Preferences",
+    "auto_save": "Auto-save ideas as you type",
+    "dark_mode": "Dark Mode",
     "tabs": {
       "appearance": "Appearance",
       "layout": "Layout", 
