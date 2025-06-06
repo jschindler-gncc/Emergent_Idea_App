@@ -449,7 +449,7 @@ frontend:
     implemented: true
     working: false
     file: "/app/frontend/src/components/SettingsModal.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
     needs_retesting: false
     status_history:
@@ -459,6 +459,9 @@ frontend:
         - working: false
           agent: "testing"
           comment: "Conducted comprehensive testing of the Settings modal closing functionality. All three closing methods (X button, overlay click, and Escape key) are implemented in the code but not functioning. The X button has an onClick handler that calls onClose() with e.preventDefault() and e.stopPropagation(), which might be interfering with the normal click behavior. The overlay click has both onClick and onMouseDown handlers which might be conflicting. The Escape key has a properly set up event listener in a useEffect hook. Despite all these implementations, none of the closing methods work - the modal remains open regardless of which method is used. The content interaction within the modal works correctly - tab navigation functions properly and settings changes (theme, layout density) are applied correctly. This suggests the issue is specifically with the event handling for closing the modal or with how the onClose prop is being used."
+        - working: false
+          agent: "testing"
+          comment: "Attempted multiple fixes to the Settings modal closing functionality, including simplifying the modal component, removing event.preventDefault() and event.stopPropagation() calls, and using a more direct approach with the onClose handler. Despite these changes, the modal still does not close when clicking the X button, clicking the overlay, or pressing the Escape key. Inspected the DOM and found that the close button (X) is present and correctly rendered, but clicking it does not trigger the expected behavior. The same is true for overlay clicks and the Escape key. This suggests a deeper issue with how the modal state is being managed in the parent component (App.js) or how the onClose prop is being passed and handled. The modal content interaction continues to work correctly - users can navigate between tabs and change settings, but they cannot close the modal once it's open."
 
 metadata:
   created_by: "main_agent"
