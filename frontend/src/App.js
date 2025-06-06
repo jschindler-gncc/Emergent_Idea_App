@@ -490,14 +490,45 @@ function App() {
   const handleLoginSuccess = (user) => {
     setIsAuthenticated(true);
     setCurrentUser(user);
-    const tenant = authService.getCurrentTenant();
-    setCurrentTenant(tenant);
     setShowLogin(false);
     
-    // Load tenant-specific ideas
-    if (tenant) {
+    // Handle tenant selection after login
+    const userTenants = user.tenants || [];
+    
+    if (userTenants.length === 0) {
+      // No tenants - user can still use the app with limited functionality
+      setCurrentTenant(null);
+      setIdeas([]);
+    } else if (userTenants.length === 1) {
+      // Auto-select single tenant
+      const tenant = userTenants[0];
+      authService.switchTenant(tenant.id);
+      setCurrentTenant(tenant);
       const tenantIdeas = loadIdeas(tenant.id);
       setIdeas(tenantIdeas);
+    } else {
+      // Multiple tenants - show selection modal
+      setShowTenantSelection(true);
+    }
+  };
+
+  const handleTenantSelection = (tenantId) => {
+    if (authService.switchTenant(tenantId)) {
+      const newTenant = authService.getCurrentTenant();
+      setCurrentTenant(newTenant);
+      
+      // Load ideas for selected tenant
+      const tenantIdeas = loadIdeas(tenantId);
+      setIdeas(tenantIdeas);
+      
+      setShowTenantSelection(false);
+      
+      // Reset UI state
+      setSelectedCategory('all');
+      setSearchTerm('');
+      setShowArchived(false);
+      setSelectedIdeas(new Set());
+      setBulkMode(false);
     }
   };
 
