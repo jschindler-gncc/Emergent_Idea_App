@@ -189,34 +189,28 @@ const SettingsModal = ({
     }
   };
 
+  // Handle overlay click - simplified to fix closing issue
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  // Handle close button click - simplified to fix closing issue
+  const handleCloseClick = () => {
+    onClose();
+  };
+
   return (
     <div 
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[60]"
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        // Close modal when clicking on overlay
-        if (e.target === e.currentTarget) {
-          onClose();
-        }
-      }}
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) {
-          e.preventDefault();
-        }
-      }}
+      onClick={handleOverlayClick}
     >
       <div 
         className={`rounded-lg w-full max-w-4xl h-[80vh] flex ${
           darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
         }`}
-        onClick={(e) => {
-          // Prevent modal from closing when clicking inside the modal content
-          e.stopPropagation();
-        }}
-        onMouseDown={(e) => {
-          e.stopPropagation();
-        }}
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Sidebar */}
         <div className={`w-64 p-6 border-r ${
@@ -225,11 +219,7 @@ const SettingsModal = ({
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('settings.title')}</h2>
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                onClose();
-              }}
+              onClick={handleCloseClick}
               className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               type="button"
               aria-label="Close settings"
