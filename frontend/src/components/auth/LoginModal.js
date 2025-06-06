@@ -188,9 +188,9 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
   const availableTenants = tenantService.getAllTenants();
 
   const tabs = [
-    { id: 'login', name: 'Sign In', icon: LogIn },
-    { id: 'register', name: 'Sign Up', icon: UserPlus },
-    { id: 'tenant', name: 'Create Organization', icon: Building }
+    { id: 'login', name: t('auth.sign_in'), icon: LogIn },
+    { id: 'register', name: t('auth.sign_up'), icon: UserPlus },
+    { id: 'tenant', name: t('auth.create_organization'), icon: Building }
   ];
 
   return (
