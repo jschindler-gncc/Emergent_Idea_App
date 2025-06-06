@@ -1,10 +1,10 @@
 {
   "app": {
     "title": "アイデア",
-    "subtitle": "素晴らしいアイデアを記録・整理しましょう"
+    "subtitle": "素晴らしいアイデアをキャプチャして整理しましょう"
   },
   "header": {
-    "ideas_count": "{{count}} のアイデア",
+    "ideas_count": "{{count}} 個のアイデア",
     "archived": "アーカイブ済み",
     "selected": "{{count}} 個選択中",
     "new_idea": "新しいアイデア",
@@ -25,9 +25,9 @@
   },
   "ideas": {
     "no_ideas_title": "まだアイデアがありません",
-    "no_ideas_subtitle": "素晴らしいアイデアの記録を始めましょう！",
+    "no_ideas_subtitle": "素晴らしいアイデアをキャプチャし始めましょう！",
     "no_search_results": "アイデアが見つかりません",
-    "search_help": "検索条件やフィルターを調整してみてください",
+    "search_help": "検索やフィルターを調整してみてください",
     "add_first_idea": "最初のアイデアを追加",
     "title_placeholder": "アイデアのタイトル...",
     "content_placeholder": "アイデアを説明してください...",
@@ -46,52 +46,51 @@
     "project_idea": "プロジェクトアイデア",
     "technical_solution": "技術的解決策",
     "creative_concept": "クリエイティブコンセプト",
-    "personal_goal": "個人的目標"
+    "personal_goal": "個人目標"
   },
-  "template_content": {
-    "business": "問題：\n\n解決策：\n\nターゲット市場：\n\n収益モデル：\n\n次のステップ：",
-    "project": "目的：\n\n範囲：\n\n要件：\n\nタイムライン：\n\n必要なリソース：",
-    "technical": "問題の概要：\n\n提案する解決策：\n\n技術スタック：\n\n実装手順：\n\n潜在的課題：",
-    "creative": "コンセプト：\n\nインスピレーション：\n\nターゲット層：\n\n実行アイデア：\n\n必要なリソース：",
-    "personal": "目標：\n\nなぜ重要か：\n\nアクション手順：\n\n成功指標：\n\n期限："
-  },
-  "actions": {
-    "add": "追加",
-    "edit": "編集",
+  "modal": {
+    "edit_idea": "アイデアを編集",
+    "new_idea": "新しいアイデア",
     "save": "保存",
     "cancel": "キャンセル",
     "delete": "削除",
     "archive": "アーカイブ",
     "unarchive": "アーカイブ解除",
-    "add_idea": "アイデアを追加",
+    "title": "タイトル",
+    "category": "カテゴリ",
+    "content": "内容",
+    "tags": "タグ",
+    "created": "作成日時",
+    "updated": "更新日時"
+  },
+  "actions": {
+    "bulk_actions": "一括操作",
+    "select_all": "すべて選択",
+    "deselect_all": "すべて選択解除",
     "archive_selected": "選択項目をアーカイブ",
     "delete_selected": "選択項目を削除",
-    "bulk_select": "一括選択",
-    "analytics": "分析",
-    "card_view": "カードビュー",
-    "list_view": "リストビュー"
+    "cancel_selection": "選択をキャンセル",
+    "confirm_delete": "選択したアイデアを削除してもよろしいですか？",
+    "confirm_archive": "選択したアイデアをアーカイブしてもよろしいですか？",
+    "reorder_drag": "ドラッグしてアイデアを並び替え"
   },
   "analytics": {
     "title": "分析",
+    "ideas_over_time": "時間経過によるアイデア",
+    "category_distribution": "カテゴリ分布",
+    "tag_usage": "タグ使用状況",
     "total_ideas": "アイデア総数",
-    "active": "アクティブ",
-    "archived": "アーカイブ済み",
-    "this_week": "今週",
-    "most_popular_category": "最も人気のカテゴリ：",
-    "top_tag": "トップタグ："
+    "this_month": "今月",
+    "total_categories": "カテゴリ総数",
+    "total_tags": "タグ総数",
+    "most_popular_category": "最も人気のカテゴリ",
+    "most_used_tag": "最も使用されるタグ",
+    "ideas_created": "作成されたアイデア",
+    "weekly_goal": "週間目標"
   },
-  "modals": {
-    "add_new_idea": "新しいアイデアを追加",
-    "confirm_delete": "選択した {{count}} 個のアイデアを削除しますか？"
-  },
-  "tooltips": {
-    "dark_mode": "ダークモードを切り替え",
-    "analytics": "分析を表示",
-    "bulk_select": "一括選択モード",
-    "card_view": "カードビューに切り替え",
-    "list_view": "リストビューに切り替え",
-    "templates": "テンプレートを使用",
-    "settings": "設定"
+  "view_modes": {
+    "card_view": "カード表示",
+    "list_view": "リスト表示"
   },
   "languages": {
     "en": "English",
@@ -103,40 +102,22 @@
     "zh": "中文",
     "ja": "日本語"
   },
-  "dates": {
-    "created": "作成日 {{date}}",
-    "updated": "更新日 {{date}}"
-  },
   "settings": {
     "title": "設定",
-    "tabs": {
-      "appearance": "外観",
-      "layout": "レイアウト",
-      "preferences": "設定",
-      "achievements": "実績"
-    },
-    "appearance": {
-      "theme_selection": "テーマ選択",
-      "dark_mode": "ダークモード",
-      "light": "ライト",
-      "dark": "ダーク",
-      "system": "システム"
-    },
-    "layout": {
-      "layout_density": "レイアウト密度",
-      "default_view": "デフォルトビュー",
-      "sidebar_settings": "サイドバー設定",
-      "collapse_sidebar": "デフォルトでサイドバーを折りたたむ",
-      "show_sidebar_icons": "サイドバーアイコンを表示"
-    },
-    "preferences": {
-      "quick_actions": "クイックアクション",
-      "auto_save": "入力時に自動保存",
-      "confirm_delete": "アイデア削除前に確認",
-      "show_tooltips": "役立つツールチップを表示",
-      "ideas_per_page": "ページあたりのアイデア数"
-    },
-    "achievements": {
+    "appearance": "外観",
+    "behavior": "動作",
+    "data": "データ",
+    "achievements": "実績",
+    "theme": "テーマ",
+    "dark_mode": "ダークモード",
+    "language": "言語",
+    "layout_density": "レイアウト密度",
+    "auto_save": "自動保存",
+    "export_data": "データエクスポート",
+    "import_data": "データインポート",
+    "reset_data": "データリセット",
+    "reset_confirm": "すべてのデータをリセットしてもよろしいですか？この操作は取り消せません。",
+    "achievement_progress": {
       "your_progress": "あなたの進捗",
       "achievement_stats": "実績統計",
       "unlocked": "{{total}} 個中 {{count}} 個の実績をアンロック"
@@ -152,22 +133,155 @@
   },
   "layout_density": {
     "comfortable": "快適",
-    "compact": "コンパクト",
+    "compact": "コンパクト", 
     "cozy": "心地よい",
-    "comfortable_desc": "余白を多くし、目に優しく",
-    "compact_desc": "余白を少なくし、より多くのコンテンツを表示",
-    "cozy_desc": "最適な快適さのためのバランスの取れた余白"
+    "comfortable_desc": "より多くの間隔で、目に優しい",
+    "compact_desc": "より少ない間隔で、より多くのコンテンツが見える",
+    "cozy_desc": "最適な快適性のためのバランスの取れた間隔"
   },
   "achievements_list": {
-    "first_step": "はじめの一歩",
+    "first_step": "最初の一歩",
     "first_step_desc": "最初のアイデアを作成しました",
     "idea_collector": "アイデアコレクター",
     "idea_collector_desc": "10個のアイデアを作成しました",
-    "idea_master": "アイデアマスター",
+    "idea_master": "アイデアマスター", 
     "idea_master_desc": "50個のアイデアを作成しました",
     "organizer": "スーパーオーガナイザー",
-    "organizer_desc": "5つのカテゴリすべてを使用しました",
+    "organizer_desc": "すべての5つのカテゴリを使用しました",
     "weekly_streak": "ウィークリーウォリアー",
-    "weekly_streak_desc": "7日連続でアイデアを作成しました"
+    "weekly_streak_desc": "7日間連続でアイデアを作成しました"
+  },
+  "superadmin": {
+    "title": "スーパー管理者",
+    "dashboard": "スーパー管理者ダッシュボード",
+    "platform_overview": "プラットフォーム概要",
+    "tenant_management": "テナント管理",
+    "usage_analytics": "使用分析",
+    "platform_settings": "プラットフォーム設定",
+    "overview": {
+      "title": "プラットフォーム概要",
+      "subtitle": "プラットフォーム全体の包括的な統計とヘルスメトリクス",
+      "total_tenants": "テナント総数",
+      "total_users": "ユーザー総数",
+      "total_ideas": "アイデア総数",
+      "monthly_revenue": "月収",
+      "active_tenants": "{{count}} 個がアクティブ",
+      "avg_per_tenant": "テナント当たり平均 {{count}}",
+      "paying_tenants": "{{count}} 個の有料テナントから",
+      "recent_activity": "最近のプラットフォーム活動",
+      "growth_trends": "成長トレンド",
+      "fastest_growing": "最も急成長",
+      "most_active": "最もアクティブ",
+      "api_calls": "{{count}} 回のAPI呼び出し",
+      "growth_percent": "+{{percent}}% 成長"
+    },
+    "tenants": {
+      "title": "テナント管理",
+      "subtitle": "すべてのプラットフォームテナントを作成、管理、監視",
+      "create_tenant": "テナント作成",
+      "tenant_name": "テナント",
+      "plan": "プラン",
+      "users_ideas": "ユーザー/アイデア",
+      "status": "ステータス",
+      "created": "作成日",
+      "actions": "アクション",
+      "users_count": "{{count}} ユーザー",
+      "ideas_count": "{{count}} アイデア",
+      "active": "アクティブ",
+      "inactive": "非アクティブ"
+    },
+    "analytics": {
+      "title": "使用分析",
+      "subtitle": "すべてのテナントの詳細な使用統計とパフォーマンスメトリクス",
+      "total_users": "ユーザー総数",
+      "total_ideas": "アイデア総数",
+      "active_users": "アクティブユーザー",
+      "monthly_revenue": "月収",
+      "api_calls": "API呼び出し",
+      "collaboration_events": "コラボレーションイベント",
+      "cross_tenant_shares": "テナント間共有",
+      "last_active": "最終アクティブ"
+    },
+    "settings": {
+      "title": "プラットフォーム設定",
+      "subtitle": "グローバルプラットフォーム設定とセキュリティ設定",
+      "coming_soon": "近日公開",
+      "coming_soon_desc": "プラットフォーム設定には、グローバル設定オプション、セキュリティポリシー、システム全体の機能管理が含まれます。"
+    },
+    "create_tenant": {
+      "title": "新しいテナントを作成",
+      "organization_name": "組織名",
+      "organization_name_placeholder": "組織名を入力",
+      "domain": "ドメイン",
+      "domain_placeholder": "組織ドメイン",
+      "industry": "業界",
+      "select_industry": "業界を選択",
+      "company_size": "会社規模",
+      "select_size": "規模を選択",
+      "plan": "プラン",
+      "admin_email": "管理者メール",
+      "admin_email_placeholder": "admin@company.com",
+      "admin_password": "管理者パスワード",
+      "admin_password_placeholder": "管理者パスワードを作成",
+      "max_users": "最大ユーザー数",
+      "max_ideas": "最大アイデア数",
+      "storage_limit": "ストレージ制限",
+      "creating": "作成中...",
+      "create": "テナント作成",
+      "cancel": "キャンセル",
+      "industries": {
+        "technology": "テクノロジー",
+        "finance": "金融",
+        "healthcare": "ヘルスケア",
+        "education": "教育",
+        "retail": "小売",
+        "manufacturing": "製造業",
+        "other": "その他"
+      },
+      "sizes": {
+        "startup": "1-10名",
+        "small": "11-50名",
+        "medium": "51-200名",
+        "large": "201-1000名",
+        "enterprise": "1000名以上"
+      },
+      "plans": {
+        "starter": "スターター（無料）",
+        "professional": "プロフェッショナル（$29/月）",
+        "enterprise": "エンタープライズ（$99/月）"
+      }
+    },
+    "quick_stats": "クイック統計",
+    "tenants_label": "テナント",
+    "users_label": "ユーザー",
+    "ideas_label": "アイデア",
+    "revenue_label": "収益"
+  },
+  "auth": {
+    "sign_in": "サインイン",
+    "sign_up": "サインアップ",
+    "create_organization": "組織を作成",
+    "email": "メール",
+    "password": "パスワード",
+    "remember_me": "ログイン状態を保持",
+    "sign_in_button": "サインイン",
+    "sign_up_button": "サインアップ",
+    "social_login": "または以下で続行",
+    "logout": "ログアウト",
+    "user_menu": "ユーザーメニュー",
+    "switch_organization": "組織を切り替え"
+  },
+  "tenant_selection": {
+    "title": "組織を選択",
+    "subtitle": "どの組織で作業したいかを選択してください",
+    "switch_anytime": "ユーザーメニューからいつでも組織を切り替えることができます"
+  },
+  "tooltips": {
+    "settings": "設定",
+    "super_admin": "スーパー管理者ダッシュボード",
+    "user_menu": "ユーザーメニュー",
+    "logout": "ログアウト",
+    "templates": "アイデアテンプレート",
+    "new_idea": "新しいアイデアを作成"
   }
 }
