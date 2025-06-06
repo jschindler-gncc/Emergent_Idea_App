@@ -105,13 +105,13 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
 
     // Validation
     if (registerForm.password !== registerForm.confirmPassword) {
-      setError('Passwords do not match');
+      setError(t('auth.passwords_no_match'));
       setLoading(false);
       return;
     }
 
     if (!registerForm.agreeToTerms) {
-      setError('Please agree to the terms and conditions');
+      setError(t('auth.agree_terms_required'));
       setLoading(false);
       return;
     }
