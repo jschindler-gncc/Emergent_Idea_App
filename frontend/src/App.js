@@ -574,8 +574,10 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-200 ${themeClasses}`}>
-      {/* Header */}
-      <header className={`border-b px-6 py-4 ${settings.darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+      {isAuthenticated ? (
+        <>
+          {/* Header */}
+          <header className={`border-b px-6 py-4 ${settings.darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <button
