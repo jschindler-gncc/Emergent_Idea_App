@@ -292,8 +292,7 @@ metadata:
 test_plan:
   current_focus:
     - "Super Admin Dashboard with Tenant Management"
-  stuck_tasks: 
-    - "Super Admin Dashboard with Tenant Management"
+  stuck_tasks: []
   test_all: true
   test_priority: "high_first"
   
