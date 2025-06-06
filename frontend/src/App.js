@@ -1349,6 +1349,51 @@ function App() {
         onLoginSuccess={handleLoginSuccess}
       />
 
+      {/* Tenant Selection Modal */}
+      {showTenantSelection && currentUser && currentUser.tenants && currentUser.tenants.length > 1 && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className={`rounded-lg p-6 w-full max-w-md ${settings.darkMode ? 'bg-gray-800' : 'bg-white'}`}>
+            <div className="text-center mb-6">
+              <Building className="w-12 h-12 text-blue-600 mx-auto mb-3" />
+              <h2 className="text-xl font-bold mb-2">Select Organization</h2>
+              <p className="text-gray-600 dark:text-gray-400">
+                Choose which organization you'd like to work with
+              </p>
+            </div>
+            
+            <div className="space-y-2">
+              {currentUser.tenants.map(tenant => (
+                <button
+                  key={tenant.id}
+                  onClick={() => handleTenantSelection(tenant.id)}
+                  className={`w-full p-4 rounded-lg border-2 transition-all text-left hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 ${
+                    settings.darkMode 
+                      ? 'border-gray-600 bg-gray-700' 
+                      : 'border-gray-200 bg-white'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Building className="w-5 h-5 text-blue-600" />
+                    <div>
+                      <h3 className="font-semibold">{tenant.name}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
+                        {tenant.role.replace('_', ' ')}
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+            
+            <div className="mt-6 text-center">
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                You can switch organizations anytime from the user menu
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Settings Modal */}
       <SettingsModal
         key={i18n.language} // Force re-render when language changes
