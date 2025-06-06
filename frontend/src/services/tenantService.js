@@ -298,11 +298,22 @@ class TenantService {
         domain: 'tech-innovations',
         industry: 'Technology',
         size: 'Enterprise',
-        plan: 'Premium',
+        plan: 'enterprise',
         status: 'active',
         createdAt: '2024-01-15T00:00:00Z',
         settings: this.getDefaultTenantSettings(),
-        usage: { ...this.getDefaultUsageMetrics(), totalUsers: 25, totalIdeas: 150 }
+        usage: { 
+          ...this.getDefaultUsageMetrics(), 
+          totalUsers: 25, 
+          totalIdeas: 150,
+          activeUsers: 18,
+          storageUsed: 2.5,
+          apiCallsThisMonth: 8500,
+          collaborationEvents: 45,
+          crossTenantShares: 12,
+          monthlyGrowth: 15.2,
+          lastActive: '2024-12-15T10:30:00Z'
+        }
       },
       {
         id: 'tenant_2',
@@ -310,11 +321,22 @@ class TenantService {
         domain: 'creative-studios',
         industry: 'Design & Creative',
         size: 'Medium',
-        plan: 'Professional',
+        plan: 'professional',
         status: 'active',
         createdAt: '2024-02-01T00:00:00Z',
         settings: this.getDefaultTenantSettings(),
-        usage: { ...this.getDefaultUsageMetrics(), totalUsers: 12, totalIdeas: 89 }
+        usage: { 
+          ...this.getDefaultUsageMetrics(), 
+          totalUsers: 12, 
+          totalIdeas: 89,
+          activeUsers: 9,
+          storageUsed: 1.2,
+          apiCallsThisMonth: 3200,
+          collaborationEvents: 23,
+          crossTenantShares: 7,
+          monthlyGrowth: 8.5,
+          lastActive: '2024-12-14T16:45:00Z'
+        }
       },
       {
         id: 'tenant_3',
@@ -322,11 +344,68 @@ class TenantService {
         domain: 'global-consulting',
         industry: 'Consulting',
         size: 'Enterprise',
-        plan: 'Enterprise',
+        plan: 'enterprise',
         status: 'active',
         createdAt: '2024-01-20T00:00:00Z',
         settings: this.getDefaultTenantSettings(),
-        usage: { ...this.getDefaultUsageMetrics(), totalUsers: 45, totalIdeas: 275 }
+        usage: { 
+          ...this.getDefaultUsageMetrics(), 
+          totalUsers: 45, 
+          totalIdeas: 275,
+          activeUsers: 32,
+          storageUsed: 4.8,
+          apiCallsThisMonth: 12500,
+          collaborationEvents: 78,
+          crossTenantShares: 28,
+          monthlyGrowth: 22.1,
+          lastActive: '2024-12-15T09:15:00Z'
+        }
+      },
+      {
+        id: 'tenant_4',
+        name: 'StartupXYZ Inc',
+        domain: 'startupxyz',
+        industry: 'Technology',
+        size: 'Startup',
+        plan: 'starter',
+        status: 'active',
+        createdAt: '2024-11-01T00:00:00Z',
+        settings: this.getDefaultTenantSettings(),
+        usage: { 
+          ...this.getDefaultUsageMetrics(), 
+          totalUsers: 5, 
+          totalIdeas: 28,
+          activeUsers: 4,
+          storageUsed: 0.3,
+          apiCallsThisMonth: 450,
+          collaborationEvents: 5,
+          crossTenantShares: 2,
+          monthlyGrowth: 45.8,
+          lastActive: '2024-12-14T14:20:00Z'
+        }
+      },
+      {
+        id: 'tenant_5',
+        name: 'Education Plus',
+        domain: 'education-plus',
+        industry: 'Education',
+        size: 'Large',
+        plan: 'professional',
+        status: 'active',
+        createdAt: '2024-03-10T00:00:00Z',
+        settings: this.getDefaultTenantSettings(),
+        usage: { 
+          ...this.getDefaultUsageMetrics(), 
+          totalUsers: 35, 
+          totalIdeas: 198,
+          activeUsers: 26,
+          storageUsed: 3.1,
+          apiCallsThisMonth: 6800,
+          collaborationEvents: 52,
+          crossTenantShares: 18,
+          monthlyGrowth: 12.3,
+          lastActive: '2024-12-15T11:00:00Z'
+        }
       }
     ];
   }
