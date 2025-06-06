@@ -161,7 +161,7 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-2">
               <Crown className="w-6 h-6 text-yellow-500" />
-              <h2 className="text-xl font-bold">Super Admin</h2>
+              <h2 className="text-xl font-bold">{t('superadmin.title')}</h2>
             </div>
             <button
               onClick={onClose}
