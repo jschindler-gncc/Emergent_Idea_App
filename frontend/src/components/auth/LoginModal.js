@@ -20,7 +20,6 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: '',
-    tenantId: '',
     rememberMe: false
   });
 
