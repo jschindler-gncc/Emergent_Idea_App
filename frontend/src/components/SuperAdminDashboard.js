@@ -519,9 +519,9 @@ const SuperAdminDashboard = ({ isOpen, onClose, currentUser, darkMode }) => {
             {activeTab === 'analytics' && (
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-2xl font-bold mb-2">Usage Analytics</h1>
+                  <h1 className="text-2xl font-bold mb-2">{t('superadmin.analytics.title')}</h1>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Detailed usage statistics and performance metrics for all tenants
+                    {t('superadmin.analytics.subtitle')}
                   </p>
                 </div>
 
