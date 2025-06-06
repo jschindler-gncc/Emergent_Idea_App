@@ -246,9 +246,9 @@ frontend:
 
   - task: "Super Admin Dashboard with Tenant Management"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/components/SuperAdminDashboard.js"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
     needs_retesting: false
     status_history:
@@ -258,6 +258,9 @@ frontend:
         - working: true
           agent: "testing"
           comment: "Completed comprehensive testing of the multi-tenant authentication and tenant selection flow. The login modal appears correctly on page load. Successfully logged in with the demo credentials (admin@example.com/admin123) by pressing Enter on the password field. After login, the tenant selection modal appears showing both available tenants (Tech Corp and Creative Agency) with their respective roles (Tenant Admin and Manager). Selected Tech Corp tenant and verified the main app interface loaded with the tenant name displayed in the header. Successfully tested tenant switching through the user menu - switched to Creative Agency and back to Tech Corp with the tenant name updating correctly in the header each time. Logout functionality works correctly - clicking logout in the user menu returns to the login screen. The entire authentication flow with tenant selection and switching works seamlessly."
+        - working: false
+          agent: "testing"
+          comment: "Conducted comprehensive testing of the Super Admin Dashboard functionality. The login and tenant selection process works correctly, and the crown icon is visible in the header indicating super admin status. The Super Admin Dashboard option is also visible in the user menu. However, when attempting to access the Super Admin Dashboard (via either the crown icon or the user menu option), a JavaScript error occurs: 'Reduce of empty array with no initial value' in the SuperAdminDashboard component. This prevents the dashboard from loading and displaying any content. The error appears to be in the platformStats calculation in SuperAdminDashboard.js where it's trying to reduce an empty array without providing an initial value. The basic authentication, tenant selection, and tenant switching functionality work correctly, but the Super Admin Dashboard itself is not functional due to this error."
 
 metadata:
   created_by: "main_agent"
