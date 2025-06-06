@@ -24,7 +24,7 @@
     "settings": "Impostazioni"
   },
   "ideas": {
-    "no_ideas_title": "Nessuna idea ancora",
+    "no_ideas_title": "Ancora nessuna idea",
     "no_ideas_subtitle": "Inizia a catturare le tue idee brillanti!",
     "no_search_results": "Nessuna idea trovata",
     "search_help": "Prova ad aggiustare la tua ricerca o i filtri",
@@ -48,50 +48,49 @@
     "creative_concept": "Concetto Creativo",
     "personal_goal": "Obiettivo Personale"
   },
-  "template_content": {
-    "business": "Problema:\n\nSoluzione:\n\nMercato di Riferimento:\n\nModello di Ricavi:\n\nProssimi Passi:",
-    "project": "Obiettivo:\n\nAmbito:\n\nRequisiti:\n\nTempistiche:\n\nRisorse Necessarie:",
-    "technical": "Dichiarazione del Problema:\n\nSoluzione Proposta:\n\nStack Tecnologico:\n\nPassi di Implementazione:\n\nSfide Potenziali:",
-    "creative": "Concetto:\n\nIspirazione:\n\nPubblico di Riferimento:\n\nIdee di Esecuzione:\n\nRisorse Necessarie:",
-    "personal": "Obiettivo:\n\nPerché è importante:\n\nPassi d'Azione:\n\nMetriche di Successo:\n\nScadenza:"
-  },
-  "actions": {
-    "add": "Aggiungi",
-    "edit": "Modifica",
+  "modal": {
+    "edit_idea": "Modifica Idea",
+    "new_idea": "Nuova Idea",
     "save": "Salva",
     "cancel": "Annulla",
     "delete": "Elimina",
     "archive": "Archivia",
-    "unarchive": "Ripristina",
-    "add_idea": "Aggiungi Idea",
+    "unarchive": "Dearchivia",
+    "title": "Titolo",
+    "category": "Categoria",
+    "content": "Contenuto",
+    "tags": "Tag",
+    "created": "Creato",
+    "updated": "Aggiornato"
+  },
+  "actions": {
+    "bulk_actions": "Azioni di Massa",
+    "select_all": "Seleziona Tutto",
+    "deselect_all": "Deseleziona Tutto",
     "archive_selected": "Archivia Selezionate",
     "delete_selected": "Elimina Selezionate",
-    "bulk_select": "Selezione Multipla",
-    "analytics": "Analisi",
-    "card_view": "Vista a Schede",
-    "list_view": "Vista a Lista"
+    "cancel_selection": "Annulla Selezione",
+    "confirm_delete": "Sei sicuro di voler eliminare le idee selezionate?",
+    "confirm_archive": "Sei sicuro di voler archiviare le idee selezionate?",
+    "reorder_drag": "Trascina per riordinare le idee"
   },
   "analytics": {
     "title": "Analisi",
-    "total_ideas": "Totale Idee",
-    "active": "Attive",
-    "archived": "Archiviate",
-    "this_week": "Questa Settimana",
-    "most_popular_category": "Categoria più popolare:",
-    "top_tag": "Tag principale:"
+    "ideas_over_time": "Idee nel Tempo",
+    "category_distribution": "Distribuzione per Categorie",
+    "tag_usage": "Uso dei Tag",
+    "total_ideas": "Idee Totali",
+    "this_month": "Questo Mese",
+    "total_categories": "Categorie Totali",
+    "total_tags": "Tag Totali",
+    "most_popular_category": "Categoria Più Popolare",
+    "most_used_tag": "Tag Più Usato",
+    "ideas_created": "Idee Create",
+    "weekly_goal": "Obiettivo Settimanale"
   },
-  "modals": {
-    "add_new_idea": "Aggiungi Nuova Idea",
-    "confirm_delete": "Eliminare {{count}} idee selezionate?"
-  },
-  "tooltips": {
-    "dark_mode": "Attiva/disattiva modalità scura",
-    "analytics": "Visualizza analisi",
-    "bulk_select": "Modalità selezione multipla",
-    "card_view": "Passa alla vista a schede",
-    "list_view": "Passa alla vista a lista",
-    "templates": "Usa modelli",
-    "settings": "Impostazioni"
+  "view_modes": {
+    "card_view": "Vista a Schede",
+    "list_view": "Vista a Lista"
   },
   "languages": {
     "en": "English",
@@ -103,43 +102,25 @@
     "zh": "中文",
     "ja": "日本語"
   },
-  "dates": {
-    "created": "Creato {{date}}",
-    "updated": "Aggiornato {{date}}"
-  },
   "settings": {
     "title": "Impostazioni",
-    "tabs": {
-      "appearance": "Aspetto",
-      "layout": "Layout",
-      "preferences": "Preferenze",
-      "achievements": "Risultati"
-    },
-    "appearance": {
-      "theme_selection": "Selezione Tema",
-      "dark_mode": "Modalità Scura",
-      "light": "Chiaro",
-      "dark": "Scuro",
-      "system": "Sistema"
-    },
-    "layout": {
-      "layout_density": "Densità del Layout",
-      "default_view": "Vista Predefinita",
-      "sidebar_settings": "Impostazioni Barra Laterale",
-      "collapse_sidebar": "Comprimi barra laterale per impostazione predefinita",
-      "show_sidebar_icons": "Mostra icone barra laterale"
-    },
-    "preferences": {
-      "quick_actions": "Azioni Rapide",
-      "auto_save": "Salvataggio automatico durante la digitazione",
-      "confirm_delete": "Conferma prima di eliminare le idee",
-      "show_tooltips": "Mostra suggerimenti utili",
-      "ideas_per_page": "Idee per Pagina"
-    },
-    "achievements": {
-      "your_progress": "I Tuoi Progressi",
-      "achievement_stats": "Statistiche Risultati",
-      "unlocked": "{{count}} di {{total}} risultati sbloccati"
+    "appearance": "Aspetto",
+    "behavior": "Comportamento",
+    "data": "Dati",
+    "achievements": "Traguardi",
+    "theme": "Tema",
+    "dark_mode": "Modalità Scura",
+    "language": "Lingua",
+    "layout_density": "Densità del Layout",
+    "auto_save": "Salvataggio Automatico",
+    "export_data": "Esporta Dati",
+    "import_data": "Importa Dati",
+    "reset_data": "Reimposta Dati",
+    "reset_confirm": "Sei sicuro di voler reimpostare tutti i dati? Questa azione non può essere annullata.",
+    "achievement_progress": {
+      "your_progress": "Il Tuo Progresso",
+      "achievement_stats": "Statistiche Traguardi",
+      "unlocked": "{{count}} di {{total}} traguardi sbloccati"
     }
   },
   "themes": {
@@ -148,26 +129,159 @@
     "forest": "Foresta",
     "sunset": "Tramonto",
     "purple": "Viola",
-    "monochrome": "Monocromatico"
+    "monochrome": "Monocromo"
   },
   "layout_density": {
     "comfortable": "Comodo",
-    "compact": "Compatto",
+    "compact": "Compatto", 
     "cozy": "Accogliente",
     "comfortable_desc": "Più spaziatura, più facile per gli occhi",
     "compact_desc": "Meno spaziatura, più contenuto visibile",
-    "cozy_desc": "Spaziatura equilibrata per comfort ottimale"
+    "cozy_desc": "Spaziatura bilanciata per il comfort ottimale"
   },
   "achievements_list": {
     "first_step": "Primo Passo",
     "first_step_desc": "Hai creato la tua prima idea",
     "idea_collector": "Collezionista di Idee",
     "idea_collector_desc": "Hai creato 10 idee",
-    "idea_master": "Maestro delle Idee",
+    "idea_master": "Maestro delle Idee", 
     "idea_master_desc": "Hai creato 50 idee",
     "organizer": "Super Organizzatore",
     "organizer_desc": "Hai usato tutte e 5 le categorie",
     "weekly_streak": "Guerriero Settimanale",
     "weekly_streak_desc": "Hai creato idee per 7 giorni consecutivi"
+  },
+  "superadmin": {
+    "title": "Super Amministratore",
+    "dashboard": "Dashboard Super Admin",
+    "platform_overview": "Panoramica Piattaforma",
+    "tenant_management": "Gestione Tenant",
+    "usage_analytics": "Analisi Utilizzo",
+    "platform_settings": "Impostazioni Piattaforma",
+    "overview": {
+      "title": "Panoramica Piattaforma",
+      "subtitle": "Statistiche complete e metriche di salute per l'intera piattaforma",
+      "total_tenants": "Tenant Totali",
+      "total_users": "Utenti Totali",
+      "total_ideas": "Idee Totali",
+      "monthly_revenue": "Entrate Mensili",
+      "active_tenants": "{{count}} attivi",
+      "avg_per_tenant": "Media {{count}} per tenant",
+      "paying_tenants": "Da {{count}} tenant paganti",
+      "recent_activity": "Attività Recente della Piattaforma",
+      "growth_trends": "Tendenze di Crescita",
+      "fastest_growing": "Crescita Più Veloce",
+      "most_active": "Più Attivo",
+      "api_calls": "{{count}} chiamate API",
+      "growth_percent": "+{{percent}}% crescita"
+    },
+    "tenants": {
+      "title": "Gestione Tenant",
+      "subtitle": "Crea, gestisci e monitora tutti i tenant della piattaforma",
+      "create_tenant": "Crea Tenant",
+      "tenant_name": "Tenant",
+      "plan": "Piano",
+      "users_ideas": "Utenti/Idee",
+      "status": "Stato",
+      "created": "Creato",
+      "actions": "Azioni",
+      "users_count": "{{count}} utenti",
+      "ideas_count": "{{count}} idee",
+      "active": "attivo",
+      "inactive": "inattivo"
+    },
+    "analytics": {
+      "title": "Analisi Utilizzo",
+      "subtitle": "Statistiche dettagliate di utilizzo e metriche di performance per tutti i tenant",
+      "total_users": "Utenti Totali",
+      "total_ideas": "Idee Totali",
+      "active_users": "Utenti Attivi",
+      "monthly_revenue": "Entrate Mensili",
+      "api_calls": "Chiamate API",
+      "collaboration_events": "Eventi di Collaborazione",
+      "cross_tenant_shares": "Condivisioni Inter-Tenant",
+      "last_active": "Ultima Attività"
+    },
+    "settings": {
+      "title": "Impostazioni Piattaforma",
+      "subtitle": "Configurazione globale della piattaforma e impostazioni di sicurezza",
+      "coming_soon": "Prossimamente",
+      "coming_soon_desc": "Le impostazioni della piattaforma includeranno opzioni di configurazione globale, politiche di sicurezza e gestione delle funzionalità a livello di sistema."
+    },
+    "create_tenant": {
+      "title": "Crea Nuovo Tenant",
+      "organization_name": "Nome Organizzazione",
+      "organization_name_placeholder": "Inserisci il nome dell'organizzazione",
+      "domain": "Dominio",
+      "domain_placeholder": "dominio-organizzazione",
+      "industry": "Settore",
+      "select_industry": "Seleziona Settore",
+      "company_size": "Dimensione Azienda",
+      "select_size": "Seleziona Dimensione",
+      "plan": "Piano",
+      "admin_email": "Email Amministratore",
+      "admin_email_placeholder": "admin@azienda.com",
+      "admin_password": "Password Amministratore",
+      "admin_password_placeholder": "Crea password amministratore",
+      "max_users": "Utenti Massimi",
+      "max_ideas": "Idee Massime",
+      "storage_limit": "Limite Archiviazione",
+      "creating": "Creazione...",
+      "create": "Crea Tenant",
+      "cancel": "Annulla",
+      "industries": {
+        "technology": "Tecnologia",
+        "finance": "Finanza",
+        "healthcare": "Sanità",
+        "education": "Educazione",
+        "retail": "Vendita al Dettaglio",
+        "manufacturing": "Manifattura",
+        "other": "Altro"
+      },
+      "sizes": {
+        "startup": "1-10 dipendenti",
+        "small": "11-50 dipendenti",
+        "medium": "51-200 dipendenti",
+        "large": "201-1000 dipendenti",
+        "enterprise": "1000+ dipendenti"
+      },
+      "plans": {
+        "starter": "Starter (Gratuito)",
+        "professional": "Professionale ($29/mese)",
+        "enterprise": "Enterprise ($99/mese)"
+      }
+    },
+    "quick_stats": "Statistiche Rapide",
+    "tenants_label": "Tenant",
+    "users_label": "Utenti",
+    "ideas_label": "Idee",
+    "revenue_label": "Entrate"
+  },
+  "auth": {
+    "sign_in": "Accedi",
+    "sign_up": "Registrati",
+    "create_organization": "Crea Organizzazione",
+    "email": "Email",
+    "password": "Password",
+    "remember_me": "Ricordami",
+    "sign_in_button": "Accedi",
+    "sign_up_button": "Registrati",
+    "social_login": "O continua con",
+    "logout": "Esci",
+    "user_menu": "Menu utente",
+    "switch_organization": "Cambia Organizzazione"
+  },
+  "tenant_selection": {
+    "title": "Seleziona Organizzazione",
+    "subtitle": "Scegli con quale organizzazione vorresti lavorare",
+    "switch_anytime": "Puoi cambiare organizzazione in qualsiasi momento dal menu utente"
+  },
+  "tooltips": {
+    "settings": "Impostazioni",
+    "super_admin": "Dashboard Super Admin",
+    "user_menu": "Menu utente",
+    "logout": "Esci",
+    "templates": "Modelli di Idee",
+    "new_idea": "Crea Nuova Idea"
   }
 }

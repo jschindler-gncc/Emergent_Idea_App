@@ -1,22 +1,22 @@
 {
   "app": {
-    "title": "想法",
-    "subtitle": "捕获和整理您的绝妙想法"
+    "title": "创意",
+    "subtitle": "捕捉和整理您的精彩创意"
   },
   "header": {
-    "ideas_count": "{{count}} 个想法",
+    "ideas_count": "{{count}} 个创意",
     "archived": "已归档",
     "selected": "已选择 {{count}} 个",
-    "new_idea": "新想法",
+    "new_idea": "新创意",
     "templates": "模板"
   },
   "sidebar": {
-    "search_placeholder": "搜索想法...",
+    "search_placeholder": "搜索创意...",
     "export": "导出",
     "export_json": "导出为 JSON",
     "export_csv": "导出为 CSV",
     "categories": "分类",
-    "all_ideas": "所有想法",
+    "all_ideas": "所有创意",
     "show_archived": "显示已归档",
     "hide_archived": "隐藏已归档",
     "tags": "标签",
@@ -24,17 +24,17 @@
     "settings": "设置"
   },
   "ideas": {
-    "no_ideas_title": "还没有想法",
-    "no_ideas_subtitle": "开始捕获您的绝妙想法吧！",
-    "no_search_results": "未找到想法",
+    "no_ideas_title": "暂无创意",
+    "no_ideas_subtitle": "开始捕捉您的精彩创意吧！",
+    "no_search_results": "未找到创意",
     "search_help": "尝试调整您的搜索或筛选条件",
-    "add_first_idea": "添加您的第一个想法",
-    "title_placeholder": "想法标题...",
-    "content_placeholder": "描述您的想法...",
+    "add_first_idea": "添加您的第一个创意",
+    "title_placeholder": "创意标题...",
+    "content_placeholder": "描述您的创意...",
     "tags_placeholder": "标签（用逗号分隔）"
   },
   "categories": {
-    "general": "一般",
+    "general": "通用",
     "business": "商业",
     "personal": "个人",
     "creative": "创意",
@@ -42,56 +42,55 @@
   },
   "templates": {
     "quick_start": "快速开始模板",
-    "business_idea": "商业想法",
-    "project_idea": "项目想法",
+    "business_idea": "商业创意",
+    "project_idea": "项目创意",
     "technical_solution": "技术解决方案",
     "creative_concept": "创意概念",
     "personal_goal": "个人目标"
   },
-  "template_content": {
-    "business": "问题：\n\n解决方案：\n\n目标市场：\n\n收入模式：\n\n下一步：",
-    "project": "目标：\n\n范围：\n\n需求：\n\n时间表：\n\n所需资源：",
-    "technical": "问题陈述：\n\n建议解决方案：\n\n技术栈：\n\n实施步骤：\n\n潜在挑战：",
-    "creative": "概念：\n\n灵感：\n\n目标受众：\n\n执行想法：\n\n所需资源：",
-    "personal": "目标：\n\n为什么重要：\n\n行动步骤：\n\n成功指标：\n\n截止日期："
-  },
-  "actions": {
-    "add": "添加",
-    "edit": "编辑",
+  "modal": {
+    "edit_idea": "编辑创意",
+    "new_idea": "新创意",
     "save": "保存",
     "cancel": "取消",
     "delete": "删除",
     "archive": "归档",
     "unarchive": "取消归档",
-    "add_idea": "添加想法",
-    "archive_selected": "归档选中项",
-    "delete_selected": "删除选中项",
-    "bulk_select": "批量选择",
-    "analytics": "分析",
-    "card_view": "卡片视图",
-    "list_view": "列表视图"
+    "title": "标题",
+    "category": "分类",
+    "content": "内容",
+    "tags": "标签",
+    "created": "创建时间",
+    "updated": "更新时间"
+  },
+  "actions": {
+    "bulk_actions": "批量操作",
+    "select_all": "全选",
+    "deselect_all": "取消全选",
+    "archive_selected": "归档所选",
+    "delete_selected": "删除所选",
+    "cancel_selection": "取消选择",
+    "confirm_delete": "您确定要删除所选的创意吗？",
+    "confirm_archive": "您确定要归档所选的创意吗？",
+    "reorder_drag": "拖拽重新排序创意"
   },
   "analytics": {
     "title": "分析",
-    "total_ideas": "总想法数",
-    "active": "活跃",
-    "archived": "已归档",
-    "this_week": "本周",
-    "most_popular_category": "最受欢迎的分类：",
-    "top_tag": "热门标签："
+    "ideas_over_time": "创意时间趋势",
+    "category_distribution": "分类分布",
+    "tag_usage": "标签使用",
+    "total_ideas": "总创意数",
+    "this_month": "本月",
+    "total_categories": "总分类数",
+    "total_tags": "总标签数",
+    "most_popular_category": "最受欢迎分类",
+    "most_used_tag": "最常用标签",
+    "ideas_created": "已创建创意",
+    "weekly_goal": "周目标"
   },
-  "modals": {
-    "add_new_idea": "添加新想法",
-    "confirm_delete": "删除 {{count}} 个选中的想法？"
-  },
-  "tooltips": {
-    "dark_mode": "切换暗黑模式",
-    "analytics": "查看分析",
-    "bulk_select": "批量选择模式",
-    "card_view": "切换到卡片视图",
-    "list_view": "切换到列表视图",
-    "templates": "使用模板",
-    "settings": "设置"
+  "view_modes": {
+    "card_view": "卡片视图",
+    "list_view": "列表视图"
   },
   "languages": {
     "en": "English",
@@ -103,43 +102,25 @@
     "zh": "中文",
     "ja": "日本語"
   },
-  "dates": {
-    "created": "创建于 {{date}}",
-    "updated": "更新于 {{date}}"
-  },
   "settings": {
     "title": "设置",
-    "tabs": {
-      "appearance": "外观",
-      "layout": "布局",
-      "preferences": "偏好设置",
-      "achievements": "成就"
-    },
-    "appearance": {
-      "theme_selection": "主题选择",
-      "dark_mode": "深色模式",
-      "light": "浅色",
-      "dark": "深色",
-      "system": "系统"
-    },
-    "layout": {
-      "layout_density": "布局密度",
-      "default_view": "默认视图",
-      "sidebar_settings": "侧边栏设置",
-      "collapse_sidebar": "默认折叠侧边栏",
-      "show_sidebar_icons": "显示侧边栏图标"
-    },
-    "preferences": {
-      "quick_actions": "快速操作",
-      "auto_save": "输入时自动保存",
-      "confirm_delete": "删除想法前确认",
-      "show_tooltips": "显示有用提示",
-      "ideas_per_page": "每页想法数"
-    },
-    "achievements": {
+    "appearance": "外观",
+    "behavior": "行为",
+    "data": "数据",
+    "achievements": "成就",
+    "theme": "主题",
+    "dark_mode": "深色模式",
+    "language": "语言",
+    "layout_density": "布局密度",
+    "auto_save": "自动保存",
+    "export_data": "导出数据",
+    "import_data": "导入数据",
+    "reset_data": "重置数据",
+    "reset_confirm": "您确定要重置所有数据吗？此操作无法撤销。",
+    "achievement_progress": {
       "your_progress": "您的进度",
       "achievement_stats": "成就统计",
-      "unlocked": "已解锁 {{count}} / {{total}} 个成就"
+      "unlocked": "已解锁 {{count}}/{{total}} 个成就"
     }
   },
   "themes": {
@@ -152,22 +133,155 @@
   },
   "layout_density": {
     "comfortable": "舒适",
-    "compact": "紧凑",
+    "compact": "紧凑", 
     "cozy": "温馨",
-    "comfortable_desc": "更多间距，对眼睛更友好",
+    "comfortable_desc": "更多间距，眼睛更舒适",
     "compact_desc": "更少间距，显示更多内容",
     "cozy_desc": "平衡间距，获得最佳舒适度"
   },
   "achievements_list": {
     "first_step": "第一步",
-    "first_step_desc": "创建了您的第一个想法",
-    "idea_collector": "想法收集者",
-    "idea_collector_desc": "创建了10个想法",
-    "idea_master": "想法大师",
-    "idea_master_desc": "创建了50个想法",
+    "first_step_desc": "创建了您的第一个创意",
+    "idea_collector": "创意收集者",
+    "idea_collector_desc": "创建了 10 个创意",
+    "idea_master": "创意大师", 
+    "idea_master_desc": "创建了 50 个创意",
     "organizer": "超级组织者",
-    "organizer_desc": "使用了全部5个分类",
+    "organizer_desc": "使用了所有 5 个分类",
     "weekly_streak": "每周战士",
-    "weekly_streak_desc": "连续7天创建想法"
+    "weekly_streak_desc": "连续 7 天创建创意"
+  },
+  "superadmin": {
+    "title": "超级管理员",
+    "dashboard": "超级管理员仪表板",
+    "platform_overview": "平台概览",
+    "tenant_management": "租户管理",
+    "usage_analytics": "使用分析",
+    "platform_settings": "平台设置",
+    "overview": {
+      "title": "平台概览",
+      "subtitle": "整个平台的综合统计和健康指标",
+      "total_tenants": "租户总数",
+      "total_users": "用户总数",
+      "total_ideas": "创意总数",
+      "monthly_revenue": "月收入",
+      "active_tenants": "{{count}} 个活跃",
+      "avg_per_tenant": "平均每个租户 {{count}}",
+      "paying_tenants": "来自 {{count}} 个付费租户",
+      "recent_activity": "平台最近活动",
+      "growth_trends": "增长趋势",
+      "fastest_growing": "增长最快",
+      "most_active": "最活跃",
+      "api_calls": "{{count}} 次 API 调用",
+      "growth_percent": "+{{percent}}% 增长"
+    },
+    "tenants": {
+      "title": "租户管理",
+      "subtitle": "创建、管理和监控所有平台租户",
+      "create_tenant": "创建租户",
+      "tenant_name": "租户",
+      "plan": "计划",
+      "users_ideas": "用户/创意",
+      "status": "状态",
+      "created": "创建时间",
+      "actions": "操作",
+      "users_count": "{{count}} 个用户",
+      "ideas_count": "{{count}} 个创意",
+      "active": "活跃",
+      "inactive": "非活跃"
+    },
+    "analytics": {
+      "title": "使用分析",
+      "subtitle": "所有租户的详细使用统计和性能指标",
+      "total_users": "用户总数",
+      "total_ideas": "创意总数",
+      "active_users": "活跃用户",
+      "monthly_revenue": "月收入",
+      "api_calls": "API 调用",
+      "collaboration_events": "协作事件",
+      "cross_tenant_shares": "跨租户分享",
+      "last_active": "最后活跃"
+    },
+    "settings": {
+      "title": "平台设置",
+      "subtitle": "全局平台配置和安全设置",
+      "coming_soon": "即将推出",
+      "coming_soon_desc": "平台设置将包括全局配置选项、安全策略和系统级功能管理。"
+    },
+    "create_tenant": {
+      "title": "创建新租户",
+      "organization_name": "组织名称",
+      "organization_name_placeholder": "输入组织名称",
+      "domain": "域名",
+      "domain_placeholder": "组织域名",
+      "industry": "行业",
+      "select_industry": "选择行业",
+      "company_size": "公司规模",
+      "select_size": "选择规模",
+      "plan": "计划",
+      "admin_email": "管理员邮箱",
+      "admin_email_placeholder": "admin@company.com",
+      "admin_password": "管理员密码",
+      "admin_password_placeholder": "创建管理员密码",
+      "max_users": "最大用户数",
+      "max_ideas": "最大创意数",
+      "storage_limit": "存储限制",
+      "creating": "创建中...",
+      "create": "创建租户",
+      "cancel": "取消",
+      "industries": {
+        "technology": "技术",
+        "finance": "金融",
+        "healthcare": "医疗保健",
+        "education": "教育",
+        "retail": "零售",
+        "manufacturing": "制造业",
+        "other": "其他"
+      },
+      "sizes": {
+        "startup": "1-10 名员工",
+        "small": "11-50 名员工",
+        "medium": "51-200 名员工",
+        "large": "201-1000 名员工",
+        "enterprise": "1000+ 名员工"
+      },
+      "plans": {
+        "starter": "入门版（免费）",
+        "professional": "专业版（$29/月）",
+        "enterprise": "企业版（$99/月）"
+      }
+    },
+    "quick_stats": "快速统计",
+    "tenants_label": "租户",
+    "users_label": "用户",
+    "ideas_label": "创意",
+    "revenue_label": "收入"
+  },
+  "auth": {
+    "sign_in": "登录",
+    "sign_up": "注册",
+    "create_organization": "创建组织",
+    "email": "邮箱",
+    "password": "密码",
+    "remember_me": "记住我",
+    "sign_in_button": "登录",
+    "sign_up_button": "注册",
+    "social_login": "或者使用以下方式继续",
+    "logout": "退出登录",
+    "user_menu": "用户菜单",
+    "switch_organization": "切换组织"
+  },
+  "tenant_selection": {
+    "title": "选择组织",
+    "subtitle": "选择您想要使用的组织",
+    "switch_anytime": "您可以随时从用户菜单切换组织"
+  },
+  "tooltips": {
+    "settings": "设置",
+    "super_admin": "超级管理员仪表板",
+    "user_menu": "用户菜单",
+    "logout": "退出登录",
+    "templates": "创意模板",
+    "new_idea": "创建新创意"
   }
 }
